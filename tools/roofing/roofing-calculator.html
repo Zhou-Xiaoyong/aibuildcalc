@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Roofing Calculator","description":"Free roofing calculator. Estimate shingle bundles, squares, underlayment, and total cost for your roof replacement.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many bundles of shingles do I need?","acceptedAnswer":{"@type":"Answer","text":"You need 3 bundles of standard 3-tab shingles per roofing square (100 sq ft). For architectural shingles, you may need 4 bundles per square."}},{"@type":"Question","name":"What is a roofing square?","acceptedAnswer":{"@type":"Answer","text":"A roofing square equals 100 square feet of roof area, the standard unit for measuring and pricing."}},{"@type":"Question","name":"How much does a new roof cost?","acceptedAnswer":{"@type":"Answer","text":"Average roof replacement costs $5,000-$12,000 for asphalt shingles, $12,000-$25,000 for metal, and $20,000+ for slate or tile."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Roofing Calculator","description":"Free roofing calculator. Estimate shingle bundles, squares, underlayment, and total cost for your roof replacement.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many bundles of shingles do I need?","acceptedAnswer":{"@type":"Answer","text":"You need 3 bundles of standard 3-tab shingles per roofing square (100 sq ft). For architectural shingles, you may need 4 bundles per square."}},{"@type":"Question","name":"What is a roofing square?","acceptedAnswer":{"@type":"Answer","text":"A roofing square equals 100 square feet of roof area, the standard unit for measuring and pricing."}},{"@type":"Question","name":"How much does a new roof cost?","acceptedAnswer":{"@type":"Answer","text":"Average roof replacement costs $5,000-$12,000 for asphalt shingles, $12,000-$25,000 for metal, and $20,000+ for slate or tile."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Roofing","item":"https://aibuildcalc.com/tools/roofing/"},{"@type":"ListItem","position":3,"name":"Roofing Calculator","item":"https://aibuildcalc.com/tools/roofing/roofing-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -84,7 +88,7 @@
             <input type="number" id="pitch" value="6" step="any" min="0" aria-label="Roof Pitch">
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -110,21 +114,21 @@
             <div class="result-value" id="result-bundles">—</div>
             <div class="result-unit">bundles</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Estimated Cost</div>
             <div class="detail-value" id="result-estimatedCost">—</div>
             <div class="detail-unit">USD</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -147,10 +151,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Roofing project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -178,7 +182,7 @@
         <div class="formula-box">Pitch factor = sqrt(pitch^2 + 144) / 12
 Roof area = Base area x Pitch factor
 Squares = Roof area / 100
-Bundles = Squares x 3</div>
+Bundles = Squares x 3 x 1.1 (includes 10% waste)</div>
       </div>
 
       <!-- Material Comparison -->
@@ -294,7 +298,7 @@ Bundles = Squares x 3</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -392,7 +396,7 @@ Bundles = Squares x 3</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["A 15% waste factor is standard for gable roofs. For hip roofs, use 20% due to more cutting.","Ice and water shield is required along eaves in most northern US climate zones.","Ventilation matters: 1 sq ft of vent per 150 sq ft of attic space is the minimum code requirement.","Architectural shingles last 30-50 years vs 15-25 for 3-tab, but cost only 20-30% more.","Don't forget drip edge flashing — it prevents water from getting under the shingles at the edges."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

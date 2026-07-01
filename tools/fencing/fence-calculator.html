@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Fence Calculator","description":"Free fence calculator. Estimate posts, rails, pickets, and total cost for your fencing project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far apart should fence posts be?","acceptedAnswer":{"@type":"Answer","text":"6-8 ft for wood fences, 10 ft for chain link. Use closer spacing for tall fences or high wind."}},{"@type":"Question","name":"How much does a wood fence cost?","acceptedAnswer":{"@type":"Answer","text":"$15-$45 per linear foot installed. A 100-foot fence costs $1,500-$4,500. DIY saves 40-50%."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Fence Calculator","description":"Free fence calculator. Estimate posts, rails, pickets, and total cost for your fencing project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far apart should fence posts be?","acceptedAnswer":{"@type":"Answer","text":"6-8 ft for wood fences, 10 ft for chain link. Use closer spacing for tall fences or high wind."}},{"@type":"Question","name":"How much does a wood fence cost?","acceptedAnswer":{"@type":"Answer","text":"$15-$45 per linear foot installed. A 100-foot fence costs $1,500-$4,500. DIY saves 40-50%."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Fencing","item":"https://aibuildcalc.com/tools/fencing/"},{"@type":"ListItem","position":3,"name":"Fence Calculator","item":"https://aibuildcalc.com/tools/fencing/fence-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -94,7 +98,7 @@
             <input type="number" id="picketSpacing" value="2" step="any" min="0" aria-label="Picket Spacing">
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -115,6 +119,7 @@
             <div class="result-value" id="result-pickets">—</div>
             <div class="result-unit">pickets</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Concrete for Posts</div>
             <div class="detail-value" id="result-concreteBags">—</div>
@@ -126,15 +131,14 @@
             <div class="detail-unit">USD</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -158,10 +162,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Fencing project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -299,7 +303,7 @@ Pickets = Length / ((PicketWidth + Spacing) / 12)</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -401,7 +405,7 @@ Pickets = Length / ((PicketWidth + Spacing) / 12)</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Posts should be set in concrete at least 2 feet deep, or below frost line in cold climates.","Allow concrete to cure 24-48 hours before attaching fence panels or rails.","A 6-foot fence typically needs posts set 32-36 inches deep for stability.","Galvanized or vinyl-coated hardware extends fence life by 5-10 years in coastal areas.","Check local setback rules — most municipalities require fences 2-8 inches inside property lines."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

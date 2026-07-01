@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Drywall Calculator","description":"Free drywall calculator. Estimate drywall sheets, mud, screws, and tape.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many drywall sheets for 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"About 16 sheets of 4x8 drywall (10 walls + 6 ceiling). Add 10% waste."}},{"@type":"Question","name":"Should I use 1/2\" or 5/8\" drywall?","acceptedAnswer":{"@type":"Answer","text":"1/2\" for walls with 16\" stud spacing. 5/8\" for ceilings (prevents sagging) and fire-rated walls."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Drywall Calculator","description":"Free drywall calculator. Estimate drywall sheets, mud, screws, and tape.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many drywall sheets for 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"About 16 sheets of 4x8 drywall (10 walls + 6 ceiling). Add 10% waste."}},{"@type":"Question","name":"Should I use 1/2\" or 5/8\" drywall?","acceptedAnswer":{"@type":"Answer","text":"1/2\" for walls with 16\" stud spacing. 5/8\" for ceilings (prevents sagging) and fire-rated walls."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Drywall","item":"https://aibuildcalc.com/tools/drywall/"},{"@type":"ListItem","position":3,"name":"Drywall Calculator","item":"https://aibuildcalc.com/tools/drywall/drywall-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -102,7 +106,7 @@
             </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -118,6 +122,7 @@
             <div class="result-value" id="result-sheets">—</div>
             <div class="result-unit">sheets</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Screws Needed</div>
             <div class="detail-value" id="result-screws">—</div>
@@ -139,15 +144,14 @@
             <div class="detail-unit">USD</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -171,10 +175,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Drywall project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -288,7 +292,7 @@ Mud ~ 0.05 gal/sq ft</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -396,7 +400,7 @@ Mud ~ 0.05 gal/sq ft</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Hang ceiling drywall before walls — it provides edge support for wall sheets.","Butt joints (non-tapered ends) are the hardest to finish smoothly. Stagger them across the wall.","3 coats of mud with sanding between each gives a professional finish. Rushing shows.","Screws every 12\" on ceilings, every 16\" on walls — fewer means nail pops later.","Type X drywall (5/8\") is required for fire-rated walls between garages and living spaces."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

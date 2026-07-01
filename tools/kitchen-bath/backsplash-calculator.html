@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Backsplash Calculator","description":"Free backsplash calculator. Estimate backsplash tile quantity and cost.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a kitchen backsplash cost?","acceptedAnswer":{"@type":"Answer","text":"Subway tile: $7-$15/sq ft installed. Glass mosaic: $20-$40/sq ft. A typical 20 sq ft backsplash costs $140-$800 installed."}},{"@type":"Question","name":"How high should a kitchen backsplash be?","acceptedAnswer":{"@type":"Answer","text":"Standard: 18 inches (between counter and upper cabinets). Full-height backsplashes are becoming more popular."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Backsplash Calculator","description":"Free backsplash calculator. Estimate backsplash tile quantity and cost.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a kitchen backsplash cost?","acceptedAnswer":{"@type":"Answer","text":"Subway tile: $7-$15/sq ft installed. Glass mosaic: $20-$40/sq ft. A typical 20 sq ft backsplash costs $140-$800 installed."}},{"@type":"Question","name":"How high should a kitchen backsplash be?","acceptedAnswer":{"@type":"Answer","text":"Standard: 18 inches (between counter and upper cabinets). Full-height backsplashes are becoming more popular."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Kitchen & Bath","item":"https://aibuildcalc.com/tools/kitchen-bath/"},{"@type":"ListItem","position":3,"name":"Backsplash Calculator","item":"https://aibuildcalc.com/tools/kitchen-bath/backsplash-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -99,7 +103,7 @@
             </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -115,6 +119,7 @@
             <div class="result-value" id="result-tilesNeeded">—</div>
             <div class="result-unit">tiles</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Grout Needed</div>
             <div class="detail-value" id="result-groutNeeded">—</div>
@@ -126,15 +131,14 @@
             <div class="detail-unit">USD</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -158,10 +162,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Kitchen &amp; Bath project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -276,7 +280,7 @@ Grout ~ 1 lb per 20 sq ft</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -375,7 +379,7 @@ Grout ~ 1 lb per 20 sq ft</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Countertop overhang should be 1-1.5\" on standard cabinets, 10-12\" for breakfast bar seating.","Backsplash height of 18-20\" between counter and cabinets is standard, but full-height is trending.","Waterproof membrane behind shower tile is essential — tile and grout are NOT waterproof.","Quartz is non-porous (no sealing needed), while granite requires sealing every 1-2 years.","Standard vanity height is now 36\" (comfort height) vs the old 30\" standard."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Siding Calculator","description":"Free siding calculator. Estimate siding squares, panels, and total cost for vinyl, wood, or fiber cement siding.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does siding cost?","acceptedAnswer":{"@type":"Answer","text":"Vinyl: $5-$8/sq ft. Wood: $7-$14/sq ft. Fiber cement: $6-$12/sq ft. A 1,500 sq ft home costs $7,500-$18,000 for vinyl."}},{"@type":"Question","name":"What is a square of siding?","acceptedAnswer":{"@type":"Answer","text":"A square equals 100 square feet of siding, the standard unit for ordering and pricing."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Siding Calculator","description":"Free siding calculator. Estimate siding squares, panels, and total cost for vinyl, wood, or fiber cement siding.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does siding cost?","acceptedAnswer":{"@type":"Answer","text":"Vinyl: $5-$8/sq ft. Wood: $7-$14/sq ft. Fiber cement: $6-$12/sq ft. A 1,500 sq ft home costs $7,500-$18,000 for vinyl."}},{"@type":"Question","name":"What is a square of siding?","acceptedAnswer":{"@type":"Answer","text":"A square equals 100 square feet of siding, the standard unit for ordering and pricing."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Siding","item":"https://aibuildcalc.com/tools/siding/"},{"@type":"ListItem","position":3,"name":"Siding Calculator","item":"https://aibuildcalc.com/tools/siding/siding-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -99,7 +103,7 @@
             </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -134,7 +138,7 @@
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -158,10 +162,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Siding project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -276,7 +280,7 @@ Cost = Total x Price per sq ft</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -376,7 +380,7 @@ Cost = Total x Price per sq ft</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Vinyl siding should be installed with a 1/4\" gap at overlaps for thermal expansion.","House wrap (Tyvek) under siding prevents air infiltration and water damage.","Fiber cement siding requires special cutting tools — a dust mask is mandatory (contains silica).","Proper flashing around windows and doors prevents 90% of water infiltration issues.","Gutters should have 1 downspout per 30-40 feet of gutter run for adequate drainage."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pipe Size Calculator","description":"Free pipe size calculator. Find the right water supply pipe size.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size pipe for a main water line?","acceptedAnswer":{"@type":"Answer","text":"Most homes use 3/4\" or 1\" copper/PEX for main supply. Size depends on fixtures and pressure."}},{"@type":"Question","name":"What are WSFU?","acceptedAnswer":{"@type":"Answer","text":"Water Supply Fixture Units: bathroom faucet = 1, shower = 2, toilet = 2.5, kitchen sink = 1.5, washing machine = 4."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pipe Size Calculator","description":"Free pipe size calculator. Find the right water supply pipe size.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size pipe for a main water line?","acceptedAnswer":{"@type":"Answer","text":"Most homes use 3/4\" or 1\" copper/PEX for main supply. Size depends on fixtures and pressure."}},{"@type":"Question","name":"What are WSFU?","acceptedAnswer":{"@type":"Answer","text":"Water Supply Fixture Units: bathroom faucet = 1, shower = 2, toilet = 2.5, kitchen sink = 1.5, washing machine = 4."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Plumbing","item":"https://aibuildcalc.com/tools/plumbing/"},{"@type":"ListItem","position":3,"name":"Pipe Size Calculator","item":"https://aibuildcalc.com/tools/plumbing/pipe-size-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -90,7 +94,7 @@
             <input type="number" id="pipeLength" value="60" step="any" min="0" aria-label="Longest Pipe Run">
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -101,6 +105,7 @@
             <div class="result-value" id="result-mainPipe">—</div>
             <div class="result-unit">inches</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Branch Lines</div>
             <div class="detail-value" id="result-branchPipe">—</div>
@@ -112,15 +117,14 @@
             <div class="detail-unit">GPM</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -144,10 +148,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Plumbing project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -263,7 +267,7 @@ Pipe size from flow rate x pressure x length</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -367,7 +371,7 @@ Pipe size from flow rate x pressure x length</div>
       document.getElementById('result-flowRate').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Always size supply pipes based on total fixture units, not just current fixtures — plan for additions.","PEX is faster to install than copper (40-60% labor savings) and resists freeze damage.","Low water pressure? Check for galvanized pipes — they corrode from inside and restrict flow over time.","A pressure reducing valve is required if street pressure exceeds 80 PSI.","Shut-off valves at every fixture aren't just convenient — they're code in most jurisdictions."];
       const tip = tips[Math.floor(Math.random() * tips.length)];
