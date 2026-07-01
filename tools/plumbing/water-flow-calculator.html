@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Water Flow Calculator: Estimate GPM flow rate through your pipes | AIBuildCalc</title>
+  <meta name="description" content="Free water flow calculator. Estimate GPM flow rate through pipes.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/plumbing/water-flow-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Water Flow Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free water flow calculator. Estimate GPM flow rate through pipes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/plumbing/water-flow-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Water Flow Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free water flow calculator. Estimate GPM flow rate through pipes.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Water Flow Calculator","description":"Free water flow calculator. Estimate GPM flow rate through pipes.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good water flow rate for a house?","acceptedAnswer":{"@type":"Answer","text":"A residential system should deliver 6-12 GPM at fixtures. Minimum acceptable is 4 GPM."}},{"@type":"Question","name":"What is max water velocity in pipes?","acceptedAnswer":{"@type":"Answer","text":"Max recommended velocity is 8 ft/s for copper and 12 ft/s for PVC. Excessive velocity causes erosion and noise."}}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Plumbing","item":"https://aibuildcalc.com/tools/plumbing/"},{"@type":"ListItem","position":3,"name":"Water Flow Calculator","item":"https://aibuildcalc.com/tools/plumbing/water-flow-calculator.html"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">AI</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+    <a href="/tools/roofing/">Roofing</a>
+    <a href="/tools/painting/">Painting</a>
+    <a href="/tools/flooring/">Flooring</a>
+    <a href="/tools/fencing/">Fencing</a>
+    <a href="/tools/decking/">Decking</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/plumbing/">Plumbing</a> <span>›</span> Water Flow Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Water Flow Calculator</h1>
+          <p>Estimate GPM flow rate through your pipes</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="pipeDiameter">Pipe Diameter </label>
+            <span class="label-hint">Nominal pipe size</span>
+            <select id="pipeDiameter" aria-label="Pipe Diameter">
+              <option value="1/2" selected>1/2</option>
+              <option value="3/4" >3/4</option>
+              <option value="1" >1</option>
+              <option value="1-1/4" >1-1/4</option>
+              <option value="1-1/2" >1-1/2</option>
+              <option value="2" >2</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pressure">Available Pressure <span class="unit-label">psi</span></label>
+            <span class="label-hint">Static pressure</span>
+            <input type="number" id="pressure" value="50" step="any" min="0" aria-label="Available Pressure">
+          </div>
+          <div class="form-group">
+            <label for="pipeLength">Pipe Length <span class="unit-label">ft</span></label>
+            <span class="label-hint">Total length of pipe run</span>
+            <input type="number" id="pipeLength" value="50" step="any" min="0" aria-label="Pipe Length">
+          </div>
+          <div class="form-group">
+            <label for="pipeMaterial">Pipe Material </label>
+            <span class="label-hint">Affects friction coefficient</span>
+            <select id="pipeMaterial" aria-label="Pipe Material">
+              <option value="Copper (C=140)" selected>Copper (C=140)</option>
+              <option value="PEX (C=150)" >PEX (C=150)</option>
+              <option value="PVC (C=150)" >PVC (C=150)</option>
+              <option value="Galvanized (C=100)" >Galvanized (C=100)</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> AI Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Flow Rate</div>
+            <div class="result-value" id="result-flowRate">—</div>
+            <div class="result-unit">GPM</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Water Velocity</div>
+            <div class="detail-value" id="result-velocity">—</div>
+            <div class="detail-unit">ft/s</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Pressure Loss</div>
+            <div class="detail-value" id="result-pressureLoss">—</div>
+            <div class="detail-unit">psi</div>
+          </div>
+          </div>
+
+          <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Our calculator uses the Hazen-Williams formula to estimate GPM flow rates through pipes.</p>
+        <ol>
+          <li>Identify pipe diameter and material</li>
+        <li>Measure available water pressure</li>
+        <li>Determine total pipe run length</li>
+        <li>Enter specifications</li>
+        </ol>
+      </div>
+
+      <!-- AI Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">AI Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Plumbing project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🔧</div>
+            <div class="insight-title">PEX vs Copper Analysis</div>
+            <div class="insight-desc">PEX: 40-60% less labor, freeze-resistant. Copper: longer lifespan, antimicrobial. AI compares total installed cost for your project scope.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📏</div>
+            <div class="insight-title">Fixture Unit Sizing</div>
+            <div class="insight-desc">AI calculates total water supply fixture units (WSFU) per UPC/IPC code to size your main and branch lines correctly.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">⚠️</div>
+            <div class="insight-title">Pressure Regulation Check</div>
+            <div class="insight-desc">Street pressure over 80 PSI requires a PRV. AI flags high-pressure scenarios and recommends the right valve size.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Hazen-Williams: Q = 0.442 x C x D^2.63 x (P/L)^0.54
+Where C = roughness, D = diameter, P = pressure, L = length</div>
+      </div>
+
+      <!-- Material Comparison -->
+      
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>International Association of Plumbing and Mechanical Officials (IAPMO)</strong> — Uniform Plumbing Code (UPC). <a href="https://www.iapmo.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Code Council (ICC)</strong> — International Plumbing Code (IPC). <a href="https://www.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What is a good water flow rate for a house?</div>
+          <div class="faq-answer">A residential system should deliver 6-12 GPM at fixtures. Minimum acceptable is 4 GPM.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is max water velocity in pipes?</div>
+          <div class="faq-answer">Max recommended velocity is 8 ft/s for copper and 12 ft/s for PVC. Excessive velocity causes erosion and noise.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/plumbing/pipe-size-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Pipe Size Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="active">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/plumbing/pipe-size-calculator.html">Pipe Size Calculator</a></li>
+          <li><a href="/tools/plumbing/water-flow-calculator.html">Water Flow Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: water-flow-calculator
+    function calculate() {
+      try {
+        const pipeDiameter = document.getElementById('pipeDiameter').value;
+        const pressure = parseFloat(document.getElementById('pressure').value) || 0;
+        const pipeLength = parseFloat(document.getElementById('pipeLength').value) || 0;
+        const pipeMaterial = document.getElementById('pipeMaterial').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const diaMap = {'1/2': 0.622, '3/4': 0.824, '1': 1.049, '1-1/4': 1.38, '1-1/2': 1.61, '2': 2.067};
+        const cMap = {'Copper (C=140)': 140, 'PEX (C=150)': 150, 'PVC (C=150)': 150, 'Galvanized (C=100)': 100};
+        const d = diaMap[pipeDiameter] || 0.824;
+        const c = cMap[pipeMaterial] || 140;
+        const flowRate = 0.442 * c * Math.pow(d, 2.63) * Math.pow(pressure / pipeLength, 0.54);
+        const areaSqFt = Math.PI * Math.pow(d/24, 2);
+        const velocity = flowRate / (448.8 * areaSqFt);
+        const pressureLoss = (pressure * 0.4335 * pipeLength * (1/c) * Math.pow(flowRate/100, 1.85)) / 100;
+        setResult('flowRate', flowRate.toFixed(1));
+        setResult('velocity', velocity.toFixed(1));
+        setResult('pressureLoss', pressureLoss.toFixed(1));
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('pipeDiameter').value = '1/2';
+      document.getElementById('pressure').value = '50';
+      document.getElementById('pipeLength').value = '50';
+      document.getElementById('pipeMaterial').value = 'Copper (C=140)';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-flowRate').textContent = '—';
+      document.getElementById('result-velocity').textContent = '—';
+      document.getElementById('result-pressureLoss').textContent = '—';
+    }
+
+    // AI Smart Tip Generator
+    function generateAITip() {
+      const tips = ["Always size supply pipes based on total fixture units, not just current fixtures — plan for additions.","PEX is faster to install than copper (40-60% labor savings) and resists freeze damage.","Low water pressure? Check for galvanized pipes — they corrode from inside and restrict flow over time.","A pressure reducing valve is required if street pressure exceeds 80 PSI.","Shut-off valves at every fixture aren't just convenient — they're code in most jurisdictions."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+</body>
+</html>

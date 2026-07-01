@@ -1,0 +1,25 @@
+# Build scripts - not needed for deployment
+scripts/
+
+# Duplicate/temp images
+images/Professional_clean_og_image_fo_*.png
+
+# Empty directories
+js/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment and secrets
+.env
+.env.*
+*.key
+*.pem

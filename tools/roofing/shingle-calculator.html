@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shingle Calculator: Estimate shingle bundles for your roof replacement | AIBuildCalc</title>
+  <meta name="description" content="Free shingle calculator. Estimate exact number of shingle bundles for your roof based on area, pitch, and shingle type.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/roofing/shingle-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Shingle Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free shingle calculator. Estimate exact number of shingle bundles for your roof based on area, pitch, and shingle type.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/roofing/shingle-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shingle Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free shingle calculator. Estimate exact number of shingle bundles for your roof based on area, pitch, and shingle type.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shingle Calculator","description":"Free shingle calculator. Estimate exact number of shingle bundles for your roof based on area, pitch, and shingle type.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many shingle bundles per square?","acceptedAnswer":{"@type":"Answer","text":"3-tab: 3 bundles per square. Architectural: 3.5 bundles. Premium: 4 bundles per square."}},{"@type":"Question","name":"What waste factor should I use?","acceptedAnswer":{"@type":"Answer","text":"Use 10% for simple gable roofs, 15% for hip roofs, and 20% for complex roofs with multiple dormers and valleys."}}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Roofing","item":"https://aibuildcalc.com/tools/roofing/"},{"@type":"ListItem","position":3,"name":"Shingle Calculator","item":"https://aibuildcalc.com/tools/roofing/shingle-calculator.html"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">AI</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+    <a href="/tools/roofing/">Roofing</a>
+    <a href="/tools/painting/">Painting</a>
+    <a href="/tools/flooring/">Flooring</a>
+    <a href="/tools/fencing/">Fencing</a>
+    <a href="/tools/decking/">Decking</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/roofing/">Roofing</a> <span>›</span> Shingle Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Shingle Calculator</h1>
+          <p>Estimate shingle bundles for your roof replacement</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="roofArea">Roof Area <span class="unit-label">sq ft</span></label>
+            <span class="label-hint">Total roof area in sq ft</span>
+            <input type="number" id="roofArea" value="1500" step="any" min="0" aria-label="Roof Area">
+          </div>
+          <div class="form-group">
+            <label for="shingleType">Shingle Type </label>
+            <span class="label-hint">Affects bundles per square</span>
+            <select id="shingleType" aria-label="Shingle Type">
+              <option value="3-Tab (3 bundles/square)" selected>3-Tab (3 bundles/square)</option>
+              <option value="Architectural (3.5 bundles/square)" >Architectural (3.5 bundles/square)</option>
+              <option value="Luxury/Designer (4 bundles/square)" >Luxury/Designer (4 bundles/square)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="waste">Waste Factor </label>
+            <span class="label-hint">For cuts and valleys</span>
+            <select id="waste" aria-label="Waste Factor">
+              <option value="10%" selected>10%</option>
+              <option value="15%" >15%</option>
+              <option value="20%" >20%</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> AI Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Roofing Squares</div>
+            <div class="detail-value" id="result-squares">—</div>
+            <div class="detail-unit">squares</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Shingle Bundles</div>
+            <div class="result-value" id="result-bundles">—</div>
+            <div class="result-unit">bundles</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Roofing Nails</div>
+            <div class="detail-value" id="result-nailsNeeded">—</div>
+            <div class="detail-unit">lbs</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Underlayment Rolls</div>
+            <div class="detail-value" id="result-underlayment">—</div>
+            <div class="detail-unit">rolls</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Material Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+
+          <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Accurately calculating shingle quantities prevents delays and waste. Our calculator accounts for roof area, shingle type, and waste factor.</p>
+        <ol>
+          <li>Measure or calculate your total roof area</li>
+        <li>Select your shingle type</li>
+        <li>Choose waste factor</li>
+        <li>Enter specifications in the calculator</li>
+        </ol>
+      </div>
+
+      <!-- AI Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">AI Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Roofing project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏠</div>
+            <div class="insight-title">Pitch-to-Cost Analysis</div>
+            <div class="insight-desc">Steep roofs (8/12+) need 20-40% more material and higher labor costs. Our AI adjusts estimates based on your exact pitch ratio.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📐</div>
+            <div class="insight-title">Waste Factor Intelligence</div>
+            <div class="insight-desc">Gable roofs: 10-15% waste. Hip roofs: 15-20%. Complex roofs with dormers: 20-25%. AI selects the right factor for your roof type.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🌧️</div>
+            <div class="insight-title">Climate Zone Recommendations</div>
+            <div class="insight-desc">Ice & water shield required in northern zones. AI checks your region's IRC climate zone for code-compliant underlayment suggestions.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Squares = Roof area / 100
+Bundles = Squares x Bundles per square x (1 + Waste%)
+Nails ~ 0.33 lbs per bundle</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Roofing Material Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Material Type</th><th>Lifespan</th><th>Cost per Square</th><th>Bundles/100 sq ft</th><th>Waste Factor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>3-Tab Asphalt</td><td>15-25 years</td><td>$80-120</td><td>3</td><td>10-15%</td></tr>
+              <tr><td>Architectural Shingles</td><td>30-50 years</td><td>$120-200</td><td>3-4</td><td>12-18%</td></tr>
+              <tr><td>Premium Designer</td><td>40-50+ years</td><td>$200-400</td><td>4-5</td><td>15-20%</td></tr>
+              <tr><td>Metal Standing Seam</td><td>40-70 years</td><td>$500-1,200</td><td>N/A (panels)</td><td>5-10%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>National Roofing Contractors Association (NRCA)</strong> — Roofing Manual & Installation Guidelines. <a href="https://www.nrca.net/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Asphalt Roofing Manufacturers Association (ARMA)</strong> — Residential Asphalt Roofing Manual. <a href="https://www.asphaltroofing.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Residential Code (IRC)</strong> — Chapter 9 — Roof Assemblies. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How many shingle bundles per square?</div>
+          <div class="faq-answer">3-tab: 3 bundles per square. Architectural: 3.5 bundles. Premium: 4 bundles per square.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What waste factor should I use?</div>
+          <div class="faq-answer">Use 10% for simple gable roofs, 15% for hip roofs, and 20% for complex roofs with multiple dormers and valleys.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/roofing/roofing-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Roofing Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/roofing/roof-pitch-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Roof Pitch Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="active">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+          <li><a href="/tools/roofing/roof-pitch-calculator.html">Roof Pitch Calculator</a></li>
+          <li><a href="/tools/roofing/shingle-calculator.html">Shingle Calculator</a></li>
+          <li><a href="/tools/roofing/roof-sheathing-calculator.html">Roof Sheathing Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: shingle-calculator
+    function calculate() {
+      try {
+        const roofArea = parseFloat(document.getElementById('roofArea').value) || 0;
+        const shingleType = document.getElementById('shingleType').value;
+        const waste = document.getElementById('waste').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const area = roofArea;
+        const squares = area / 100;
+        const bundlesPerSquare = shingleType.includes('3-Tab') ? 3 : shingleType.includes('Architectural') ? 3.5 : 4;
+        const wastePct = parseInt(waste) / 100;
+        const bundles = Math.ceil(squares * bundlesPerSquare * (1 + wastePct));
+        const nailsNeeded = (bundles * 0.33).toFixed(1);
+        const underlayment = Math.ceil(squares / 4);
+        const estimatedCost = Math.round(bundles * 30 * 100) / 100;
+        setResult('squares', squares.toFixed(1));
+        setResult('bundles', bundles);
+        setResult('nailsNeeded', nailsNeeded);
+        setResult('underlayment', underlayment);
+        setResult('estimatedCost', '$' + estimatedCost.toFixed(0));
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('roofArea').value = '1500';
+      document.getElementById('shingleType').value = '3-Tab (3 bundles/square)';
+      document.getElementById('waste').value = '10%';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-squares').textContent = '—';
+      document.getElementById('result-bundles').textContent = '—';
+      document.getElementById('result-nailsNeeded').textContent = '—';
+      document.getElementById('result-underlayment').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // AI Smart Tip Generator
+    function generateAITip() {
+      const tips = ["A 15% waste factor is standard for gable roofs. For hip roofs, use 20% due to more cutting.","Ice and water shield is required along eaves in most northern US climate zones.","Ventilation matters: 1 sq ft of vent per 150 sq ft of attic space is the minimum code requirement.","Architectural shingles last 30-50 years vs 15-25 for 3-tab, but cost only 20-30% more.","Don't forget drip edge flashing — it prevents water from getting under the shingles at the edges."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gutter Calculator: Determine gutter size and downspout requirements | AIBuildCalc</title>
+  <meta name="description" content="Free gutter calculator. Determine gutter size and downspouts for your roof.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/siding/gutter-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Gutter Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free gutter calculator. Determine gutter size and downspouts for your roof.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/siding/gutter-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gutter Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free gutter calculator. Determine gutter size and downspouts for your roof.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gutter Calculator","description":"Free gutter calculator. Determine gutter size and downspouts for your roof.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size gutters do I need?","acceptedAnswer":{"@type":"Answer","text":"5-inch K-style handles up to 1,200 sq ft drainage area per downspout. 6-inch handles up to 2,400 sq ft."}},{"@type":"Question","name":"How far apart should downspouts be?","acceptedAnswer":{"@type":"Answer","text":"Every 30-40 feet maximum. For 5-inch gutters, limit each downspout drainage area to 600-800 sq ft."}}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Siding","item":"https://aibuildcalc.com/tools/siding/"},{"@type":"ListItem","position":3,"name":"Gutter Calculator","item":"https://aibuildcalc.com/tools/siding/gutter-calculator.html"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">AI</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+    <a href="/tools/roofing/">Roofing</a>
+    <a href="/tools/painting/">Painting</a>
+    <a href="/tools/flooring/">Flooring</a>
+    <a href="/tools/fencing/">Fencing</a>
+    <a href="/tools/decking/">Decking</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/siding/">Siding</a> <span>›</span> Gutter Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Gutter Calculator</h1>
+          <p>Determine gutter size and downspout requirements</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="roofLength">Roof Eave Length <span class="unit-label">ft</span></label>
+            <span class="label-hint">Length of each roof edge needing gutters</span>
+            <input type="number" id="roofLength" value="40" step="any" min="0" aria-label="Roof Eave Length">
+          </div>
+          <div class="form-group">
+            <label for="roofWidth">Roof Width (to ridge) <span class="unit-label">ft</span></label>
+            <span class="label-hint">Distance from eave to ridge</span>
+            <input type="number" id="roofWidth" value="25" step="any" min="0" aria-label="Roof Width (to ridge)">
+          </div>
+          <div class="form-group">
+            <label for="rainfallIntensity">Max Rainfall Intensity </label>
+            <span class="label-hint">Inches per hour for your area</span>
+            <select id="rainfallIntensity" aria-label="Max Rainfall Intensity">
+              <option value="4" selected>4</option>
+              <option value="5" >5</option>
+              <option value="6" >6</option>
+              <option value="7" >7</option>
+              <option value="8" >8</option>
+              <option value="9" >9</option>
+              <option value="10" >10</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> AI Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Drainage Area</div>
+            <div class="detail-value" id="result-drainageArea">—</div>
+            <div class="detail-unit">sq ft</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Recommended Gutter Size</div>
+            <div class="result-value" id="result-gutterSize">—</div>
+            <div class="result-unit">inches</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Downspouts Needed</div>
+            <div class="detail-value" id="result-downspouts">—</div>
+            <div class="detail-unit">downspouts</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Total Gutter Length</div>
+            <div class="detail-value" id="result-gutterLength">—</div>
+            <div class="detail-unit">ft</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+
+          <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Our gutter calculator determines the right gutter size and downspout count based on roof area and rainfall intensity.</p>
+        <ol>
+          <li>Measure roof eave length and width to ridge</li>
+        <li>Look up maximum rainfall intensity for your area</li>
+        <li>Enter specifications</li>
+        <li>Add downspouts at corners and low points</li>
+        </ol>
+      </div>
+
+      <!-- AI Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">AI Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Siding project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏠</div>
+            <div class="insight-title">Vinyl vs Fiber Cement TCO</div>
+            <div class="insight-desc">Vinyl: $3-7/sqft installed, 20-40 year life. Fiber cement: $6-13/sqft, 50+ years. AI calculates 30-year total cost of ownership.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">💧</div>
+            <div class="insight-title">House Wrap & Flashing</div>
+            <div class="insight-desc">Proper WRB and flashing prevents 90% of water damage. AI includes house wrap square footage in material estimates.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🌡️</div>
+            <div class="insight-title">Thermal Expansion Allowance</div>
+            <div class="insight-desc">Vinyl siding needs 1/4" gap at overlaps for expansion. AI calculates total material needed accounting for expansion gaps.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Drainage area = Roof width x Eave length
+Gutter size based on drainage area x rainfall intensity
+Downspouts = Gutter length / 30-40 ft spacing</div>
+      </div>
+
+      <!-- Material Comparison -->
+      
+
+      <!-- Authority References -->
+      
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What size gutters do I need?</div>
+          <div class="faq-answer">5-inch K-style handles up to 1,200 sq ft drainage area per downspout. 6-inch handles up to 2,400 sq ft.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How far apart should downspouts be?</div>
+          <div class="faq-answer">Every 30-40 feet maximum. For 5-inch gutters, limit each downspout drainage area to 600-800 sq ft.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/roofing/roofing-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Roofing Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/roofing/roof-pitch-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Roof Pitch Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="active">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/siding/siding-calculator.html">Siding Calculator</a></li>
+          <li><a href="/tools/siding/gutter-calculator.html">Gutter Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: gutter-calculator
+    function calculate() {
+      try {
+        const roofLength = parseFloat(document.getElementById('roofLength').value) || 0;
+        const roofWidth = parseFloat(document.getElementById('roofWidth').value) || 0;
+        const rainfallIntensity = document.getElementById('rainfallIntensity').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const drainageArea = roofWidth * roofLength;
+        const intensity = parseInt(rainfallIntensity);
+        let gutterSize, downspouts;
+        if (drainageArea * intensity / 100 <= 5000) { gutterSize = '5-inch K-style'; downspouts = Math.ceil(roofLength / 40); }
+        else if (drainageArea * intensity / 100 <= 10000) { gutterSize = '6-inch K-style'; downspouts = Math.ceil(roofLength / 30); }
+        else { gutterSize = '7-inch Box'; downspouts = Math.ceil(roofLength / 25); }
+        const gutterLength = roofLength * 2;
+        const estimatedCost = Math.round(gutterLength * 8 * 100) / 100;
+        setResult('drainageArea', drainageArea.toFixed(0));
+        setResult('gutterSize', gutterSize);
+        setResult('downspouts', downspouts);
+        setResult('gutterLength', gutterLength.toFixed(0));
+        setResult('estimatedCost', '$' + estimatedCost.toFixed(0));
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('roofLength').value = '40';
+      document.getElementById('roofWidth').value = '25';
+      document.getElementById('rainfallIntensity').value = '4';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-drainageArea').textContent = '—';
+      document.getElementById('result-gutterSize').textContent = '—';
+      document.getElementById('result-downspouts').textContent = '—';
+      document.getElementById('result-gutterLength').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // AI Smart Tip Generator
+    function generateAITip() {
+      const tips = ["Vinyl siding should be installed with a 1/4\" gap at overlaps for thermal expansion.","House wrap (Tyvek) under siding prevents air infiltration and water damage.","Fiber cement siding requires special cutting tools — a dust mask is mandatory (contains silica).","Proper flashing around windows and doors prevents 90% of water infiltration issues.","Gutters should have 1 downspout per 30-40 feet of gutter run for adequate drainage."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+</body>
+</html>

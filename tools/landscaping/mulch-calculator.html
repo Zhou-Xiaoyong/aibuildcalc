@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mulch Calculator: Estimate mulch quantity in cubic yards or bags | AIBuildCalc</title>
+  <meta name="description" content="Free mulch calculator. Estimate cubic yards or bags of mulch needed.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/landscaping/mulch-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Mulch Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free mulch calculator. Estimate cubic yards or bags of mulch needed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/landscaping/mulch-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mulch Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free mulch calculator. Estimate cubic yards or bags of mulch needed.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mulch Calculator","description":"Free mulch calculator. Estimate cubic yards or bags of mulch needed.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much mulch do I need?","acceptedAnswer":{"@type":"Answer","text":"One cubic yard covers 324 sq ft at 1\" deep, 162 sq ft at 2\", or 108 sq ft at 3\"."}},{"@type":"Question","name":"Is bulk mulch cheaper than bagged?","acceptedAnswer":{"@type":"Answer","text":"Bulk ($20-$45/cu yd) is significantly cheaper than bagged ($50-$80/cu yd equivalent). Buy bags only for small areas."}},{"@type":"Question","name":"How deep should mulch be?","acceptedAnswer":{"@type":"Answer","text":"2-3 inches for existing beds, 3-4 for new beds. Never exceed 4 inches."}}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Landscaping","item":"https://aibuildcalc.com/tools/landscaping/"},{"@type":"ListItem","position":3,"name":"Mulch Calculator","item":"https://aibuildcalc.com/tools/landscaping/mulch-calculator.html"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">AI</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+    <a href="/tools/roofing/">Roofing</a>
+    <a href="/tools/painting/">Painting</a>
+    <a href="/tools/flooring/">Flooring</a>
+    <a href="/tools/fencing/">Fencing</a>
+    <a href="/tools/decking/">Decking</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/landscaping/">Landscaping</a> <span>›</span> Mulch Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Mulch Calculator</h1>
+          <p>Estimate mulch quantity in cubic yards or bags</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="areaLength">Bed Length <span class="unit-label">ft</span></label>
+            <span class="label-hint">Length of the mulch area</span>
+            <input type="number" id="areaLength" value="20" step="any" min="0" aria-label="Bed Length">
+          </div>
+          <div class="form-group">
+            <label for="areaWidth">Bed Width <span class="unit-label">ft</span></label>
+            <span class="label-hint">Width of the mulch area</span>
+            <input type="number" id="areaWidth" value="5" step="any" min="0" aria-label="Bed Width">
+          </div>
+          <div class="form-group">
+            <label for="depth">Mulch Depth </label>
+            <span class="label-hint">2-3&quot; for existing beds</span>
+            <select id="depth" aria-label="Mulch Depth">
+              <option value="2" selected>2</option>
+              <option value="3" >3</option>
+              <option value="4" >4</option>
+              <option value="6" >6</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> AI Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Cubic Yards</div>
+            <div class="result-value" id="result-cubicYards">—</div>
+            <div class="result-unit">cu yd</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Cubic Feet</div>
+            <div class="detail-value" id="result-cubicFeet">—</div>
+            <div class="detail-unit">cu ft</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">2 cu ft Bags</div>
+            <div class="detail-value" id="result-bags2cf">—</div>
+            <div class="detail-unit">bags</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">3 cu ft Bags</div>
+            <div class="detail-value" id="result-bags3cf">—</div>
+            <div class="detail-unit">bags</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+
+          <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Our calculator converts your area dimensions into cubic yards, bags, and estimated cost.</p>
+        <ol>
+          <li>Measure length and width of garden beds</li>
+        <li>Decide on mulch depth</li>
+        <li>Enter measurements</li>
+        <li>Compare bulk vs bagged costs</li>
+        <li>Order 5-10% extra</li>
+        </ol>
+      </div>
+
+      <!-- AI Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">AI Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Landscaping project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🌿</div>
+            <div class="insight-title">Mulch Depth by Purpose</div>
+            <div class="insight-desc">Weed suppression: 3-4". Moisture retention: 2-3". Decorative: 1-2". AI recommends depth based on your project goals.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🪨</div>
+            <div class="insight-title">Gravel Base Requirements</div>
+            <div class="insight-desc">Driveways: 4-6" compacted base + 2-3" gravel. Paths: 2-3" base + 2" gravel. AI adjusts for vehicle vs foot traffic loads.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🌱</div>
+            <div class="insight-title">Soil Amendment Calculator</div>
+            <div class="insight-desc">AI factors your soil type (clay/sandy/loam) and plant needs to recommend compost and amendment quantities — not just volume.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Volume (cu ft) = Length x Width x (Depth / 12)
+Volume (cu yd) = Volume (cu ft) / 27</div>
+      </div>
+
+      <!-- Material Comparison -->
+      
+
+      <!-- Authority References -->
+      
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much mulch do I need?</div>
+          <div class="faq-answer">One cubic yard covers 324 sq ft at 1&quot; deep, 162 sq ft at 2&quot;, or 108 sq ft at 3&quot;.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is bulk mulch cheaper than bagged?</div>
+          <div class="faq-answer">Bulk ($20-$45/cu yd) is significantly cheaper than bagged ($50-$80/cu yd equivalent). Buy bags only for small areas.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How deep should mulch be?</div>
+          <div class="faq-answer">2-3 inches for existing beds, 3-4 for new beds. Never exceed 4 inches.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/landscaping/gravel-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Gravel Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/landscaping/soil-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Soil Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/landscaping/sod-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Sod Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="active">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/landscaping/mulch-calculator.html">Mulch Calculator</a></li>
+          <li><a href="/tools/landscaping/gravel-calculator.html">Gravel Calculator</a></li>
+          <li><a href="/tools/landscaping/soil-calculator.html">Soil Calculator</a></li>
+          <li><a href="/tools/landscaping/sod-calculator.html">Sod Calculator</a></li>
+          <li><a href="/tools/landscaping/paver-calculator.html">Paver Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: mulch-calculator
+    function calculate() {
+      try {
+        const areaLength = parseFloat(document.getElementById('areaLength').value) || 0;
+        const areaWidth = parseFloat(document.getElementById('areaWidth').value) || 0;
+        const depth = document.getElementById('depth').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const area = areaLength * areaWidth;
+        const depthFt = depth / 12;
+        const volumeCuFt = area * depthFt;
+        const cubicYards = volumeCuFt / 27;
+        const bags2cf = Math.ceil(volumeCuFt / 2);
+        const bags3cf = Math.ceil(volumeCuFt / 3);
+        const estimatedCost = Math.round(Math.min(cubicYards * 35, bags2cf * 4) * 100) / 100;
+        setResult('cubicYards', cubicYards.toFixed(2));
+        setResult('cubicFeet', volumeCuFt.toFixed(1));
+        setResult('bags2cf', bags2cf);
+        setResult('bags3cf', bags3cf);
+        setResult('estimatedCost', '$' + estimatedCost.toFixed(0));
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('areaLength').value = '20';
+      document.getElementById('areaWidth').value = '5';
+      document.getElementById('depth').value = '2';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-cubicYards').textContent = '—';
+      document.getElementById('result-cubicFeet').textContent = '—';
+      document.getElementById('result-bags2cf').textContent = '—';
+      document.getElementById('result-bags3cf').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // AI Smart Tip Generator
+    function generateAITip() {
+      const tips = ["Landscape fabric under mulch prevents weeds but can trap water — perforate for drainage.","A 3-4 inch mulch depth is optimal. Deeper mulch can suffocate plant roots.","Gravel driveways need a compacted base of at least 4 inches for vehicle traffic.","Sod should be laid within 24-48 hours of delivery. Keep it moist but not soaked.","Paver base should be 4-6\" compacted gravel + 1\" sand. Skipping base prep causes settling within 1-2 years."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+</body>
+</html>

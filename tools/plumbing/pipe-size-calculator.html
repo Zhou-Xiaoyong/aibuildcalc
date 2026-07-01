@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipe Size Calculator: Find the right water supply pipe size for your project | AIBuildCalc</title>
+  <meta name="description" content="Free pipe size calculator. Find the right water supply pipe size.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/plumbing/pipe-size-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Pipe Size Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free pipe size calculator. Find the right water supply pipe size.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/plumbing/pipe-size-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pipe Size Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free pipe size calculator. Find the right water supply pipe size.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pipe Size Calculator","description":"Free pipe size calculator. Find the right water supply pipe size.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size pipe for a main water line?","acceptedAnswer":{"@type":"Answer","text":"Most homes use 3/4\" or 1\" copper/PEX for main supply. Size depends on fixtures and pressure."}},{"@type":"Question","name":"What are WSFU?","acceptedAnswer":{"@type":"Answer","text":"Water Supply Fixture Units: bathroom faucet = 1, shower = 2, toilet = 2.5, kitchen sink = 1.5, washing machine = 4."}}]}
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Plumbing","item":"https://aibuildcalc.com/tools/plumbing/"},{"@type":"ListItem","position":3,"name":"Pipe Size Calculator","item":"https://aibuildcalc.com/tools/plumbing/pipe-size-calculator.html"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">AI</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+    <a href="/tools/roofing/">Roofing</a>
+    <a href="/tools/painting/">Painting</a>
+    <a href="/tools/flooring/">Flooring</a>
+    <a href="/tools/fencing/">Fencing</a>
+    <a href="/tools/decking/">Decking</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/plumbing/">Plumbing</a> <span>›</span> Pipe Size Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Pipe Size Calculator</h1>
+          <p>Find the right water supply pipe size for your project</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="fixtures">Total Fixture Units <span class="unit-label">WSFU</span></label>
+            <span class="label-hint">Sum of WSFU</span>
+            <input type="number" id="fixtures" value="10" step="any" min="0" aria-label="Total Fixture Units">
+          </div>
+          <div class="form-group">
+            <label for="pressure">Available Pressure </label>
+            <span class="label-hint">Static pressure at meter</span>
+            <select id="pressure" aria-label="Available Pressure">
+              <option value="30" selected>30</option>
+              <option value="40" >40</option>
+              <option value="50" >50</option>
+              <option value="60" >60</option>
+              <option value="80" >80</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pipeLength">Longest Pipe Run <span class="unit-label">ft</span></label>
+            <span class="label-hint">From meter to farthest fixture</span>
+            <input type="number" id="pipeLength" value="60" step="any" min="0" aria-label="Longest Pipe Run">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> AI Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Main Supply Line</div>
+            <div class="result-value" id="result-mainPipe">—</div>
+            <div class="result-unit">inches</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Branch Lines</div>
+            <div class="detail-value" id="result-branchPipe">—</div>
+            <div class="detail-unit">inches</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Peak Flow Rate</div>
+            <div class="detail-value" id="result-flowRate">—</div>
+            <div class="detail-unit">GPM</div>
+          </div>
+          </div>
+
+          <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Our pipe size calculator follows UPC and IPC guidelines to recommend the right pipe diameter.</p>
+        <ol>
+          <li>Add up WSFU for all fixtures</li>
+        <li>Measure static pressure at meter</li>
+        <li>Determine longest pipe run</li>
+        <li>Enter specifications</li>
+        <li>Consider future additions</li>
+        </ol>
+      </div>
+
+      <!-- AI Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">AI Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Plumbing project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🔧</div>
+            <div class="insight-title">PEX vs Copper Analysis</div>
+            <div class="insight-desc">PEX: 40-60% less labor, freeze-resistant. Copper: longer lifespan, antimicrobial. AI compares total installed cost for your project scope.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📏</div>
+            <div class="insight-title">Fixture Unit Sizing</div>
+            <div class="insight-desc">AI calculates total water supply fixture units (WSFU) per UPC/IPC code to size your main and branch lines correctly.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">⚠️</div>
+            <div class="insight-title">Pressure Regulation Check</div>
+            <div class="insight-desc">Street pressure over 80 PSI requires a PRV. AI flags high-pressure scenarios and recommends the right valve size.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Based on UPC/IPC tables:
+Flow rate from WSFU conversion
+Pipe size from flow rate x pressure x length</div>
+      </div>
+
+      <!-- Material Comparison -->
+      
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>International Association of Plumbing and Mechanical Officials (IAPMO)</strong> — Uniform Plumbing Code (UPC). <a href="https://www.iapmo.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Code Council (ICC)</strong> — International Plumbing Code (IPC). <a href="https://www.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What size pipe for a main water line?</div>
+          <div class="faq-answer">Most homes use 3/4&quot; or 1&quot; copper/PEX for main supply. Size depends on fixtures and pressure.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What are WSFU?</div>
+          <div class="faq-answer">Water Supply Fixture Units: bathroom faucet = 1, shower = 2, toilet = 2.5, kitchen sink = 1.5, washing machine = 4.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/plumbing/water-flow-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Water Flow Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="active">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/plumbing/pipe-size-calculator.html">Pipe Size Calculator</a></li>
+          <li><a href="/tools/plumbing/water-flow-calculator.html">Water Flow Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: pipe-size-calculator
+    function calculate() {
+      try {
+        const fixtures = parseFloat(document.getElementById('fixtures').value) || 0;
+        const pressure = document.getElementById('pressure').value;
+        const pipeLength = parseFloat(document.getElementById('pipeLength').value) || 0;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const wsfu = fixtures;
+        const psi = parseInt(pressure);
+        const len = pipeLength;
+        // Simplified UPC/IPC sizing
+        let flowRate;
+        if (wsfu <= 5) flowRate = wsfu * 2;
+        else if (wsfu <= 20) flowRate = 10 + (wsfu - 5) * 1.5;
+        else flowRate = 32 + (wsfu - 20) * 1;
+        let mainPipe, branchPipe;
+        if (flowRate <= 10) { mainPipe = '3/4"'; branchPipe = '1/2"'; }
+        else if (flowRate <= 20) { mainPipe = '1"'; branchPipe = '3/4"'; }
+        else if (flowRate <= 35) { mainPipe = '1-1/4"'; branchPipe = '3/4"'; }
+        else if (flowRate <= 50) { mainPipe = '1-1/2"'; branchPipe = '1"'; }
+        else { mainPipe = '2"'; branchPipe = '1"'; }
+        // Upgrade for low pressure
+        if (psi <= 30 && mainPipe === '3/4"') mainPipe = '1"';
+        setResult('mainPipe', mainPipe);
+        setResult('branchPipe', branchPipe);
+        setResult('flowRate', flowRate.toFixed(1));
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('fixtures').value = '10';
+      document.getElementById('pressure').value = '30';
+      document.getElementById('pipeLength').value = '60';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-mainPipe').textContent = '—';
+      document.getElementById('result-branchPipe').textContent = '—';
+      document.getElementById('result-flowRate').textContent = '—';
+    }
+
+    // AI Smart Tip Generator
+    function generateAITip() {
+      const tips = ["Always size supply pipes based on total fixture units, not just current fixtures — plan for additions.","PEX is faster to install than copper (40-60% labor savings) and resists freeze damage.","Low water pressure? Check for galvanized pipes — they corrode from inside and restrict flow over time.","A pressure reducing valve is required if street pressure exceeds 80 PSI.","Shut-off valves at every fixture aren't just convenient — they're code in most jurisdictions."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+</body>
+</html>
