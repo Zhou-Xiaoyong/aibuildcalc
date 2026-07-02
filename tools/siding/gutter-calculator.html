@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gutter Calculator","description":"Free gutter calculator. Determine gutter size and downspouts for your roof.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size gutters do I need?","acceptedAnswer":{"@type":"Answer","text":"5-inch K-style handles up to 1,200 sq ft drainage area per downspout. 6-inch handles up to 2,400 sq ft."}},{"@type":"Question","name":"How far apart should downspouts be?","acceptedAnswer":{"@type":"Answer","text":"Every 30-40 feet maximum. For 5-inch gutters, limit each downspout drainage area to 600-800 sq ft."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gutter Calculator","description":"Free gutter calculator. Determine gutter size and downspouts for your roof.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What size gutters do I need?","acceptedAnswer":{"@type":"Answer","text":"5-inch K-style handles up to 1,200 sq ft drainage area per downspout. 6-inch handles up to 2,400 sq ft."}},{"@type":"Question","name":"How far apart should downspouts be?","acceptedAnswer":{"@type":"Answer","text":"Every 30-40 feet maximum. For 5-inch gutters, limit each downspout drainage area to 600-800 sq ft."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Siding","item":"https://aibuildcalc.com/tools/siding/"},{"@type":"ListItem","position":3,"name":"Gutter Calculator","item":"https://aibuildcalc.com/tools/siding/gutter-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -92,7 +96,7 @@
             </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -108,6 +112,7 @@
             <div class="result-value" id="result-gutterSize">—</div>
             <div class="result-unit">inches</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Downspouts Needed</div>
             <div class="detail-value" id="result-downspouts">—</div>
@@ -124,15 +129,14 @@
             <div class="detail-unit">USD</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -155,10 +159,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Siding project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -272,7 +276,7 @@ Downspouts = Gutter length / 30-40 ft spacing</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -372,7 +376,7 @@ Downspouts = Gutter length / 30-40 ft spacing</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Vinyl siding should be installed with a 1/4\" gap at overlaps for thermal expansion.","House wrap (Tyvek) under siding prevents air infiltration and water damage.","Fiber cement siding requires special cutting tools — a dust mask is mandatory (contains silica).","Proper flashing around windows and doors prevents 90% of water infiltration issues.","Gutters should have 1 downspout per 30-40 feet of gutter run for adequate drainage."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

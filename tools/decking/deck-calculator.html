@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Deck Calculator","description":"Free deck calculator. Estimate decking boards, joists, beams, footings, and total cost.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a deck cost?","acceptedAnswer":{"@type":"Answer","text":"Pressure-treated wood: $15-$30/sq ft. Composite: $30-$45/sq ft. A 16x12 deck costs $2,880-$7,200."}},{"@type":"Question","name":"What spacing should deck joists be?","acceptedAnswer":{"@type":"Answer","text":"Standard: 16\" OC for wood. 12\" OC for composite. 24\" only for 2x6 boards."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Deck Calculator","description":"Free deck calculator. Estimate decking boards, joists, beams, footings, and total cost.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a deck cost?","acceptedAnswer":{"@type":"Answer","text":"Pressure-treated wood: $15-$30/sq ft. Composite: $30-$45/sq ft. A 16x12 deck costs $2,880-$7,200."}},{"@type":"Question","name":"What spacing should deck joists be?","acceptedAnswer":{"@type":"Answer","text":"Standard: 16\" OC for wood. 12\" OC for composite. 24\" only for 2x6 boards."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Decking","item":"https://aibuildcalc.com/tools/decking/"},{"@type":"ListItem","position":3,"name":"Deck Calculator","item":"https://aibuildcalc.com/tools/decking/deck-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -96,7 +100,7 @@
             </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -112,6 +116,7 @@
             <div class="result-value" id="result-boards">—</div>
             <div class="result-unit">boards</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Joists Needed</div>
             <div class="detail-value" id="result-joists">—</div>
@@ -128,15 +133,14 @@
             <div class="detail-unit">USD</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -160,10 +164,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Decking project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -302,7 +306,7 @@ Joists = (L x 12 / Joist spacing) + 1</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -404,7 +408,7 @@ Joists = (L x 12 / Joist spacing) + 1</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Composite decking costs 2-3x more upfront but eliminates annual sealing and lasts 25-50 years.","Joist spacing of 16\" on center is standard. For composite decking, 12\" OC is often required.","Adequate drainage between deck boards (1/4\" gap) prevents rot and extends deck life.","Flashing between the house ledger board and siding is critical — this is the #1 source of deck failure.","Plan for at least 12\" of clearance under the deck frame for air circulation."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Concrete Column Calculator","description":"Free concrete column calculator. Estimate concrete volume for round and square columns.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much concrete for a 12\" round column?","acceptedAnswer":{"@type":"Answer","text":"A 12\" diameter column, 8 ft tall, needs about 6.28 cu ft or 0.23 cu yd of concrete, about 4 bags of 80lb concrete."}},{"@type":"Question","name":"What size concrete column do I need?","acceptedAnswer":{"@type":"Answer","text":"For residential porches, 10-12\" round columns are typical. Consult a structural engineer for load-bearing columns."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Concrete Column Calculator","description":"Free concrete column calculator. Estimate concrete volume for round and square columns.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much concrete for a 12\" round column?","acceptedAnswer":{"@type":"Answer","text":"A 12\" diameter column, 8 ft tall, needs about 6.28 cu ft or 0.23 cu yd of concrete, about 4 bags of 80lb concrete."}},{"@type":"Question","name":"What size concrete column do I need?","acceptedAnswer":{"@type":"Answer","text":"For residential porches, 10-12\" round columns are typical. Consult a structural engineer for load-bearing columns."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Concrete & Masonry","item":"https://aibuildcalc.com/tools/concrete/"},{"@type":"ListItem","position":3,"name":"Concrete Column Calculator","item":"https://aibuildcalc.com/tools/concrete/concrete-column-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -92,7 +96,7 @@
             <input type="number" id="quantity" value="4" step="any" min="0" aria-label="Number of Columns">
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -108,6 +112,7 @@
             <div class="result-value" id="result-totalVolume">—</div>
             <div class="result-unit">cu yd</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">80 lb Bags</div>
             <div class="detail-value" id="result-bags80">—</div>
@@ -119,15 +124,14 @@
             <div class="detail-unit">USD</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -150,27 +154,27 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Concrete &amp; Masonry project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
           <div class="ai-insight-card">
             <div class="insight-icon">🏗️</div>
             <div class="insight-title">Slab Thickness Guide</div>
-            <div class="insight-desc">4" for patios, 5-6" for driveways, 6-8" for heavy vehicle loads. Our AI cross-references your dimensions against ACI 301-20 standards for optimal thickness recommendations.</div>
+            <div class="insight-desc">4" for patios, 5-6" for driveways, 6-8" for heavy vehicle loads. Our calculator references your dimensions against ACI 301-20 standards for optimal thickness recommendations.</div>
           </div>
           <div class="ai-insight-card">
             <div class="insight-icon">📊</div>
             <div class="insight-title">Bag vs Ready-Mix Analysis</div>
-            <div class="insight-desc">For pours under 1 cubic yard, 80lb bags cost less. Over 3 yards, ready-mix saves 30-50%. AI factors your volume against regional pricing.</div>
+            <div class="insight-desc">For pours under 1 cubic yard, 80lb bags cost less. Over 3 yards, ready-mix saves 30-50%. Our calculator factors your volume against regional pricing.</div>
           </div>
           <div class="ai-insight-card">
             <div class="insight-icon">🛡️</div>
             <div class="insight-title">Curing & Strength Timeline</div>
-            <div class="insight-desc">Concrete reaches 50% strength in 3 days, 70% in 7 days, and full cure in 28 days. Cold weather? AI flags when heated enclosures are needed.</div>
+            <div class="insight-desc">Concrete reaches 50% strength in 3 days, 70% in 7 days, and full cure in 28 days. Cold weather? Our calculator flags when heated enclosures are needed.</div>
           </div>
         </div>
       </div>
@@ -301,7 +305,7 @@ Total = V x Qty / 27</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -401,7 +405,7 @@ Total = V x Qty / 27</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Consider ordering 10% more concrete than calculated to account for spillage and uneven ground.","For large pours (over 3 cubic yards), ready-mix delivery is typically 30-50% cheaper than bags.","Concrete reaches 70% strength in 7 days. Full cure takes 28 days — plan your timeline accordingly.","Cold weather tip: Add a heated enclosure if pouring below 40°F. Concrete won't cure properly in freezing temps.","Wire mesh reinforcement is recommended for slabs over 4\" thick, even with rebar."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Circuit Load Calculator","description":"Free circuit load calculator. Determine if your circuit can handle additional load.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the 80% rule for circuits?","acceptedAnswer":{"@type":"Answer","text":"NEC requires continuous loads not exceed 80% of circuit rating. A 20-amp at 120V has safe capacity of 1,920 watts."}},{"@type":"Question","name":"How many outlets on a 20-amp circuit?","acceptedAnswer":{"@type":"Answer","text":"NEC does not specify a maximum. Practical limit is 10 outlets for a 20-amp circuit."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Circuit Load Calculator","description":"Free circuit load calculator. Determine if your circuit can handle additional load.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the 80% rule for circuits?","acceptedAnswer":{"@type":"Answer","text":"NEC requires continuous loads not exceed 80% of circuit rating. A 20-amp at 120V has safe capacity of 1,920 watts."}},{"@type":"Question","name":"How many outlets on a 20-amp circuit?","acceptedAnswer":{"@type":"Answer","text":"NEC does not specify a maximum. Practical limit is 10 outlets for a 20-amp circuit."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Electrical","item":"https://aibuildcalc.com/tools/electrical/"},{"@type":"ListItem","position":3,"name":"Circuit Load Calculator","item":"https://aibuildcalc.com/tools/electrical/circuit-load-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -98,7 +102,7 @@
             <input type="number" id="newLoad" value="1500" step="any" min="0" aria-label="New Load">
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -133,7 +137,7 @@
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -156,10 +160,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Electrical project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -281,7 +285,7 @@ Safe capacity = Breaker x Voltage x 0.80</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -378,7 +382,7 @@ Safe capacity = Breaker x Voltage x 0.80</div>
       document.getElementById('result-canAdd').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["The 80% rule: never load a circuit beyond 80% of its breaker rating for continuous use.","GFCI protection is required in kitchens, bathrooms, garages, and outdoor circuits.","AFCI breakers are now required in bedrooms and living areas per 2023 NEC.","Voltage drop over 3% can cause motors to overheat and electronics to malfunction.","Aluminum wiring (pre-1976 homes) requires special connectors and should be inspected by an electrician."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

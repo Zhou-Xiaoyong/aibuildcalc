@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"BTU Calculator","description":"Free BTU calculator. Determine heating and cooling BTU requirements for your room.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many BTU per square foot?","acceptedAnswer":{"@type":"Answer","text":"Cooling: 20-25 BTU/sq ft. Heating: 30-40 BTU/sq ft. Kitchens and sunrooms need 10-20% more."}},{"@type":"Question","name":"What does AC tonnage mean?","acceptedAnswer":{"@type":"Answer","text":"One ton = 12,000 BTU/h. A 2-ton unit provides 24,000 BTU/h. Most residential AC units range 1.5-5 tons."}},{"@type":"Question","name":"What happens if my AC is oversized?","acceptedAnswer":{"@type":"Answer","text":"Oversized units short-cycle, reducing dehumidification, increasing energy bills, and shortening equipment life."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"BTU Calculator","description":"Free BTU calculator. Determine heating and cooling BTU requirements for your room.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many BTU per square foot?","acceptedAnswer":{"@type":"Answer","text":"Cooling: 20-25 BTU/sq ft. Heating: 30-40 BTU/sq ft. Kitchens and sunrooms need 10-20% more."}},{"@type":"Question","name":"What does AC tonnage mean?","acceptedAnswer":{"@type":"Answer","text":"One ton = 12,000 BTU/h. A 2-ton unit provides 24,000 BTU/h. Most residential AC units range 1.5-5 tons."}},{"@type":"Question","name":"What happens if my AC is oversized?","acceptedAnswer":{"@type":"Answer","text":"Oversized units short-cycle, reducing dehumidification, increasing energy bills, and shortening equipment life."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"HVAC","item":"https://aibuildcalc.com/tools/hvac/"},{"@type":"ListItem","position":3,"name":"BTU Calculator","item":"https://aibuildcalc.com/tools/hvac/btu-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -102,7 +106,7 @@
             </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -113,6 +117,7 @@
             <div class="result-value" id="result-coolingBTU">—</div>
             <div class="result-unit">BTU/h</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Heating BTU</div>
             <div class="detail-value" id="result-heatingBTU">—</div>
@@ -129,15 +134,14 @@
             <div class="detail-unit">watts</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -160,10 +164,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your HVAC project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -284,7 +288,7 @@ Adjustments for ceiling height, insulation, sun exposure
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -390,7 +394,7 @@ Adjustments for ceiling height, insulation, sun exposure
       document.getElementById('result-wattage').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Oversized AC units short-cycle and dehumidify poorly — correct sizing is critical.","Each ton of AC covers ~400-600 sq ft depending on insulation, windows, and climate.","A 16 SEER unit costs ~15% more than 14 SEER but saves 15-20% on energy bills long-term.","Heat pumps are 2-3x more efficient than electric resistance heating in moderate climates.","Duct sealing can improve HVAC efficiency by 20-30%. Leaky ducts are the #1 waste in most homes."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

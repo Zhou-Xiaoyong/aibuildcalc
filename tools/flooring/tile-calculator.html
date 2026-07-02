@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tile Calculator","description":"Free tile calculator. Estimate tiles, boxes, and grout for your project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tile for a 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"144 sq ft. With 12x12 tiles, need 144 + 10% waste = 158 tiles. About 16 boxes."}},{"@type":"Question","name":"What waste factor for tile?","acceptedAnswer":{"@type":"Answer","text":"Use 10% for straight layouts, 15% for diagonal, 20% for intricate patterns."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tile Calculator","description":"Free tile calculator. Estimate tiles, boxes, and grout for your project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tile for a 12x12 room?","acceptedAnswer":{"@type":"Answer","text":"144 sq ft. With 12x12 tiles, need 144 + 10% waste = 158 tiles. About 16 boxes."}},{"@type":"Question","name":"What waste factor for tile?","acceptedAnswer":{"@type":"Answer","text":"Use 10% for straight layouts, 15% for diagonal, 20% for intricate patterns."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Flooring","item":"https://aibuildcalc.com/tools/flooring/"},{"@type":"ListItem","position":3,"name":"Tile Calculator","item":"https://aibuildcalc.com/tools/flooring/tile-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -93,13 +97,14 @@
             <label for="waste">Waste Factor </label>
             <span class="label-hint">10% standard, 15% diagonal</span>
             <select id="waste" aria-label="Waste Factor">
-              <option value="5%" selected>5%</option>
+              <option value="5%">5%</option>
+              <option value="10%" selected>10%</option>
               <option value="10%" >10%</option>
               <option value="15%" >15%</option>
             </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -115,6 +120,7 @@
             <div class="result-value" id="result-tilesNeeded">—</div>
             <div class="result-unit">tiles</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Boxes (10 per box)</div>
             <div class="detail-value" id="result-boxesNeeded">—</div>
@@ -131,15 +137,14 @@
             <div class="detail-unit">USD</div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -163,10 +168,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Flooring project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -312,7 +317,7 @@ Grout ~ 1 lb per 15 sq ft</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -414,7 +419,7 @@ Grout ~ 1 lb per 15 sq ft</div>
       document.getElementById('result-estimatedCost').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["Acclimate hardwood and laminate for 48-72 hours in the room before installation.","10% waste factor is minimum for straight lay. For diagonal patterns, plan 15-20%.","Underlayment quality directly affects sound transmission and comfort — don't skip it.","Subfloor prep is 80% of a successful flooring job. Level and clean before you start.","Tile spacing of 1/8\" to 3/16\" is most popular for modern looks. Wider grout lines are more forgiving."];
       const tip = tips[Math.floor(Math.random() * tips.length)];

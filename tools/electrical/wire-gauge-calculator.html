@@ -30,9 +30,11 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wire Gauge Calculator","description":"Free wire gauge calculator. Find the right wire size for your electrical project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What wire gauge for 20 amp circuit?","acceptedAnswer":{"@type":"Answer","text":"12 AWG copper for 20 amp circuits up to 100 ft. Step up to 10 AWG for longer runs."}},{"@type":"Question","name":"What happens if wire gauge is too small?","acceptedAnswer":{"@type":"Answer","text":"Undersized wire causes overheating, voltage drop, and fire hazard."}}]}
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wire Gauge Calculator","description":"Free wire gauge calculator. Find the right wire size for your electrical project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What wire gauge for 20 amp circuit?","acceptedAnswer":{"@type":"Answer","text":"12 AWG copper for 20 amp circuits up to 100 ft. Step up to 10 AWG for longer runs."}},{"@type":"Question","name":"What happens if wire gauge is too small?","acceptedAnswer":{"@type":"Answer","text":"Undersized wire causes overheating, voltage drop, and fire hazard."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Electrical","item":"https://aibuildcalc.com/tools/electrical/"},{"@type":"ListItem","position":3,"name":"Wire Gauge Calculator","item":"https://aibuildcalc.com/tools/electrical/wire-gauge-calculator.html"}]}
+  ]
   </script>
 </head>
 <body>
@@ -44,11 +46,13 @@
       </a>
       <nav class="main-nav" id="mainNav">
         <a href="/tools/concrete/">Concrete &amp; Masonry</a>
-    <a href="/tools/roofing/">Roofing</a>
-    <a href="/tools/painting/">Painting</a>
-    <a href="/tools/flooring/">Flooring</a>
-    <a href="/tools/fencing/">Fencing</a>
-    <a href="/tools/decking/">Decking</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -103,7 +107,7 @@
             </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
-              <span class="btn-icon">✦</span> AI Calculate
+              <span class="btn-icon">✦</span> Calculate
             </button>
             <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
           </div>
@@ -114,6 +118,7 @@
             <div class="result-value" id="result-recommendedGauge">—</div>
             <div class="result-unit">AWG</div>
           </div>
+          <div class="result-details">
           <div class="result-detail">
             <div class="detail-label">Actual Voltage Drop</div>
             <div class="detail-value" id="result-actualDrop">—</div>
@@ -130,15 +135,14 @@
             <div class="detail-unit"></div>
           </div>
           </div>
-
-          <!-- Inline Disclaimer -->
+          </div>      <!-- Inline Disclaimer -->
           <div class="inline-disclaimer">
             <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
           </div>
 
           <!-- AI Smart Tip -->
           <div class="ai-tip" id="aiTip" style="display:none;">
-            <div class="ai-tip-header"><span class="ai-badge-sm">AI Tip</span> Smart Recommendation</div>
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
             <p id="aiTipText"></p>
           </div>
         </div>
@@ -162,10 +166,10 @@
         </ol>
       </div>
 
-      <!-- AI Insights -->
+      <!-- Expert Insights -->
       <div class="ai-insights">
         <div class="ai-insights-header">
-          <span class="ai-badge">AI Insights</span>
+          <span class="ai-badge">Expert Insights</span>
           <span class="ai-insights-subtitle">Smart analysis for your Electrical project</span>
         </div>
         <div class="ai-insights-grid" id="aiInsights">
@@ -286,7 +290,7 @@ Minimum gauge based on NEC Table 310.16</div>
   <div class="footer-inner">
     <div class="footer-col">
       <h4>About AIBuildCalc</h4>
-      <p>AIBuildCalc provides AI-powered calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
     </div>
     <div class="footer-col">
       <h4>Categories</h4>
@@ -355,7 +359,7 @@ Minimum gauge based on NEC Table 310.16</div>
         const amp = parseInt(amperage);
         const volt = parseInt(voltage);
         const len = wireLength;
-        const maxDropPct = parseInt(maxDrop) / 100;
+        const maxDropPct = parseFloat(maxDrop) / 100;
         // NEC Table 310.16 simplified - copper wire resistance per 1000ft
         const wireResistances = { '14': 3.14, '12': 1.98, '10': 1.24, '8': 0.778, '6': 0.491, '4': 0.308, '2': 0.193, '1/0': 0.122, '2/0': 0.0967, '4/0': 0.0608 };
         const minAmpGauge = { 15: '14', 20: '12', 30: '10', 40: '8', 50: '6', 60: '4' };
@@ -404,7 +408,7 @@ Minimum gauge based on NEC Table 310.16</div>
       document.getElementById('result-wireType').textContent = '—';
     }
 
-    // AI Smart Tip Generator
+    // Pro Tip Generator
     function generateAITip() {
       const tips = ["The 80% rule: never load a circuit beyond 80% of its breaker rating for continuous use.","GFCI protection is required in kitchens, bathrooms, garages, and outdoor circuits.","AFCI breakers are now required in bedrooms and living areas per 2023 NEC.","Voltage drop over 3% can cause motors to overheat and electronics to malfunction.","Aluminum wiring (pre-1976 homes) requires special connectors and should be inspected by an electrician."];
       const tip = tips[Math.floor(Math.random() * tips.length)];
