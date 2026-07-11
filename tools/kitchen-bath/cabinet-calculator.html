@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen Cabinet Calculator: Estimate linear feet, count, and cost | AIBuildCalc</title>
+  <meta name="description" content="Free kitchen cabinet calculator. Estimate linear feet, cabinet count, and total cost for base, wall, or tall cabinets.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/kitchen-bath/cabinet-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Kitchen Cabinet Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free kitchen cabinet calculator. Estimate linear feet, cabinet count, and total cost for base, wall, or tall cabinets.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/kitchen-bath/cabinet-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kitchen Cabinet Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free kitchen cabinet calculator. Estimate linear feet, cabinet count, and total cost for base, wall, or tall cabinets.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Kitchen Cabinet Calculator","description":"Free kitchen cabinet calculator. Estimate linear feet, cabinet count, and total cost for base, wall, or tall cabinets.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do kitchen cabinets cost per linear foot?","acceptedAnswer":{"@type":"Answer","text":"Stock base cabinets run about $250 per linear foot, wall cabinets $200, and tall cabinets $300. Custom cabinetry can reach $500-1,200 per linear foot."}},{"@type":"Question","name":"How many cabinets do I need for my kitchen?","acceptedAnswer":{"@type":"Answer","text":"Most cabinets come in 3-foot sections. Divide your total wall length by 3 to estimate the cabinet count. A typical 10x10 kitchen uses 12-15 cabinets."}},{"@type":"Question","name":"What is the difference between base, wall, and tall cabinets?","acceptedAnswer":{"@type":"Answer","text":"Base cabinets sit on the floor (34.5 in high), wall cabinets mount above counters (12-42 in high), and tall cabinets run floor-to-ceiling (84-96 in) for pantries and utilities."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Kitchen & Bath","item":"https://aibuildcalc.com/tools/kitchen-bath/"},{"@type":"ListItem","position":3,"name":"Kitchen Cabinet Calculator","item":"https://aibuildcalc.com/tools/kitchen-bath/cabinet-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a> <span>›</span> Kitchen Cabinet Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Kitchen Cabinet Calculator</h1>
+          <p>Estimate linear feet, cabinet count, and cost</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="wallLength">Wall Length <span class="unit-label">ft</span></label>
+            <span class="label-hint">Length of cabinet run along the wall</span>
+            <input type="number" id="wallLength" value="10" step="any" min="0" aria-label="Wall Length">
+          </div>
+          <div class="form-group">
+            <label for="cabinetType">Cabinet Type </label>
+            <span class="label-hint">Base, wall, or tall</span>
+            <select id="cabinetType" aria-label="Cabinet Type">
+              <option value="Base" selected>Base</option>
+              <option value="Wall">Wall</option>
+              <option value="Tall">Tall</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Cabinet Count</div>
+            <div class="detail-value" id="result-cabinetCount">—</div>
+            <div class="detail-unit">cabinets</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Linear Feet</div>
+            <div class="result-value" id="result-linearFt">—</div>
+            <div class="result-unit">ft</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Accurate cabinet estimates keep your kitchen remodel on budget. Knowing your linear feet and cabinet count helps you compare stock, semi-custom, and custom options.</p>
+        <ol>
+          <li>Measure the wall length available for cabinets</li>
+        <li>Choose the cabinet type (base, wall, or tall)</li>
+        <li>Calculate to get linear feet and cabinet count</li>
+        <li>Use the cost estimate to plan your budget</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Kitchen &amp; Bath project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">📐</div>
+            <div class="insight-title">Linear Foot Pricing</div>
+            <div class="insight-desc">Cabinets are priced per linear foot. AI applies type-specific rates — $250 base, $200 wall, $300 tall — for an accurate budget.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🔢</div>
+            <div class="insight-title">Count Estimation</div>
+            <div class="insight-desc">Most cabinets come in 3-foot sections. AI divides wall length by 3 to estimate how many units you will need to order.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🧱</div>
+            <div class="insight-title">Type Cost Tiers</div>
+            <div class="insight-desc">Tall pantry cabinets cost more per foot than wall units. AI adjusts pricing automatically based on your selected cabinet type.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Linear Feet = Wall Length
+Cabinet Count = ceil(Linear Feet / 3)
+Cost per ft = Tall: $300 | Wall: $200 | Base: $250
+Estimated Cost = ceil(Linear Feet x Cost per ft)</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Cabinet Grade Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Cabinet Grade</th><th>Cost per Linear Ft</th><th>Construction</th><th>Lead Time</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Stock</td><td>$100-300</td><td>Particleboard/MDF</td><td>1-2 weeks</td><td>Budget remodels</td></tr>
+              <tr><td>Semi-Custom</td><td>$150-650</td><td>Plywood with hardwood face</td><td>4-8 weeks</td><td>Most kitchens</td></tr>
+              <tr><td>Custom</td><td>$500-1,200</td><td>Solid hardwood</td><td>8-12 weeks</td><td>Premium homes</td></tr>
+              <tr><td>RTA (Flat-Pack)</td><td>$75-250</td><td>Plywood/MDF</td><td>1-3 weeks</td><td>DIY installs</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>Kitchen Cabinet Manufacturers Association (KCMA)</strong> — Cabinet Construction & Performance Standards. <a href="https://www.kcma.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>NKBA (National Kitchen &amp; Bath Association)</strong> — Kitchen &amp; Bath Planning Guidelines. <a href="https://www.nkba.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>ANSI/A135</strong> — Cabinet Dimensional &amp; Performance Standards. <a href="https://www.ansi.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much do kitchen cabinets cost per linear foot?</div>
+          <div class="faq-answer">Stock base cabinets run about $250 per linear foot, wall cabinets $200, and tall cabinets $300. Custom cabinetry can reach $500-1,200 per linear foot.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How many cabinets do I need for my kitchen?</div>
+          <div class="faq-answer">Most cabinets come in 3-foot sections. Divide your total wall length by 3 to estimate the cabinet count. A typical 10x10 kitchen uses 12-15 cabinets.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the difference between base, wall, and tall cabinets?</div>
+          <div class="faq-answer">Base cabinets sit on the floor (34.5 in high), wall cabinets mount above counters (12-42 in high), and tall cabinets run floor-to-ceiling (84-96 in) for pantries and utilities.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/kitchen-bath/countertop-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Countertop Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/kitchen-bath/backsplash-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Backsplash Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="active">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/kitchen-bath/countertop-calculator.html">Countertop Calculator</a></li>
+          <li><a href="/tools/kitchen-bath/cabinet-calculator.html">Kitchen Cabinet Calculator</a></li>
+          <li><a href="/tools/kitchen-bath/backsplash-calculator.html">Backsplash Calculator</a></li>
+          <li><a href="/tools/kitchen-bath/bathroom-tile-calculator.html">Bathroom Tile Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: cabinet-calculator
+    function calculate() {
+      try {
+        const wallLength = parseFloat(document.getElementById('wallLength').value) || 0;
+        const cabinetType = document.getElementById('cabinetType').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const linearFt = wallLength;
+        const cabinetCount = Math.ceil(linearFt / 3);
+        const costPerFt = cabinetType === 'Tall' ? 300 : cabinetType === 'Wall' ? 200 : 250;
+        const estimatedCost = Math.ceil(linearFt * costPerFt);
+        setResult('cabinetCount', cabinetCount);
+        setResult('linearFt', linearFt.toFixed(0));
+        setResult('estimatedCost', '$' + estimatedCost.toLocaleString());
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('wallLength').value = '10';
+      document.getElementById('cabinetType').value = 'Base';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-cabinetCount').textContent = '—';
+      document.getElementById('result-linearFt').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Cabinets are sold in 3-foot sections — divide wall length by 3 to estimate unit count.","Tall pantry cabinets cost more per linear foot ($300) than wall ($200) or base ($250) units.","Add 10% to your order for fillers, trim, and unexpected cuts around corners and appliances."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

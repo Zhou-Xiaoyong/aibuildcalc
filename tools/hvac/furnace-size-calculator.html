@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furnace Size Calculator: Find the right BTU output | AIBuildCalc</title>
+  <meta name="description" content="Free furnace size calculator. Determine the correct BTU output, tonnage, and cost for your furnace based on area and climate zone.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/hvac/furnace-size-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Furnace Size Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free furnace size calculator. Determine the correct BTU output, tonnage, and cost for your furnace based on area and climate zone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/hvac/furnace-size-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Furnace Size Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free furnace size calculator. Determine the correct BTU output, tonnage, and cost for your furnace based on area and climate zone.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Furnace Size Calculator","description":"Free furnace size calculator. Determine the correct BTU output, tonnage, and cost for your furnace based on area and climate zone.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many BTU furnace do I need per square foot?","acceptedAnswer":{"@type":"Answer","text":"Cold climates (Zone 5-7) need about 50 BTU/sq ft, mixed zones (3-4) need 40 BTU/sq ft, and hot zones (1-2) need 30 BTU/sq ft. Adjust for ceiling height and insulation."}},{"@type":"Question","name":"Can a furnace be too big?","acceptedAnswer":{"@type":"Answer","text":"Yes. Oversized furnaces short-cycle, causing temperature swings, wasted energy, and wear on components. Proper sizing improves comfort and efficiency."}},{"@type":"Question","name":"How long do furnaces last?","acceptedAnswer":{"@type":"Answer","text":"A well-maintained gas furnace lasts 15-20 years. High-efficiency models can reach 25 years, while electric furnaces may last 20-30 years."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"HVAC","item":"https://aibuildcalc.com/tools/hvac/"},{"@type":"ListItem","position":3,"name":"Furnace Size Calculator","item":"https://aibuildcalc.com/tools/hvac/furnace-size-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/hvac/">HVAC</a> <span>›</span> Furnace Size Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Furnace Size Calculator</h1>
+          <p>Find the right BTU output for your heating needs</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="area">Area <span class="unit-label">sqft</span></label>
+            <span class="label-hint">Floor area to be heated</span>
+            <input type="number" id="area" value="2000" step="any" min="0" aria-label="Area">
+          </div>
+          <div class="form-group">
+            <label for="ceilingHeight">Ceiling Height <span class="unit-label">ft</span></label>
+            <span class="label-hint">Standard: 8 ft</span>
+            <input type="number" id="ceilingHeight" value="8" step="any" min="0" aria-label="Ceiling Height">
+          </div>
+          <div class="form-group">
+            <label for="climateZone">Climate Zone </label>
+            <span class="label-hint">Affects BTU per sq ft</span>
+            <select id="climateZone" aria-label="Climate Zone">
+              <option value="Zone 1-2 Hot" selected>Zone 1-2 Hot</option>
+              <option value="Zone 3-4 Mixed">Zone 3-4 Mixed</option>
+              <option value="Zone 5-7 Cold">Zone 5-7 Cold</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Tonnage</div>
+            <div class="detail-value" id="result-tonnage">—</div>
+            <div class="detail-unit">tons</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">BTU Output</div>
+            <div class="result-value" id="result-btuOutput">—</div>
+            <div class="result-unit">BTU/h</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Selecting the correct furnace size keeps your home comfortable and your energy bills low. A properly sized furnace runs longer cycles, distributing heat evenly without wasting fuel.</p>
+        <ol>
+          <li>Measure the total floor area you need to heat</li>
+        <li>Enter your ceiling height (standard is 8 ft)</li>
+        <li>Choose your IECC climate zone</li>
+        <li>Use the BTU output to match a furnace model</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your HVAC project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">❄️</div>
+            <div class="insight-title">Climate Zone Scaling</div>
+            <div class="insight-desc">Cold Zone 5-7 homes need 50 BTU/sq ft, while hot Zone 1-2 homes need just 30. AI adjusts the heating load to your region.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📐</div>
+            <div class="insight-title">Ceiling Height Factor</div>
+            <div class="insight-desc">Taller ceilings increase heated volume. AI multiplies BTU load by (ceiling height / 8) for accurate sizing on vaulted homes.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🔥</div>
+            <div class="insight-title">Efficiency Rating Impact</div>
+            <div class="insight-desc">Input BTU differs from output BTU based on AFUE. A 90% AFUE furnace delivers 90% of input as heat. AI helps you compare installed costs.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">BTU per sq ft = Zone 5-7: 50 | Zone 3-4: 40 | Zone 1-2: 30
+BTU Output = Area x (Ceiling Height / 8) x BTU per sq ft
+Tonnage = ceil(BTU Output / 12,000 x 10) / 10
+Estimated Cost = ceil(BTU Output / 1,000 x $55)</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Furnace Type Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Furnace Type</th><th>AFUE Rating</th><th>Cost Range</th><th>Lifespan</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Gas (Standard)</td><td>80%</td><td>$2,000-3,500</td><td>15-20 yrs</td><td>Mild climates</td></tr>
+              <tr><td>Gas (High-Efficiency)</td><td>90-98%</td><td>$3,500-6,000</td><td>20-25 yrs</td><td>Cold climates</td></tr>
+              <tr><td>Electric</td><td>100%</td><td>$1,500-3,000</td><td>20-30 yrs</td><td>Warm climates</td></tr>
+              <tr><td>Oil</td><td>80-86%</td><td>$4,000-7,000</td><td>15-20 yrs</td><td>Rural areas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>ACCA (Air Conditioning Contractors of America)</strong> — Manual J Residential Load Calculation. <a href="https://www.acca.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Department of Energy (DOE)</strong> — Furnaces and Boilers Efficiency Guide. <a href="https://www.energy.gov/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>IECC (International Energy Conservation Code)</strong> — Climate Zone Map & Prescriptive Requirements. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How many BTU furnace do I need per square foot?</div>
+          <div class="faq-answer">Cold climates (Zone 5-7) need about 50 BTU/sq ft, mixed zones (3-4) need 40 BTU/sq ft, and hot zones (1-2) need 30 BTU/sq ft. Adjust for ceiling height and insulation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can a furnace be too big?</div>
+          <div class="faq-answer">Yes. Oversized furnaces short-cycle, causing temperature swings, wasted energy, and wear on components. Proper sizing improves comfort and efficiency.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long do furnaces last?</div>
+          <div class="faq-answer">A well-maintained gas furnace lasts 15-20 years. High-efficiency models can reach 25 years, while electric furnaces may last 20-30 years.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/hvac/ac-tonnage-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">AC Tonnage Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/hvac/btu-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">BTU Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="active">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/hvac/btu-calculator.html">BTU Calculator</a></li>
+          <li><a href="/tools/hvac/ac-tonnage-calculator.html">AC Tonnage Calculator</a></li>
+          <li><a href="/tools/hvac/furnace-size-calculator.html">Furnace Size Calculator</a></li>
+          <li><a href="/tools/hvac/hvac-cost-calculator.html">HVAC Cost Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: furnace-size-calculator
+    function calculate() {
+      try {
+        const area = parseFloat(document.getElementById('area').value) || 0;
+        const ceilingHeight = parseFloat(document.getElementById('ceilingHeight').value) || 0;
+        const climateZone = document.getElementById('climateZone').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const btuPerSqFt = climateZone.startsWith('Zone 5') ? 50 : climateZone.startsWith('Zone 3') ? 40 : 30;
+        const btuOutput = area * (ceilingHeight / 8) * btuPerSqFt;
+        const tons = Math.ceil(btuOutput / 12000 * 10) / 10;
+        const estimatedCost = Math.ceil(btuOutput / 1000 * 55);
+        setResult('tonnage', tons.toFixed(1));
+        setResult('btuOutput', Math.round(btuOutput).toLocaleString());
+        setResult('estimatedCost', '$' + estimatedCost.toLocaleString());
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('area').value = '2000';
+      document.getElementById('ceilingHeight').value = '8';
+      document.getElementById('climateZone').value = 'Zone 1-2 Hot';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-tonnage').textContent = '—';
+      document.getElementById('result-btuOutput').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["High-efficiency (90%+ AFUE) furnaces cost more upfront but save 15-30% on fuel bills over time.","Oversized furnaces short-cycle and waste energy — proper sizing matters more than max output.","Cold Zone 5-7 homes need ~50 BTU/sq ft; upgrade insulation before upsizing your furnace."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brick Veneer Calculator: Estimate thin bricks, mortar, and cost | AIBuildCalc</title>
+  <meta name="description" content="Free brick veneer calculator. Estimate thin bricks, mortar bags, and total cost based on wall area and brick dimensions.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/siding/brick-veneer-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Brick Veneer Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free brick veneer calculator. Estimate thin bricks, mortar bags, and total cost based on wall area and brick dimensions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/siding/brick-veneer-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brick Veneer Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free brick veneer calculator. Estimate thin bricks, mortar bags, and total cost based on wall area and brick dimensions.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Brick Veneer Calculator","description":"Free brick veneer calculator. Estimate thin bricks, mortar bags, and total cost based on wall area and brick dimensions.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many thin bricks do I need per square foot?","acceptedAnswer":{"@type":"Answer","text":"A standard thin brick (8 in x 2.25 in with a 3/8 in joint) needs about 7 bricks per square foot. Larger or smaller bricks change the count, so use the calculator for accuracy."}},{"@type":"Question","name":"How much mortar do I need for thin brick veneer?","acceptedAnswer":{"@type":"Answer","text":"Plan on roughly 1 bag (80 lb) of Type S mortar per 50 thin bricks. Mortar covers both the setting bed and the grout joints between bricks."}},{"@type":"Question","name":"How much does brick veneer cost per square foot?","acceptedAnswer":{"@type":"Answer","text":"Thin brick veneer costs $8-$15 per square foot installed, including bricks, mortar, and labor. Materials alone run $3-$6 per square foot."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Siding","item":"https://aibuildcalc.com/tools/siding/"},{"@type":"ListItem","position":3,"name":"Brick Veneer Calculator","item":"https://aibuildcalc.com/tools/siding/brick-veneer-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/siding/">Siding</a> <span>›</span> Brick Veneer Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Brick Veneer Calculator</h1>
+          <p>Estimate thin bricks, mortar bags, and cost</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="wallArea">Wall Area <span class="unit-label">sqft</span></label>
+            <span class="label-hint">Total surface area to be veneered</span>
+            <input type="number" id="wallArea" value="200" step="any" min="0" aria-label="Wall Area">
+          </div>
+          <div class="form-group">
+            <label for="brickLength">Brick Length <span class="unit-label">in</span></label>
+            <span class="label-hint">Length of one thin brick</span>
+            <input type="number" id="brickLength" value="8" step="any" min="0" aria-label="Brick Length">
+          </div>
+          <div class="form-group">
+            <label for="brickHeight">Brick Height <span class="unit-label">in</span></label>
+            <span class="label-hint">Height of one thin brick</span>
+            <input type="number" id="brickHeight" value="2.25" step="any" min="0" aria-label="Brick Height">
+          </div>
+          <div class="form-group">
+            <label for="joint">Joint <span class="unit-label">in</span></label>
+            <span class="label-hint">Mortar joint thickness between bricks</span>
+            <input type="number" id="joint" value="0.375" step="any" min="0" aria-label="Joint">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Mortar Bags</div>
+            <div class="detail-value" id="result-mortarBags">—</div>
+            <div class="detail-unit">bags</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Thin Bricks</div>
+            <div class="result-value" id="result-bricks">—</div>
+            <div class="result-unit">bricks</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Thin brick veneer count depends on brick size and mortar joint width. Factoring both into the effective module prevents running short mid-wall.</p>
+        <ol>
+          <li>Measure the total wall area in square feet</li>
+        <li>Enter the brick length and height in inches</li>
+        <li>Enter the mortar joint thickness (3/8 in is standard)</li>
+        <li>Order 5% extra for cuts, breaks, and corner pieces</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Siding project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🧱</div>
+            <div class="insight-title">Module Math</div>
+            <div class="insight-desc">Adding the joint to both brick length and height gives the effective module. The calculator converts that to bricks per square foot automatically.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🪣</div>
+            <div class="insight-title">Mortar Sizing</div>
+            <div class="insight-desc">Type S mortar yields roughly 50 thin bricks per 80 lb bag when used for both the setting bed and joint grouting.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">✂️</div>
+            <div class="insight-title">Waste Allowance</div>
+            <div class="insight-desc">A 5% overage covers cuts at openings and corners. Buy full boxes from one lot to keep color consistent across the wall.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Eff W = Brick Length + Joint
+Eff H = Brick Height + Joint
+Per sq ft = 144 / (Eff W x Eff H)
+Bricks = ceil(Wall Area x Per sq ft x 1.05)
+Mortar Bags = ceil(Bricks / 50)
+Cost = ceil(Bricks x $0.80)</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Brick Veneer Style Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Brick Style</th><th>Size (in)</th><th>Bricks/sq ft</th><th>Cost per Brick</th><th>Best Use</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Standard Modular</td><td>8 x 2.25</td><td>~7</td><td>$0.70-$1.00</td><td>Exterior walls</td></tr>
+              <tr><td>Queen Size</td><td>9.625 x 2.75</td><td>~5</td><td>$0.90-$1.30</td><td>Large feature walls</td></tr>
+              <tr><td>Thin Paver</td><td>4 x 8</td><td>~4.5</td><td>$0.60-$0.90</td><td>Floor accents</td></tr>
+              <tr><td>Tumbled / Antique</td><td>8 x 2.25</td><td>~7</td><td>$1.00-$1.50</td><td>Rustic interiors</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>Brick Industry Association (BIA)</strong> — Technical Notes on Brick Veneer. <a href="https://www.gobrick.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>National Concrete Masonry Association (NCMA)</strong> — Veneer Installation Standards. <a href="https://ncma.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Residential Code (IRC)</strong> — Chapter 7 — Veneered Walls. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How many thin bricks do I need per square foot?</div>
+          <div class="faq-answer">A standard thin brick (8 in x 2.25 in with a 3/8 in joint) needs about 7 bricks per square foot. Larger or smaller bricks change the count, so use the calculator for accuracy.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much mortar do I need for thin brick veneer?</div>
+          <div class="faq-answer">Plan on roughly 1 bag (80 lb) of Type S mortar per 50 thin bricks. Mortar covers both the setting bed and the grout joints between bricks.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much does brick veneer cost per square foot?</div>
+          <div class="faq-answer">Thin brick veneer costs $8-$15 per square foot installed, including bricks, mortar, and labor. Materials alone run $3-$6 per square foot.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/siding/siding-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Siding Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/siding/stucco-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Stucco Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="active">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/siding/siding-calculator.html">Siding Calculator</a></li>
+          <li><a href="/tools/siding/gutter-calculator.html">Gutter Calculator</a></li>
+          <li><a href="/tools/siding/vinyl-siding-calculator.html">Vinyl Siding Calculator</a></li>
+          <li><a href="/tools/siding/brick-veneer-calculator.html">Brick Veneer Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: brick-veneer-calculator
+    function calculate() {
+      try {
+        const wallArea = parseFloat(document.getElementById('wallArea').value) || 0;
+        const brickLength = parseFloat(document.getElementById('brickLength').value) || 0;
+        const brickHeight = parseFloat(document.getElementById('brickHeight').value) || 0;
+        const joint = parseFloat(document.getElementById('joint').value) || 0;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        const effW = brickLength + joint;
+        const effH = brickHeight + joint;
+        const perSqFt = 144 / (effW * effH);
+        const bricks = Math.ceil(wallArea * perSqFt * 1.05);
+        const mortarBags = Math.ceil(bricks / 50);
+        const cost = Math.ceil(bricks * 0.8);
+        setResult('bricks', bricks);
+        setResult('mortarBags', mortarBags);
+        setResult('estimatedCost', '$' + cost);
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('wallArea').value = '200';
+      document.getElementById('brickLength').value = '8';
+      document.getElementById('brickHeight').value = '2.25';
+      document.getElementById('joint').value = '0.375';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-mortarBags').textContent = '—';
+      document.getElementById('result-bricks').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Sort bricks from multiple boxes before installing to blend color variations evenly across the wall.","Back-butter each thin brick with a thin mortar layer to ensure full adhesion and prevent hollow spots.","Strike the joints with a concave tool when mortar is thumbprint-firm for a clean, weather-resistant finish."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

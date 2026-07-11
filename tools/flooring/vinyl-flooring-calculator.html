@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinyl Flooring Calculator: Estimate planks, cartons, and cost | AIBuildCalc</title>
+  <meta name="description" content="Free vinyl flooring calculator. Estimate vinyl planks needed, cartons, square feet, and total cost for your flooring project.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/flooring/vinyl-flooring-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Vinyl Flooring Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free vinyl flooring calculator. Estimate vinyl planks needed, cartons, square feet, and total cost for your flooring project.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/flooring/vinyl-flooring-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vinyl Flooring Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free vinyl flooring calculator. Estimate vinyl planks needed, cartons, square feet, and total cost for your flooring project.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Vinyl Flooring Calculator","description":"Free vinyl flooring calculator. Estimate vinyl planks needed, cartons, square feet, and total cost for your flooring project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many vinyl planks are in a carton?","acceptedAnswer":{"@type":"Answer","text":"Most vinyl plank cartons contain 12 planks and cover roughly 18-24 square feet, depending on plank dimensions."}},{"@type":"Question","name":"How much waste should I add for vinyl flooring?","acceptedAnswer":{"@type":"Answer","text":"A 10% waste factor is standard for straight-lay vinyl plank installations. Use 15% for diagonal layouts or rooms with many corners."}},{"@type":"Question","name":"How much does vinyl flooring cost per square foot?","acceptedAnswer":{"@type":"Answer","text":"Vinyl plank flooring averages $2-$5 per square foot for materials. Installation adds $2-$5 per square foot, bringing total cost to $4-$10 per square foot."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Flooring","item":"https://aibuildcalc.com/tools/flooring/"},{"@type":"ListItem","position":3,"name":"Vinyl Flooring Calculator","item":"https://aibuildcalc.com/tools/flooring/vinyl-flooring-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/flooring/">Flooring</a> <span>›</span> Vinyl Flooring Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Vinyl Flooring Calculator</h1>
+          <p>Estimate vinyl planks, cartons, and flooring cost</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="roomLength">Room Length <span class="unit-label">ft</span></label>
+            <span class="label-hint">Length of the room</span>
+            <input type="number" id="roomLength" value="16" step="any" min="0" aria-label="Room Length">
+          </div>
+          <div class="form-group">
+            <label for="roomWidth">Room Width <span class="unit-label">ft</span></label>
+            <span class="label-hint">Width of the room</span>
+            <input type="number" id="roomWidth" value="12" step="any" min="0" aria-label="Room Width">
+          </div>
+          <div class="form-group">
+            <label for="plankWidth">Plank Width <span class="unit-label">in</span></label>
+            <span class="label-hint">Width of each vinyl plank</span>
+            <input type="number" id="plankWidth" value="7" step="any" min="0" aria-label="Plank Width">
+          </div>
+          <div class="form-group">
+            <label for="wastePercent">Waste Percent <span class="unit-label">%</span></label>
+            <span class="label-hint">Extra material for cuts (10% is standard)</span>
+            <input type="number" id="wastePercent" value="10" step="any" min="0" aria-label="Waste Percent">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Cartons</div>
+            <div class="detail-value" id="result-cartons">—</div>
+            <div class="detail-unit">cartons</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Square Feet</div>
+            <div class="detail-value" id="result-squareFeet">—</div>
+            <div class="detail-unit">sq ft</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Planks Needed</div>
+            <div class="result-value" id="result-planks">—</div>
+            <div class="result-unit">planks</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Planning a vinyl plank flooring project? Accurate material estimates prevent costly over-ordering and mid-project shortages. Our calculator accounts for waste and plank dimensions to give you a true material count.</p>
+        <ol>
+          <li>Measure the length and width of your room in feet</li>
+        <li>Check the plank width printed on the carton (commonly 7 inches)</li>
+        <li>Enter your dimensions in the calculator</li>
+        <li>Keep the 10% waste factor for straight lays; raise it to 15% for diagonal layouts</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Flooring project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🪵</div>
+            <div class="insight-title">Plank Dimension Intelligence</div>
+            <div class="insight-desc">Wider planks cover more area per piece but cost more per carton. AI factors in your exact plank width to minimize offcuts and leftover material.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📐</div>
+            <div class="insight-title">Waste Factor Optimization</div>
+            <div class="insight-desc">Straight-lay installs: 10% waste. Diagonal patterns: 15%. Herringbone: 20%. AI matches the waste factor to your layout pattern.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">💧</div>
+            <div class="insight-title">Subfloor &amp; Moisture Check</div>
+            <div class="insight-desc">Vinyl is water-resistant but subfloor must be flat within 3/16" over 10 ft. AI flags moisture testing for concrete slabs before installation.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Room area = Room length x Room width
+Total area = Room area x (1 + Waste %)
+Plank area = (Plank width / 12) x 4 ft plank length
+Planks needed = ceil(Total area / Plank area)
+Cartons = ceil(Planks / 12)
+Estimated cost = Total area x $3.50/sq ft</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Vinyl Flooring Material Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Material Type</th><th>Lifespan</th><th>Cost per sq ft</th><th>Waterproof</th><th>Waste Factor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Glue-Down Vinyl Plank</td><td>10-20 years</td><td>$2-$4</td><td>Yes</td><td>10-15%</td></tr>
+              <tr><td>Click-Lock Vinyl Plank</td><td>15-25 years</td><td>$3-$5</td><td>Yes</td><td>10%</td></tr>
+              <tr><td>SPC (Stone Polymer Composite)</td><td>20-30 years</td><td>$4-$7</td><td>Yes</td><td>10%</td></tr>
+              <tr><td>WPC (Wood Polymer Composite)</td><td>20-30 years</td><td>$5-$8</td><td>Yes</td><td>10%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>National Wood Flooring Association (NWFA)</strong> — Installation Guidelines &amp; Best Practices. <a href="https://www.nwfa.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Resilient Floor Covering Institute (RFCI)</strong> — Vinyl Flooring Installation Standards. <a href="https://www.rfci.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>American National Standards Institute (ANSI)</strong> — ANSI A108 / Resilient Flooring Standards. <a href="https://www.ansi.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How many vinyl planks are in a carton?</div>
+          <div class="faq-answer">Most vinyl plank cartons contain 12 planks and cover roughly 18-24 square feet, depending on plank dimensions.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much waste should I add for vinyl flooring?</div>
+          <div class="faq-answer">A 10% waste factor is standard for straight-lay vinyl plank installations. Use 15% for diagonal layouts or rooms with many corners.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much does vinyl flooring cost per square foot?</div>
+          <div class="faq-answer">Vinyl plank flooring averages $2-$5 per square foot for materials. Installation adds $2-$5 per square foot, bringing total cost to $4-$10 per square foot.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/flooring/linoleum-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Linoleum Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/flooring/laminate-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Laminate Floor Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="active">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/flooring/vinyl-flooring-calculator.html">Vinyl Flooring Calculator</a></li>
+          <li><a href="/tools/flooring/linoleum-calculator.html">Linoleum Calculator</a></li>
+          <li><a href="/tools/flooring/floor-joist-calculator.html">Floor Joist Calculator</a></li>
+          <li><a href="/tools/flooring/subfloor-calculator.html">Subfloor Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: vinyl-flooring-calculator
+    function calculate() {
+      try {
+        const roomLength = parseFloat(document.getElementById('roomLength').value) || 0;
+        const roomWidth = parseFloat(document.getElementById('roomWidth').value) || 0;
+        const plankWidth = parseFloat(document.getElementById('plankWidth').value) || 0;
+        const wastePercent = parseFloat(document.getElementById('wastePercent').value) || 0;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const area = roomLength * roomWidth;
+        const totalArea = area * (1 + wastePercent / 100);
+        const plankArea = (plankWidth / 12) * 4; // 4 ft standard plank length
+        const planks = Math.ceil(totalArea / plankArea);
+        const cartons = Math.ceil(planks / 12);
+        const cost = Math.ceil(totalArea * 3.5);
+        setResult('cartons', cartons);
+        setResult('squareFeet', totalArea.toFixed(0));
+        setResult('planks', planks);
+        setResult('estimatedCost', '$' + cost);
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('roomLength').value = '16';
+      document.getElementById('roomWidth').value = '12';
+      document.getElementById('plankWidth').value = '7';
+      document.getElementById('wastePercent').value = '10';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-cartons').textContent = '—';
+      document.getElementById('result-squareFeet').textContent = '—';
+      document.getElementById('result-planks').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["A 10% waste factor is standard for straight-lay vinyl plank. Use 15% for diagonal or herringbone patterns.","Acclimate vinyl planks 48 hours in the installation room to prevent gaps and buckling after installation.","Buy all cartons from the same batch number to avoid color and texture mismatches between boxes."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

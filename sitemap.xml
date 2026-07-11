@@ -5,23 +5,15 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://aibuildcalc.com/research/</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/research/2026-roof-replacement-costs-by-state.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://aibuildcalc.com/tools/concrete/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/roofing/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/painting/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/flooring/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/fencing/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -29,15 +21,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/insulation/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://aibuildcalc.com/tools/drywall/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/plumbing/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -45,19 +29,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/landscaping/</loc>
+    <loc>https://aibuildcalc.com/tools/fencing/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/siding/</loc>
+    <loc>https://aibuildcalc.com/tools/flooring/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/hvac/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/kitchen-bath/</loc>
+    <loc>https://aibuildcalc.com/tools/foundation/</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -65,11 +45,55 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/concrete/concrete-slab-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/garage/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/hvac/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/insulation/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/kitchen-bath/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/painting/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/plumbing/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/siding/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/solar/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/windows-doors/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/concrete/block-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/concrete/concrete-footing-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/concrete/brick-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -77,11 +101,23 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/concrete/concrete-stairs-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/concrete/concrete-driveway-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/concrete/rebar-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/concrete/concrete-footing-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/concrete/concrete-patio-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/concrete/concrete-slab-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/concrete/concrete-stairs-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -89,39 +125,115 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://aibuildcalc.com/tools/concrete/mortar-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/concrete/rebar-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://aibuildcalc.com/tools/concrete/sonotube-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/roofing/roofing-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/concrete/stamped-concrete-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/roofing/roof-pitch-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/decking/deck-beam-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/roofing/shingle-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/decking/deck-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/roofing/roof-sheathing-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/decking/deck-joist-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/painting/paint-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/decking/deck-post-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/painting/wallpaper-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/decking/deck-railing-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/painting/painting-cost-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/decking/deck-stair-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/flooring/tile-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/drywall/drywall-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/drywall/drywall-mud-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/drywall/drywall-tape-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/electrical/amp-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/electrical/circuit-load-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/electrical/conduit-fill-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/electrical/lighting-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/electrical/voltage-drop-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/electrical/wattage-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/electrical/wire-gauge-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/fencing/chain-link-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/fencing/fence-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/fencing/gate-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/fencing/post-spacing-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/fencing/vinyl-fence-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/fencing/wood-fence-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/flooring/carpet-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/flooring/floor-joist-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -133,31 +245,83 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/flooring/carpet-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/flooring/linoleum-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/fencing/fence-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/flooring/subfloor-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/fencing/chain-link-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/flooring/tile-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/fencing/vinyl-fence-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/flooring/vinyl-flooring-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/decking/deck-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/foundation/basement-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/decking/deck-railing-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/foundation/foundation-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/decking/deck-beam-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/framing/beam-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/framing/header-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/framing/rafter-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/framing/sheathing-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/framing/stud-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/garage/garage-cost-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/garage/garage-slab-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/hvac/ac-tonnage-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/hvac/airflow-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/hvac/btu-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/hvac/duct-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/hvac/furnace-size-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/hvac/hvac-cost-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/insulation/blown-in-insulation-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -169,67 +333,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/drywall/drywall-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/electrical/wire-gauge-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/electrical/voltage-drop-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/electrical/circuit-load-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/plumbing/pipe-size-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/plumbing/water-flow-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/landscaping/mulch-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/landscaping/gravel-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/landscaping/soil-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/landscaping/sod-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/landscaping/paver-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/siding/siding-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/siding/gutter-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/hvac/btu-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/hvac/hvac-cost-calculator.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://aibuildcalc.com/tools/kitchen-bath/countertop-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/insulation/vapor-barrier-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -241,11 +345,187 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/framing/stud-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/kitchen-bath/cabinet-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aibuildcalc.com/tools/framing/rafter-calculator.html</loc>
+    <loc>https://aibuildcalc.com/tools/kitchen-bath/countertop-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/kitchen-bath/shower-tile-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/kitchen-bath/tub-surround-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/kitchen-bath/vanity-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/drainage-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/edging-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/gravel-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/mulch-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/paver-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/retaining-wall-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/rock-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/sand-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/sod-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/landscaping/soil-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/painting/exterior-paint-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/painting/paint-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/painting/painting-cost-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/painting/primer-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/painting/stain-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/painting/wallpaper-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/plumbing/drain-pipe-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/plumbing/fixture-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/plumbing/pipe-size-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/plumbing/septic-tank-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/plumbing/water-flow-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/plumbing/water-heater-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/metal-roof-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/roof-pitch-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/roof-sheathing-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/roof-truss-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/roof-vent-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/roofing-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/shingle-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/roofing/skylight-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/siding/brick-veneer-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/siding/gutter-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/siding/siding-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/siding/stucco-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/siding/vinyl-siding-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/solar/solar-cost-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/solar/solar-panel-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/windows-doors/door-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/windows-doors/egress-window-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/windows-doors/garage-door-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/windows-doors/window-calculator.html</loc>
     <priority>0.6</priority>
   </url>
   <url>

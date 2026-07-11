@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Door Calculator: Estimate rough opening and door area | AIBuildCalc</title>
+  <meta name="description" content="Free door calculator. Estimate rough opening width and height, plus door area, for interior and exterior doors based on door dimensions.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/windows-doors/door-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Door Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free door calculator. Estimate rough opening width and height, plus door area, for interior and exterior doors based on door dimensions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/windows-doors/door-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Door Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free door calculator. Estimate rough opening width and height, plus door area, for interior and exterior doors based on door dimensions.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Door Calculator","description":"Free door calculator. Estimate rough opening width and height, plus door area, for interior and exterior doors based on door dimensions.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do you calculate rough opening for a door?","acceptedAnswer":{"@type":"Answer","text":"Add 2 inches to the door width (1 inch per side for the frame and shims) and 2.5 inches to the height (2 inches for the header plus 1.5 inches for the threshold and sill)."}},{"@type":"Question","name":"What are standard interior door sizes?","acceptedAnswer":{"@type":"Answer","text":"Standard interior doors are 28, 30, 32, and 36 inches wide by 80 inches tall. A 30x80 inch door is the most common for bedrooms and bathrooms."}},{"@type":"Question","name":"What is a door jamb thickness?","acceptedAnswer":{"@type":"Answer","text":"Standard interior door jamb thickness is 4-9/16 inches for 2x4 walls and 6-9/16 inches for 2x6 walls. Exterior doors often use 1-3/4 inch thick slabs."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Windows & Doors","item":"https://aibuildcalc.com/tools/windows-doors/"},{"@type":"ListItem","position":3,"name":"Door Calculator","item":"https://aibuildcalc.com/tools/windows-doors/door-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/windows-doors/">Windows &amp; Doors</a> <span>›</span> Door Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Door Calculator</h1>
+          <p>Estimate rough opening and door area</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="doorWidth">Door Width <span class="unit-label">in</span></label>
+            <span class="label-hint">Width of the door slab</span>
+            <input type="number" id="doorWidth" value="36" step="any" min="0" aria-label="Door Width">
+          </div>
+          <div class="form-group">
+            <label for="doorHeight">Door Height <span class="unit-label">in</span></label>
+            <span class="label-hint">Height of the door slab</span>
+            <input type="number" id="doorHeight" value="80" step="any" min="0" aria-label="Door Height">
+          </div>
+          <div class="form-group">
+            <label for="jambThickness">Jamb Thickness <span class="unit-label">in</span></label>
+            <span class="label-hint">Thickness of the door jamb</span>
+            <input type="number" id="jambThickness" value="1" step="any" min="0" aria-label="Jamb Thickness">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Rough Opening Height</div>
+            <div class="detail-value" id="result-roughHeight">—</div>
+            <div class="detail-unit">in</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Door Area</div>
+            <div class="detail-value" id="result-doorArea">—</div>
+            <div class="detail-unit">sq ft</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Rough Opening Width</div>
+            <div class="result-value" id="result-roughWidth">—</div>
+            <div class="result-unit">in</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Jamb Thickness</div>
+            <div class="detail-value" id="result-jambThickness">—</div>
+            <div class="detail-unit">in</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Framing a door opening? Getting the rough opening right is critical so the door fits, swings freely, and latches. Our calculator sizes the rough opening from your door slab dimensions.</p>
+        <ol>
+          <li>Measure the door slab width and height</li>
+        <li>Enter the jamb thickness</li>
+        <li>Run the calculator</li>
+        <li>Frame the rough opening and allow for shimming and a level threshold</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Door project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏠</div>
+            <div class="insight-title">Rough Opening Accuracy</div>
+            <div class="insight-desc">Standard allowance is 2&quot; wider and 2.5&quot; taller than the slab. AI keeps shims, jamb legs, and a level threshold within tolerance.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📐</div>
+            <div class="insight-title">Handing &amp; Swing Clearance</div>
+            <div class="insight-desc">Door swing must clear fixtures and furniture. AI reminds you to verify the swing arc against adjacent walls and cabinetry before finalizing size.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🚪</div>
+            <div class="insight-title">Accessibility Sizing</div>
+            <div class="insight-desc">ADA-compliant doors need at least 32&quot; of clear width. AI flags narrow doors and recommends 36&quot; slabs for accessible entries.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Rough opening width = Door width + 2 x 2 in
+Rough opening height = Door height + 2 in + 1.5 in
+Door area = (Door width x Door height) / 144</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Door Type Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Door Type</th><th>Typical Width</th><th>Height</th><th>Jamb Thickness</th><th>Best Use</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Interior Slab</td><td>28-36 in</td><td>80 in</td><td>4-9/16 in</td><td>Bedrooms, baths</td></tr>
+              <tr><td>Exterior Prehung</td><td>32-36 in</td><td>80 in</td><td>4-9/16 / 6-9/16 in</td><td>Front, back entries</td></tr>
+              <tr><td>French Double</td><td>60-72 in (pair)</td><td>80 in</td><td>5-1/4 in</td><td>Patio, wide openings</td></tr>
+              <tr><td>Pocket Door</td><td>28-36 in</td><td>80 in</td><td>N/A (in-wall)</td><td>Space-saving</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>Window &amp; Door Manufacturers Association (WDMA)</strong> — Door Installation &amp; Performance Standards. <a href="https://www.wdma.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Residential Code (IRC)</strong> — Section R311 — Means of Egress, Doors. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Americans with Disabilities Act (ADA)</strong> — Door Clear Width Requirements. <a href="https://www.ada.gov/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How do you calculate rough opening for a door?</div>
+          <div class="faq-answer">Add 2 inches to the door width (1 inch per side for the frame and shims) and 2.5 inches to the height (2 inches for the header plus 1.5 inches for the threshold and sill).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What are standard interior door sizes?</div>
+          <div class="faq-answer">Standard interior doors are 28, 30, 32, and 36 inches wide by 80 inches tall. A 30x80 inch door is the most common for bedrooms and bathrooms.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is a door jamb thickness?</div>
+          <div class="faq-answer">Standard interior door jamb thickness is 4-9/16 inches for 2x4 walls and 6-9/16 inches for 2x6 walls. Exterior doors often use 1-3/4 inch thick slabs.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/windows-doors/window-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Window Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/windows-doors/garage-door-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Garage Door Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+      <li><a href="/tools/windows-doors/" class="active">Windows &amp; Doors</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/windows-doors/window-calculator.html">Window Calculator</a></li>
+          <li><a href="/tools/windows-doors/door-calculator.html">Door Calculator</a></li>
+          <li><a href="/tools/windows-doors/garage-door-calculator.html">Garage Door Calculator</a></li>
+          <li><a href="/tools/windows-doors/egress-window-calculator.html">Egress Window Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+          <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: door-calculator
+    function calculate() {
+      try {
+        const doorWidth = parseFloat(document.getElementById('doorWidth').value) || 0;
+        const doorHeight = parseFloat(document.getElementById('doorHeight').value) || 0;
+        const jambThickness = parseFloat(document.getElementById('jambThickness').value) || 0;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+
+        const roughWidth = doorWidth + 2 * 2; // 2 in per side for jamb + shims
+        const roughHeight = doorHeight + 2 + 1.5; // 2 in header + 1.5 in threshold
+        const doorArea = (doorWidth * doorHeight) / 144; // convert sq in to sq ft
+        setResult('roughWidth', roughWidth.toFixed(1));
+        setResult('roughHeight', roughHeight.toFixed(1));
+        setResult('doorArea', doorArea.toFixed(2));
+        setResult('jambThickness', jambThickness.toFixed(2));
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('doorWidth').value = '36';
+      document.getElementById('doorHeight').value = '80';
+      document.getElementById('jambThickness').value = '1';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-roughWidth').textContent = '—';
+      document.getElementById('result-roughHeight').textContent = '—';
+      document.getElementById('result-doorArea').textContent = '—';
+      document.getElementById('result-jambThickness').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Always plumb and level the door jamb with shims before nailing — a 1/4 inch twist can keep a door from latching properly.","Use 16d casing nails through the jamb into the stud for interior doors, and pre-drill to avoid splitting the jamb.","For ADA accessibility, doors need at least 32 inches of clear opening width when opened at 90 degrees."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

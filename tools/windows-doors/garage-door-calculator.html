@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garage Door Calculator: Estimate size, cost, and track length | AIBuildCalc</title>
+  <meta name="description" content="Free garage door calculator. Estimate garage door area, cost, and vertical track length for sectional, roll-up, and tilt-up doors.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/windows-doors/garage-door-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Garage Door Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free garage door calculator. Estimate garage door area, cost, and vertical track length for sectional, roll-up, and tilt-up doors.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/windows-doors/garage-door-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Garage Door Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free garage door calculator. Estimate garage door area, cost, and vertical track length for sectional, roll-up, and tilt-up doors.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Garage Door Calculator","description":"Free garage door calculator. Estimate garage door area, cost, and vertical track length for sectional, roll-up, and tilt-up doors.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are standard garage door sizes?","acceptedAnswer":{"@type":"Answer","text":"Standard single garage doors are 8 or 9 feet wide by 7 feet tall. Double doors are 16 feet wide by 7 feet tall. Custom heights of 8 feet are common for trucks and RVs."}},{"@type":"Question","name":"How much does a garage door cost installed?","acceptedAnswer":{"@type":"Answer","text":"A standard steel sectional garage door costs $700-$1,500 installed. Insulated doors run $1,000-$2,500, and custom wood doors can exceed $3,000-$5,000."}},{"@type":"Question","name":"How much headroom is needed for a garage door?","acceptedAnswer":{"@type":"Answer","text":"Sectional doors need at least 12 inches of headroom above the opening for tracks and springs. Roll-up doors need as little as 6-8 inches, making them ideal for low clearance."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Windows & Doors","item":"https://aibuildcalc.com/tools/windows-doors/"},{"@type":"ListItem","position":3,"name":"Garage Door Calculator","item":"https://aibuildcalc.com/tools/windows-doors/garage-door-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/windows-doors/">Windows &amp; Doors</a> <span>›</span> Garage Door Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Garage Door Calculator</h1>
+          <p>Estimate garage door area, cost, and track length</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="openingWidth">Opening Width <span class="unit-label">ft</span></label>
+            <span class="label-hint">Width of the garage door opening</span>
+            <input type="number" id="openingWidth" value="16" step="any" min="0" aria-label="Opening Width">
+          </div>
+          <div class="form-group">
+            <label for="openingHeight">Opening Height <span class="unit-label">ft</span></label>
+            <span class="label-hint">Height of the garage door opening</span>
+            <input type="number" id="openingHeight" value="7" step="any" min="0" aria-label="Opening Height">
+          </div>
+          <div class="form-group">
+            <label for="doorType">Door Type</label>
+            <span class="label-hint">Select the style of garage door</span>
+            <select id="doorType" aria-label="Door Type">
+              <option value="Sectional">Sectional</option>
+              <option value="Roll-up">Roll-up</option>
+              <option value="Tilt">Tilt</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Track Length</div>
+            <div class="detail-value" id="result-trackLength">—</div>
+            <div class="detail-unit">ft</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Door Area</div>
+            <div class="result-value" id="result-doorArea">—</div>
+            <div class="result-unit">sq ft</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Door Type</div>
+            <div class="detail-value" id="result-doorType">—</div>
+            <div class="detail-unit">type</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Replacing or installing a garage door? Our calculator figures door area, a cost estimate, and the vertical track length you'll need based on the opening and door type.</p>
+        <ol>
+          <li>Measure the opening width and height</li>
+        <li>Select the garage door type</li>
+        <li>Enter values in the calculator</li>
+        <li>Verify headroom clearance for tracks and springs</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Garage Door project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏠</div>
+            <div class="insight-title">Type &amp; Headroom Matching</div>
+            <div class="insight-desc">Sectional doors need 12&quot; of headroom, roll-ups as little as 6-8&quot;. AI matches the door type to your available clearance.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📐</div>
+            <div class="insight-title">Track Length Sizing</div>
+            <div class="insight-desc">Vertical track runs roughly twice the opening height plus 3 ft for the curve. AI sizes track and flags low-ceiling installs.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🚗</div>
+            <div class="insight-title">Insulation &amp; Cost</div>
+            <div class="insight-desc">Insulated R-12+ doors cost 30-60% more but cut garage heat loss sharply. AI weighs upfront cost vs. energy savings.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Door area = Opening width x Opening height
+Estimated cost = ceil(Door area x $35/sq ft)
+Track length = Opening height x 2 + 3 ft
+(Type multipliers: Sectional 1.0, Roll-up 1.3, Tilt 0.9)</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Garage Door Type Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Door Type</th><th>Headroom Needed</th><th>Cost per Sq Ft</th><th>Maintenance</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sectional</td><td>12 in</td><td>$30-40</td><td>Medium</td><td>Most homes</td></tr>
+              <tr><td>Roll-up (Coiling)</td><td>6-8 in</td><td>$40-55</td><td>Low</td><td>Low clearance, commercial</td></tr>
+              <tr><td>Tilt-up (Canopy)</td><td>Minimal</td><td>$25-35</td><td>Low</td><td>Detached garages</td></tr>
+              <tr><td>Custom Wood Sectional</td><td>12-15 in</td><td>$60-120</td><td>High</td><td>High-end homes</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>Door &amp; Access Systems Manufacturers Association (DASMA)</strong> — Garage Door Installation &amp; Safety Standards. <a href="https://www.dasma.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Residential Code (IRC)</strong> — Section R309 — Garages &amp; Carports. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Underwriters Laboratories (UL)</strong> — UL 325 Garage Door Operator Safety Standard. <a href="https://www.ul.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What are standard garage door sizes?</div>
+          <div class="faq-answer">Standard single garage doors are 8 or 9 feet wide by 7 feet tall. Double doors are 16 feet wide by 7 feet tall. Custom heights of 8 feet are common for trucks and RVs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much does a garage door cost installed?</div>
+          <div class="faq-answer">A standard steel sectional garage door costs $700-$1,500 installed. Insulated doors run $1,000-$2,500, and custom wood doors can exceed $3,000-$5,000.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much headroom is needed for a garage door?</div>
+          <div class="faq-answer">Sectional doors need at least 12 inches of headroom above the opening for tracks and springs. Roll-up doors need as little as 6-8 inches, making them ideal for low clearance.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/windows-doors/door-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Door Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/windows-doors/window-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Window Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+      <li><a href="/tools/windows-doors/" class="active">Windows &amp; Doors</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/windows-doors/window-calculator.html">Window Calculator</a></li>
+          <li><a href="/tools/windows-doors/door-calculator.html">Door Calculator</a></li>
+          <li><a href="/tools/windows-doors/garage-door-calculator.html">Garage Door Calculator</a></li>
+          <li><a href="/tools/windows-doors/egress-window-calculator.html">Egress Window Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+          <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: garage-door-calculator
+    function calculate() {
+      try {
+        const openingWidth = parseFloat(document.getElementById('openingWidth').value) || 0;
+        const openingHeight = parseFloat(document.getElementById('openingHeight').value) || 0;
+        const doorType = document.getElementById('doorType').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+
+        const doorArea = openingWidth * openingHeight;
+        let typeMultiplier = 1.0;
+        if (doorType === 'Roll-up') {
+          typeMultiplier = 1.3;
+        } else if (doorType === 'Tilt') {
+          typeMultiplier = 0.9;
+        }
+        const estimatedCost = Math.ceil(doorArea * 35 * typeMultiplier); // ~$35/sq ft base
+        const trackLength = openingHeight * 2 + 3; // vertical track + curve
+        setResult('doorArea', doorArea.toFixed(0));
+        setResult('estimatedCost', '$' + estimatedCost);
+        setResult('trackLength', trackLength.toFixed(0));
+        setResult('doorType', doorType);
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('openingWidth').value = '16';
+      document.getElementById('openingHeight').value = '7';
+      document.getElementById('doorType').value = 'Sectional';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-doorArea').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+      document.getElementById('result-trackLength').textContent = '—';
+      document.getElementById('result-doorType').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Insulated R-12 garage doors cost 30-60% more upfront but can cut attached garage heat loss by up to 40% in cold climates.","Sectional doors need 12 inches of headroom; if you have low clearance, a roll-up coiling door can work in as little as 6-8 inches.","Always install photo-eye sensors and test auto-reverse monthly — it's required by UL 325 and prevents injury to kids and pets."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>
