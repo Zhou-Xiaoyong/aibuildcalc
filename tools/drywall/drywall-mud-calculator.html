@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drywall Mud Calculator: Estimate mud gallons, boxes, and cost | AIBuildCalc</title>
+  <meta name="description" content="Free drywall mud calculator. Estimate joint compound gallons, boxes, and total cost for taping and finishing your drywall.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/drywall/drywall-mud-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Drywall Mud Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free drywall mud calculator. Estimate joint compound gallons, boxes, and total cost for taping and finishing your drywall.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/drywall/drywall-mud-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drywall Mud Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free drywall mud calculator. Estimate joint compound gallons, boxes, and total cost for taping and finishing your drywall.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Drywall Mud Calculator","description":"Free drywall mud calculator. Estimate joint compound gallons, boxes, and total cost for taping and finishing your drywall.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much drywall mud do I need per square foot?","acceptedAnswer":{"@type":"Answer","text":"Plan on about 0.02 gallons (roughly 2/3 of a cup) of joint compound per square foot of drywall for a standard 3-coat finish, including taping."}},{"@type":"Question","name":"How many gallons are in a box of drywall mud?","acceptedAnswer":{"@type":"Answer","text":"A standard box of drywall joint compound contains about 4.5 to 5 gallons. Most calculators round to 5 gallons per box for purchasing."}},{"@type":"Question","name":"How many coats of mud does drywall need?","acceptedAnswer":{"@type":"Answer","text":"Most drywall finishes use 3 coats: a taping coat, a filler coat, and a finishing coat. Level 5 smooth finishes may require an additional skim coat."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Drywall","item":"https://aibuildcalc.com/tools/drywall/"},{"@type":"ListItem","position":3,"name":"Drywall Mud Calculator","item":"https://aibuildcalc.com/tools/drywall/drywall-mud-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/drywall/">Drywall</a> <span>›</span> Drywall Mud Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Drywall Mud Calculator</h1>
+          <p>Estimate joint compound gallons, boxes, and cost</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="drywallArea">Drywall Area <span class="unit-label">sqft</span></label>
+            <span class="label-hint">Total square footage of drywall</span>
+            <input type="number" id="drywallArea" value="1000" step="any" min="0" aria-label="Drywall Area">
+          </div>
+          <div class="form-group">
+            <label for="coats">Coats</label>
+            <span class="label-hint">Number of mud coats (3 is standard)</span>
+            <input type="number" id="coats" value="3" step="1" min="1" aria-label="Coats">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Boxes</div>
+            <div class="detail-value" id="result-boxes">—</div>
+            <div class="detail-unit">gal</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Mud Gallons</div>
+            <div class="result-value" id="result-gallons">—</div>
+            <div class="result-unit">gallons</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Finishing drywall? Accurate joint compound estimates prevent mid-project supply runs and reduce waste. Our calculator sizes mud by drywall area and number of coats.</p>
+        <ol>
+          <li>Add up the total square footage of drywall to be finished</li>
+        <li>Enter the number of coats (3 is standard for tape, fill, and finish)</li>
+        <li>Enter your values in the calculator</li>
+        <li>Buy one extra box for touch-ups and repairs</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Drywall project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🪣</div>
+            <div class="insight-title">Coat-Based Coverage</div>
+            <div class="insight-desc">A standard 3-coat finish uses roughly 1 gallon per 150 sq ft of drywall. Fewer coats for Level 2; more for Level 5 skim finishes.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🧴</div>
+            <div class="insight-title">Compound Type Selection</div>
+            <div class="insight-desc">All-purpose mud works for all 3 coats. Setting-type compound speeds up taping and shrinks less for the first coat.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">💧</div>
+            <div class="insight-title">Mix &amp; Consistency</div>
+            <div class="insight-desc">Thin each coat slightly more than the last. Peanut-butter consistency for taping; pancake-batter for the final skim coat.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Mud gallons = ceil(Drywall area x Coats / 150)
+Boxes = ceil(Gallons / 5)
+Estimated cost = Boxes x $18</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Drywall Mud Material Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Compound Type</th><th>Drying Time</th><th>Cost per Box</th><th>Best For</th><th>Shrinkage</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>All-Purpose (Premix)</td><td>24 hr</td><td>$15-$18</td><td>All 3 coats</td><td>Medium</td></tr>
+              <tr><td>Topping Compound</td><td>24 hr</td><td>$14-$17</td><td>Final coat only</td><td>Low</td></tr>
+              <tr><td>Setting-Type (Hot Mud)</td><td>20-90 min</td><td>$16-$22</td><td>Fast taping</td><td>Very Low</td></tr>
+              <tr><td>Lightweight All-Purpose</td><td>24 hr</td><td>$16-$19</td><td>Easier sanding</td><td>Low</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>Gypsum Association</strong> — Application and Finishing of Gypsum Panel Products (GA-214). <a href="https://www.gypsum.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Association of the Wall and Ceiling Industry (AWCI)</strong> — Drywall Finishing Guidelines. <a href="https://www.awci.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Residential Code (IRC)</strong> — Chapter R708 — Wall Covering. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much drywall mud do I need per square foot?</div>
+          <div class="faq-answer">Plan on about 0.02 gallons (roughly 2/3 of a cup) of joint compound per square foot of drywall for a standard 3-coat finish, including taping.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How many gallons are in a box of drywall mud?</div>
+          <div class="faq-answer">A standard box of drywall joint compound contains about 4.5 to 5 gallons. Most calculators round to 5 gallons per box for purchasing.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How many coats of mud does drywall need?</div>
+          <div class="faq-answer">Most drywall finishes use 3 coats: a taping coat, a filler coat, and a finishing coat. Level 5 smooth finishes may require an additional skim coat.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/drywall/drywall-tape-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Drywall Tape Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/drywall/drywall-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Drywall Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="active">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/drywall/drywall-calculator.html">Drywall Calculator</a></li>
+          <li><a href="/tools/drywall/drywall-mud-calculator.html">Drywall Mud Calculator</a></li>
+          <li><a href="/tools/drywall/drywall-tape-calculator.html">Drywall Tape Calculator</a></li>
+          <li><a href="/tools/insulation/insulation-calculator.html">Insulation Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: drywall-mud-calculator
+    function calculate() {
+      try {
+        const drywallArea = parseFloat(document.getElementById('drywallArea').value) || 0;
+        const coats = parseFloat(document.getElementById('coats').value) || 0;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const gallons = Math.ceil(drywallArea * coats / 150);
+        const boxes = Math.ceil(gallons / 5);
+        const cost = Math.ceil(boxes * 18);
+        setResult('boxes', boxes);
+        setResult('gallons', gallons);
+        setResult('estimatedCost', '$' + cost);
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('drywallArea').value = '1000';
+      document.getElementById('coats').value = '3';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-boxes').textContent = '—';
+      document.getElementById('result-gallons').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["A standard 3-coat finish uses about 1 gallon of mud per 150 sq ft of drywall, including taping.","Setting-type hot mud dries in 20-90 minutes and shrinks less, making it ideal for the first taping coat.","Buy one extra box of mud for touch-ups, repairs, and blending patches after priming."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

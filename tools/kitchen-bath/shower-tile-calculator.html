@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shower Tile Calculator: Estimate tile area, boxes, and cost | AIBuildCalc</title>
+  <meta name="description" content="Free shower tile calculator. Estimate tile area, boxes needed, and total cost for your shower walls and floor.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/kitchen-bath/shower-tile-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Shower Tile Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free shower tile calculator. Estimate tile area, boxes needed, and total cost for your shower walls and floor.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/kitchen-bath/shower-tile-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shower Tile Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free shower tile calculator. Estimate tile area, boxes needed, and total cost for your shower walls and floor.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shower Tile Calculator","description":"Free shower tile calculator. Estimate tile area, boxes needed, and total cost for your shower walls and floor.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate tile for a shower?","acceptedAnswer":{"@type":"Answer","text":"Measure each wall (width x height) and the floor (width x depth), then add them together. Include 10% extra for cuts and waste. Divide total sq ft by the sq ft per box to find box count."}},{"@type":"Question","name":"How much tile do I need for a standard shower?","acceptedAnswer":{"@type":"Answer","text":"A typical 4x4 ft shower with 8 ft walls needs about 80-90 sq ft of tile, including the floor. Add 10% waste for a total of roughly 90-100 sq ft."}},{"@type":"Question","name":"How much does shower tile cost per square foot?","acceptedAnswer":{"@type":"Answer","text":"Ceramic shower tile runs $2-15 per sq ft, porcelain $3-20, and natural stone $7-30. Installation adds $8-15 per sq ft, bringing the average installed cost to about $12 per sq ft."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Kitchen & Bath","item":"https://aibuildcalc.com/tools/kitchen-bath/"},{"@type":"ListItem","position":3,"name":"Shower Tile Calculator","item":"https://aibuildcalc.com/tools/kitchen-bath/shower-tile-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a> <span>›</span> Shower Tile Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Shower Tile Calculator</h1>
+          <p>Estimate tile area, boxes, and cost</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="showerWidth">Shower Width <span class="unit-label">ft</span></label>
+            <span class="label-hint">Width of the shower</span>
+            <input type="number" id="showerWidth" value="4" step="any" min="0" aria-label="Shower Width">
+          </div>
+          <div class="form-group">
+            <label for="showerDepth">Shower Depth <span class="unit-label">ft</span></label>
+            <span class="label-hint">Depth of the shower</span>
+            <input type="number" id="showerDepth" value="4" step="any" min="0" aria-label="Shower Depth">
+          </div>
+          <div class="form-group">
+            <label for="showerHeight">Shower Height <span class="unit-label">ft</span></label>
+            <span class="label-hint">Wall height of the shower</span>
+            <input type="number" id="showerHeight" value="8" step="any" min="0" aria-label="Shower Height">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Boxes</div>
+            <div class="detail-value" id="result-boxes">—</div>
+            <div class="detail-unit">boxes</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Tile Area</div>
+            <div class="result-value" id="result-tileArea">—</div>
+            <div class="result-unit">sq ft</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Ordering the right amount of shower tile prevents costly shortages and excess waste. This calculator covers all three walls plus the floor of a standard shower enclosure.</p>
+        <ol>
+          <li>Measure the shower width and depth</li>
+        <li>Enter the wall height of the shower</li>
+        <li>Calculate to get the total tile area and box count</li>
+        <li>Use the cost estimate to plan your tile budget</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Kitchen &amp; Bath project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">📐</div>
+            <div class="insight-title">Full Surface Coverage</div>
+            <div class="insight-desc">AI sums three walls (perimeter x height) plus the floor (width x depth) so you order tile for every shower surface.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📦</div>
+            <div class="insight-title">Waste-Aware Box Count</div>
+            <div class="insight-desc">Tile is sold in 10 sq ft boxes. AI adds 10% for cuts and breakage before dividing, so you do not run short mid-install.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">💰</div>
+            <div class="insight-title">Budget Benchmarking</div>
+            <div class="insight-desc">Installed shower tile averages $12 per sq ft. AI multiplies area by the benchmark so you can spot overpriced quotes.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Tile Area = 2 x (Width + Depth) x Height + (Width x Depth)
+Boxes = ceil(Area x 1.1 / 10)  (10 sq ft per box, 10% waste)
+Estimated Cost = ceil(Area x $12)</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Shower Tile Material Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Tile Type</th><th>Cost per Sq Ft</th><th>Water Resistance</th><th>Slip Resistance</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ceramic</td><td>$2-15</td><td>Good</td><td>Medium</td><td>Budget showers</td></tr>
+              <tr><td>Porcelain</td><td>$3-20</td><td>Excellent</td><td>High</td><td>Most showers</td></tr>
+              <tr><td>Natural Stone</td><td>$7-30</td><td>Varies</td><td>High</td><td>Luxury looks</td></tr>
+              <tr><td>Glass Mosaic</td><td>$10-35</td><td>Excellent</td><td>Low</td><td>Accent walls</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>TCNA (Tile Council of North America)</strong> — Handbook for Ceramic, Glass, and Stone Tile Installation. <a href="https://www.tcnatile.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>ANSI A108/A118</strong> — Tile Installation Standards. <a href="https://www.ansi.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>NKBA (National Kitchen &amp; Bath Association)</strong> — Bathroom Design Guidelines. <a href="https://www.nkba.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How do I calculate tile for a shower?</div>
+          <div class="faq-answer">Measure each wall (width x height) and the floor (width x depth), then add them together. Include 10% extra for cuts and waste. Divide total sq ft by the sq ft per box to find box count.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much tile do I need for a standard shower?</div>
+          <div class="faq-answer">A typical 4x4 ft shower with 8 ft walls needs about 80-90 sq ft of tile, including the floor. Add 10% waste for a total of roughly 90-100 sq ft.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much does shower tile cost per square foot?</div>
+          <div class="faq-answer">Ceramic shower tile runs $2-15 per sq ft, porcelain $3-20, and natural stone $7-30. Installation adds $8-15 per sq ft, bringing the average installed cost to about $12 per sq ft.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/kitchen-bath/bathroom-tile-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Bathroom Tile Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/kitchen-bath/backsplash-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Backsplash Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="active">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/kitchen-bath/countertop-calculator.html">Countertop Calculator</a></li>
+          <li><a href="/tools/kitchen-bath/bathroom-tile-calculator.html">Bathroom Tile Calculator</a></li>
+          <li><a href="/tools/kitchen-bath/shower-tile-calculator.html">Shower Tile Calculator</a></li>
+          <li><a href="/tools/kitchen-bath/backsplash-calculator.html">Backsplash Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: shower-tile-calculator
+    function calculate() {
+      try {
+        const showerWidth = parseFloat(document.getElementById('showerWidth').value) || 0;
+        const showerDepth = parseFloat(document.getElementById('showerDepth').value) || 0;
+        const showerHeight = parseFloat(document.getElementById('showerHeight').value) || 0;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const area = 2 * (showerWidth + showerDepth) * showerHeight + showerWidth * showerDepth;
+        const boxes = Math.ceil(area * 1.1 / 10);
+        const estimatedCost = Math.ceil(area * 12);
+        setResult('boxes', boxes);
+        setResult('tileArea', area.toFixed(0));
+        setResult('estimatedCost', '$' + estimatedCost.toLocaleString());
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('showerWidth').value = '4';
+      document.getElementById('showerDepth').value = '4';
+      document.getElementById('showerHeight').value = '8';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-boxes').textContent = '—';
+      document.getElementById('result-tileArea').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Always add 10% extra tile for cuts, breakage, and future repairs — unboxed dye lots may not match later.","Use slip-rated tile (DCOF 0.42+) on shower floors to prevent slipping on wet surfaces.","Seal natural stone tile and grout annually to protect against moisture and mildew in showers."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

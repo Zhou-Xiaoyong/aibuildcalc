@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drywall Tape Calculator: Estimate tape feet, rolls, and cost | AIBuildCalc</title>
+  <meta name="description" content="Free drywall tape calculator. Estimate tape feet, rolls, and total cost for seams on your drywall installation.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/drywall/drywall-tape-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Drywall Tape Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free drywall tape calculator. Estimate tape feet, rolls, and total cost for seams on your drywall installation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/drywall/drywall-tape-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drywall Tape Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free drywall tape calculator. Estimate tape feet, rolls, and total cost for seams on your drywall installation.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Drywall Tape Calculator","description":"Free drywall tape calculator. Estimate tape feet, rolls, and total cost for seams on your drywall installation.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much drywall tape do I need per square foot?","acceptedAnswer":{"@type":"Answer","text":"For standard seam density, plan on about 1.3 feet of tape per square foot of drywall. High seam density (more joints, smaller sheets) raises this to about 1.6 feet per square foot."}},{"@type":"Question","name":"How many feet of tape are on a roll?","acceptedAnswer":{"@type":"Answer","text":"A standard roll of drywall joint tape contains 250 feet. A box typically holds 24 rolls, or 6,000 feet total."}},{"@type":"Question","name":"Should I use paper or fiberglass mesh drywall tape?","acceptedAnswer":{"@type":"Answer","text":"Paper tape is stronger and best for flat seams and corners with all-purpose mud. Fiberglass mesh tape is self-adhesive and easier for flat seams but should be used with setting-type compound."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Drywall","item":"https://aibuildcalc.com/tools/drywall/"},{"@type":"ListItem","position":3,"name":"Drywall Tape Calculator","item":"https://aibuildcalc.com/tools/drywall/drywall-tape-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/drywall/">Drywall</a> <span>›</span> Drywall Tape Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Drywall Tape Calculator</h1>
+          <p>Estimate tape feet, rolls, and cost</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="drywallArea">Drywall Area <span class="unit-label">sqft</span></label>
+            <span class="label-hint">Total square footage of drywall</span>
+            <input type="number" id="drywallArea" value="1000" step="any" min="0" aria-label="Drywall Area">
+          </div>
+          <div class="form-group">
+            <label for="seamDensity">Seam Density</label>
+            <span class="label-hint">Standard for full sheets; High for small pieces</span>
+            <select id="seamDensity" aria-label="Seam Density">
+              <option value="Standard" selected>Standard</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Rolls</div>
+            <div class="detail-value" id="result-rolls">—</div>
+            <div class="detail-unit">rolls</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Tape Feet</div>
+            <div class="result-value" id="result-tapeFeet">—</div>
+            <div class="result-unit">ft</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Taping drywall seams? Accurate tape estimates prevent mid-project supply runs and reduce waste. Our calculator sizes tape by drywall area and seam density.</p>
+        <ol>
+          <li>Add up the total square footage of drywall to be taped</li>
+        <li>Choose Standard for full-sheet installs or High for many small pieces</li>
+        <li>Enter your values in the calculator</li>
+        <li>Buy one extra roll for corners, repairs, and touch-ups</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Drywall project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">📏</div>
+            <div class="insight-title">Seam Density Intelligence</div>
+            <div class="insight-desc">Standard density uses 1.3 ft of tape per sq ft of drywall. High density (small sheets, many joints) uses 1.6 ft per sq ft. AI selects the right factor.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🧻</div>
+            <div class="insight-title">Tape Type Selection</div>
+            <div class="insight-desc">Paper tape is stronger for corners and flat seams. Self-adhesive mesh tape speeds flat seams but must pair with setting-type compound.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🔧</div>
+            <div class="insight-title">Corner &amp; Repair Buffer</div>
+            <div class="insight-desc">Add one extra roll for inside corners, angle cuts, and post-prime repairs so you never run short mid-job.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Factor = (Seam density = High) ? 1.6 : 1.3
+Tape feet = ceil(Drywall area x Factor)
+Rolls = ceil(Tape feet / 250)
+Estimated cost = Rolls x $5</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Drywall Tape Material Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Tape Type</th><th>Roll Length</th><th>Cost per Roll</th><th>Best For</th><th>Compound Pairing</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Paper Tape</td><td>250 ft</td><td>$4-$5</td><td>Flat seams &amp; corners</td><td>All-purpose</td></tr>
+              <tr><td>Fiberglass Mesh</td><td>300 ft</td><td>$7-$10</td><td>Flat seams only</td><td>Setting-type</td></tr>
+              <tr><td>Paper-Fiberglass Composite</td><td>250 ft</td><td>$8-$12</td><td>Crack-prone seams</td><td>All-purpose</td></tr>
+              <tr><td>Flexible Corner Tape</td><td>250 ft</td><td>$10-$14</td><td>Curved corners</td><td>All-purpose</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>Gypsum Association</strong> — Application and Finishing of Gypsum Panel Products (GA-214). <a href="https://www.gypsum.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Association of the Wall and Ceiling Industry (AWCI)</strong> — Drywall Taping &amp; Finishing Guidelines. <a href="https://www.awci.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Residential Code (IRC)</strong> — Chapter R708 — Wall Covering. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much drywall tape do I need per square foot?</div>
+          <div class="faq-answer">For standard seam density, plan on about 1.3 feet of tape per square foot of drywall. High seam density (more joints, smaller sheets) raises this to about 1.6 feet per square foot.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How many feet of tape are on a roll?</div>
+          <div class="faq-answer">A standard roll of drywall joint tape contains 250 feet. A box typically holds 24 rolls, or 6,000 feet total.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Should I use paper or fiberglass mesh drywall tape?</div>
+          <div class="faq-answer">Paper tape is stronger and best for flat seams and corners with all-purpose mud. Fiberglass mesh tape is self-adhesive and easier for flat seams but should be used with setting-type compound.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/drywall/drywall-mud-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Drywall Mud Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/drywall/drywall-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Drywall Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="active">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/drywall/drywall-calculator.html">Drywall Calculator</a></li>
+          <li><a href="/tools/drywall/drywall-mud-calculator.html">Drywall Mud Calculator</a></li>
+          <li><a href="/tools/drywall/drywall-tape-calculator.html">Drywall Tape Calculator</a></li>
+          <li><a href="/tools/insulation/insulation-calculator.html">Insulation Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: drywall-tape-calculator
+    function calculate() {
+      try {
+        const drywallArea = parseFloat(document.getElementById('drywallArea').value) || 0;
+        const seamDensity = document.getElementById('seamDensity').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const factor = seamDensity === 'High' ? 1.6 : 1.3;
+        const tapeFeet = Math.ceil(drywallArea * factor);
+        const rolls = Math.ceil(tapeFeet / 250);
+        const cost = Math.ceil(rolls * 5);
+        setResult('rolls', rolls);
+        setResult('tapeFeet', tapeFeet);
+        setResult('estimatedCost', '$' + cost);
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('drywallArea').value = '1000';
+      document.getElementById('seamDensity').value = 'Standard';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-rolls').textContent = '—';
+      document.getElementById('result-tapeFeet').textContent = '—';
+      document.getElementById('result-estimatedCost').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Standard seam density uses about 1.3 ft of tape per sq ft of drywall; high density (small sheets) uses 1.6 ft.","Paper tape is stronger and best for corners. Use self-adhesive mesh tape only on flat seams with setting-type compound.","Buy one extra roll for inside corners, angle cuts, and touch-up repairs after priming."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

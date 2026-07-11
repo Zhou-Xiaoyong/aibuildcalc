@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deck Joist Calculator: Count, length & total lumber | AIBuildCalc</title>
+  <meta name="description" content="Free deck joist calculator. Estimate the number of joists, joist length, and total lumber needed for your deck frame.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/decking/deck-joist-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Deck Joist Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free deck joist calculator. Estimate the number of joists, joist length, and total lumber needed for your deck frame.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/decking/deck-joist-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deck Joist Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free deck joist calculator. Estimate the number of joists, joist length, and total lumber needed for your deck frame.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Deck Joist Calculator","description":"Free deck joist calculator. Estimate the number of joists, joist length, and total lumber needed for your deck frame.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far apart should deck joists be spaced?","acceptedAnswer":{"@type":"Answer","text":"Deck joists are commonly spaced 16 inches on center for residential decks. For heavier loads or composite decking, 12-inch spacing is used, while 24-inch spacing works only for lighter, low-load decks."}},{"@type":"Question","name":"How do you calculate the number of deck joists?","acceptedAnswer":{"@type":"Answer","text":"Multiply the deck length in feet by 12, divide by the joist spacing in inches, then add 1 for the starting joist. For example, a 16 ft deck at 16 in spacing needs 13 joists."}},{"@type":"Question","name":"What size lumber is used for deck joists?","acceptedAnswer":{"@type":"Answer","text":"2x8 lumber is standard for spans up to 12 feet, 2x10 for spans up to 16 feet, and 2x12 for spans up to 18 feet. Always verify span against your joist size and spacing in the IRC span tables."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Decking","item":"https://aibuildcalc.com/tools/decking/"},{"@type":"ListItem","position":3,"name":"Deck Joist Calculator","item":"https://aibuildcalc.com/tools/decking/deck-joist-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/decking/">Decking</a> <span>›</span> Deck Joist Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Deck Joist Calculator</h1>
+          <p>Estimate joist count, length, and total lumber for your deck</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="deckLength">Deck Length <span class="unit-label">ft</span></label>
+            <span class="label-hint">Length along the joist run</span>
+            <input type="number" id="deckLength" value="16" step="any" min="0" aria-label="Deck Length">
+          </div>
+          <div class="form-group">
+            <label for="joistSpacing">Joist Spacing <span class="unit-label">in</span></label>
+            <span class="label-hint">On-center spacing between joists</span>
+            <input type="number" id="joistSpacing" value="16" step="any" min="0" aria-label="Joist Spacing">
+          </div>
+          <div class="form-group">
+            <label for="span">Span <span class="unit-label">ft</span></label>
+            <span class="label-hint">Joist length / unsupported span</span>
+            <input type="number" id="span" value="12" step="any" min="0" aria-label="Span">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Joist Length</div>
+            <div class="detail-value" id="result-joistLength">—</div>
+            <div class="detail-unit">ft</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Total Lumber</div>
+            <div class="detail-value" id="result-totalLumber">—</div>
+            <div class="detail-unit">ft</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Joists Needed</div>
+            <div class="result-value" id="result-count">—</div>
+            <div class="result-unit">joists</div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Joists form the structural backbone of your deck, so the count, spacing, and span must be right. Our calculator turns your deck length and spacing into an exact joist takeoff and total lumber estimate.</p>
+        <ol>
+          <li>Measure the deck length along the joist run</li>
+        <li>Enter the on-center joist spacing (16 in is standard)</li>
+        <li>Enter the joist span (unsupported length between beams)</li>
+        <li>Add 10-15% extra lumber for cuts, crowns, and rejects</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Decking project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🪵</div>
+            <div class="insight-title">On-Center Counting</div>
+            <div class="insight-desc">Joist count = ceil(deckLength × 12 / spacing) + 1. The extra joist closes the run, so you never come up short at the far end.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📏</div>
+            <div class="insight-title">Span-To-Length Match</div>
+            <div class="insight-desc">Joist length equals the unsupported span. Our AI flags when a span exceeds safe limits for common 2x8, 2x10, and 2x12 lumber.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🧮</div>
+            <div class="insight-title">Total Lumber Roll-Up</div>
+            <div class="insight-desc">Total lumber equals joist count times length. This gives you a single number to take to the lumberyard for ordering.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Joists Needed = ceil(deckLength × 12 / joistSpacing) + 1
+Joist Length = span
+Total Lumber = Joists Needed × Joist Length</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Deck Joist Sizing &amp; Spacing Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Joist Size</th><th>Max Span (16" OC)</th><th>Typical Spacing</th><th>Cost per Linear Ft</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2x6</td><td>9 ft</td><td>16 in</td><td>$1.50-2.50</td><td>Low decks</td></tr>
+              <tr><td>2x8</td><td>12 ft</td><td>16 in</td><td>$2.00-3.50</td><td>Standard decks</td></tr>
+              <tr><td>2x10</td><td>16 ft</td><td>16 in</td><td>$2.50-4.50</td><td>Larger decks</td></tr>
+              <tr><td>2x12</td><td>18 ft</td><td>16 in</td><td>$3.50-6.00</td><td>Long spans</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>North American Deck &amp; Railing Association (NADRA)</strong> — Deck Frame &amp; Joist Guidelines. <a href="https://nadra.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Residential Code (IRC)</strong> — Section R507 — Exterior Decks &amp; Table R507.5. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>American Wood Council (AWC)</strong> — Span Tables for Joists &amp; Rafters. <a href="https://www.awc.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How far apart should deck joists be spaced?</div>
+          <div class="faq-answer">Deck joists are commonly spaced 16 inches on center for residential decks. For heavier loads or composite decking, 12-inch spacing is used, while 24-inch spacing works only for lighter, low-load decks.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do you calculate the number of deck joists?</div>
+          <div class="faq-answer">Multiply the deck length in feet by 12, divide by the joist spacing in inches, then add 1 for the starting joist. For example, a 16 ft deck at 16 in spacing needs 13 joists.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What size lumber is used for deck joists?</div>
+          <div class="faq-answer">2x8 lumber is standard for spans up to 12 feet, 2x10 for spans up to 16 feet, and 2x12 for spans up to 18 feet. Always verify span against your joist size and spacing in the IRC span tables.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/decking/deck-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Deck Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/decking/deck-beam-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Deck Beam Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="active">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/decking/deck-calculator.html">Deck Calculator</a></li>
+          <li><a href="/tools/decking/deck-joist-calculator.html">Deck Joist Calculator</a></li>
+          <li><a href="/tools/decking/deck-beam-calculator.html">Deck Beam Calculator</a></li>
+          <li><a href="/tools/decking/deck-post-calculator.html">Deck Post Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: deck-joist-calculator
+    function calculate() {
+      try {
+        const deckLength = parseFloat(document.getElementById('deckLength').value) || 0;
+        const joistSpacing = parseFloat(document.getElementById('joistSpacing').value) || 0;
+        const span = parseFloat(document.getElementById('span').value) || 0;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        const count = joistSpacing > 0 ? Math.ceil(deckLength * 12 / joistSpacing) + 1 : 0; // avoid divide-by-zero
+        const joistLength = span;
+        const totalLumber = count * joistLength;
+        setResult('joistLength', joistLength);
+        setResult('totalLumber', totalLumber);
+        setResult('count', count);
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('deckLength').value = '16';
+      document.getElementById('joistSpacing').value = '16';
+      document.getElementById('span').value = '12';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-joistLength').textContent = '—';
+      document.getElementById('result-totalLumber').textContent = '—';
+      document.getElementById('result-count').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Install joists with the crown (bow) facing up so any settling over time keeps the deck surface flat.","Use joist hangers on every joist end — toenailing alone won't meet code for deck loads and can pull out under stress.","For composite decking, drop joist spacing to 12 inches on center to prevent the boards from sagging between supports."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

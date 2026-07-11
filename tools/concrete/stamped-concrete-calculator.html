@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stamped Concrete Calculator: Estimate stamped concrete cost and sealer | AIBuildCalc</title>
+  <meta name="description" content="Free stamped concrete calculator. Estimate base cost, stamp premium, total cost, and sealer gallons for your stamped concrete project.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/concrete/stamped-concrete-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Stamped Concrete Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free stamped concrete calculator. Estimate base cost, stamp premium, total cost, and sealer gallons for your stamped concrete project.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/concrete/stamped-concrete-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stamped Concrete Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free stamped concrete calculator. Estimate base cost, stamp premium, total cost, and sealer gallons for your stamped concrete project.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Stamped Concrete Calculator","description":"Free stamped concrete calculator. Estimate base cost, stamp premium, total cost, and sealer gallons for your stamped concrete project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does stamped concrete cost per square foot?","acceptedAnswer":{"@type":"Answer","text":"Stamped concrete costs $12-$20 per square foot installed. This includes a base concrete cost of about $8/sq ft plus a $5/sq ft stamping premium for pattern and color."}},{"@type":"Question","name":"How long does stamped concrete last?","acceptedAnswer":{"@type":"Answer","text":"Properly installed and sealed stamped concrete lasts 25-30 years. Reseal every 2-3 years to protect the color and pattern from wear and UV fading."}},{"@type":"Question","name":"How much sealer do I need for stamped concrete?","acceptedAnswer":{"@type":"Answer","text":"One gallon of stamped concrete sealer covers about 250 square feet per coat. Most projects need two coats, so plan for 1 gallon per 125 sq ft of surface."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Concrete & Masonry","item":"https://aibuildcalc.com/tools/concrete/"},{"@type":"ListItem","position":3,"name":"Stamped Concrete Calculator","item":"https://aibuildcalc.com/tools/concrete/stamped-concrete-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/concrete/">Concrete &amp; Masonry</a> <span>›</span> Stamped Concrete Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Stamped Concrete Calculator</h1>
+          <p>Estimate stamped concrete cost and sealer for any pattern</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="area">Surface Area <span class="unit-label">sq ft</span></label>
+            <span class="label-hint">Total stamped concrete area</span>
+            <input type="number" id="area" value="400" step="any" min="0" aria-label="Surface Area">
+          </div>
+          <div class="form-group">
+            <label for="pattern">Stamp Pattern</label>
+            <span class="label-hint">Select the decorative pattern</span>
+            <select id="pattern" aria-label="Stamp Pattern">
+              <option value="ashlar">Ashlar Stone</option>
+              <option value="slate">Slate</option>
+              <option value="flagstone">Flagstone</option>
+              <option value="roman">Roman Slate</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Estimated Cost</div>
+            <div class="result-value" id="result-totalCost">—</div>
+            <div class="result-unit">USD</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Base Cost</div>
+            <div class="detail-value" id="result-baseCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Stamp Premium</div>
+            <div class="detail-value" id="result-stampPremium">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Sealer</div>
+            <div class="detail-value" id="result-sealer">—</div>
+            <div class="detail-unit">gal</div>
+          </div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Stamped concrete adds the look of natural stone, slate, or brick at a fraction of the cost. Our calculator breaks down the base concrete cost, stamping premium, and sealer you'll need.</p>
+        <ol>
+          <li>Enter the total stamped surface area in square feet</li>
+          <li>Choose your stamp pattern (Ashlar, Slate, Flagstone, or Roman)</li>
+          <li>Review the base cost, stamp premium, and total estimated cost</li>
+          <li>Note the sealer gallons needed for protection</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Stamped Concrete project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🎨</div>
+            <div class="insight-title">Pattern Cost Variance</div>
+            <div class="insight-desc">Ashlar and slate patterns are common and budget-friendly. Intricate flagstone or custom Roman patterns can add 10-20% to the stamping premium.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🛡️</div>
+            <div class="insight-title">Sealer Coverage Strategy</div>
+            <div class="insight-desc">One gallon of acrylic sealer covers about 250 sq ft per coat. Two coats are standard for durability and color protection.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🗓️</div>
+            <div class="insight-title">Resealing Timeline</div>
+            <div class="insight-desc">Reseal stamped concrete every 2-3 years. High-traffic driveways may need annual resealing to keep the color vibrant and surface protected.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Base cost = Area x $8/sq ft
+Stamp premium = Area x $5/sq ft
+Total cost = Base cost + Stamp premium
+Sealer (gal) = ceil(Area / 250)</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Stamped Concrete Pattern Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Pattern</th><th>Look</th><th>Cost Premium</th><th>Slip Resistance</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ashlar Stone</td><td>Cut stone tiles</td><td>Standard</td><td>Medium</td><td>Patios, walkways</td></tr>
+              <tr><td>Slate</td><td>Natural slate</td><td>Standard</td><td>Medium-High</td><td>Pool decks, patios</td></tr>
+              <tr><td>Flagstone</td><td>Irregular stone</td><td>+10-20%</td><td>High</td><td>Garden paths, accents</td></tr>
+              <tr><td>Roman Slate</td><td>Large stone tiles</td><td>Standard</td><td>Medium</td><td>Driveways, large patios</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>American Society of Concrete Contractors (ASCC)</strong> — Decorative Concrete Guidelines. <a href="https://www.ascconline.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>American Concrete Institute (ACI)</strong> — ACI 310: Guide to Decorative Concrete. <a href="https://www.concrete.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Portland Cement Association (PCA)</strong> — Decorative &amp; Stamped Concrete Resources. <a href="https://www.cement.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much does stamped concrete cost per square foot?</div>
+          <div class="faq-answer">Stamped concrete costs $12-$20 per square foot installed. This includes a base concrete cost of about $8/sq ft plus a $5/sq ft stamping premium for pattern and color.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long does stamped concrete last?</div>
+          <div class="faq-answer">Properly installed and sealed stamped concrete lasts 25-30 years. Reseal every 2-3 years to protect the color and pattern from wear and UV fading.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much sealer do I need for stamped concrete?</div>
+          <div class="faq-answer">One gallon of stamped concrete sealer covers about 250 square feet per coat. Most projects need two coats, so plan for 1 gallon per 125 sq ft of surface.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/concrete/concrete-patio-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Concrete Patio Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/concrete/concrete-driveway-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Concrete Driveway Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="active">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: stamped-concrete-calculator
+    function calculate() {
+      try {
+        const area = parseFloat(document.getElementById('area').value) || 0;
+        const pattern = document.getElementById('pattern').value;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        const baseCost = area * 8;
+        const stampPremium = area * 5;
+        const total = baseCost + stampPremium;
+        const sealer = Math.ceil(area / 250);
+        setResult('totalCost', '$' + total.toFixed(0));
+        setResult('baseCost', '$' + baseCost.toFixed(0));
+        setResult('stampPremium', '$' + stampPremium.toFixed(0));
+        setResult('sealer', sealer);
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('area').value = '400';
+      document.getElementById('pattern').value = 'ashlar';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-totalCost').textContent = '—';
+      document.getElementById('result-baseCost').textContent = '—';
+      document.getElementById('result-stampPremium').textContent = '—';
+      document.getElementById('result-sealer').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Apply a release agent before stamping to prevent the mats from sticking and to add subtle antiquing color.","Reseal stamped concrete every 2-3 years to protect the color from UV fading and surface wear.","Add a non-slip additive to the sealer for stamped surfaces around pools, steps, and walkways."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

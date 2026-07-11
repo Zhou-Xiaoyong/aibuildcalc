@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retaining Wall Calculator: Estimate blocks, caps, and cost | AIBuildCalc</title>
+  <meta name="description" content="Free retaining wall calculator. Estimate the number of blocks, cap blocks, and total cost for your landscaping retaining wall project.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/landscaping/retaining-wall-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Retaining Wall Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free retaining wall calculator. Estimate the number of blocks, cap blocks, and total cost for your landscaping retaining wall project.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/landscaping/retaining-wall-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Retaining Wall Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free retaining wall calculator. Estimate the number of blocks, cap blocks, and total cost for your landscaping retaining wall project.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Retaining Wall Calculator","description":"Free retaining wall calculator. Estimate the number of blocks, cap blocks, and total cost for your landscaping retaining wall project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many blocks do I need for a retaining wall?","acceptedAnswer":{"@type":"Answer","text":"Divide the wall length in inches by the block length to get blocks per row, then divide wall height in inches by block height to get the number of rows. Multiply blocks per row by rows for total blocks."}},{"@type":"Question","name":"How tall can a landscaping block wall be?","acceptedAnswer":{"@type":"Answer","text":"Without engineering, most landscape block walls should stay under 4 feet. Walls over 4 feet typically require a permit, geogrid reinforcement, and a professional engineer's design."}},{"@type":"Question","name":"Do I need a cap block on a retaining wall?","acceptedAnswer":{"@type":"Answer","text":"Yes. Cap blocks give the wall a finished look, protect the cores from water, and help lock the top course together. Use one cap block per block in the top row."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Landscaping","item":"https://aibuildcalc.com/tools/landscaping/"},{"@type":"ListItem","position":3,"name":"Retaining Wall Calculator","item":"https://aibuildcalc.com/tools/landscaping/retaining-wall-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/landscaping/">Landscaping</a> <span>›</span> Retaining Wall Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Retaining Wall Calculator</h1>
+          <p>Estimate blocks, cap blocks, and cost for your wall</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="wallLength">Wall Length <span class="unit-label">ft</span></label>
+            <span class="label-hint">Total length of the retaining wall</span>
+            <input type="number" id="wallLength" value="20" step="any" min="0" aria-label="Wall Length">
+          </div>
+          <div class="form-group">
+            <label for="wallHeight">Wall Height <span class="unit-label">ft</span></label>
+            <span class="label-hint">Exposed height of the wall</span>
+            <input type="number" id="wallHeight" value="4" step="any" min="0" aria-label="Wall Height">
+          </div>
+          <div class="form-group">
+            <label for="blockHeight">Block Height <span class="unit-label">in</span></label>
+            <span class="label-hint">Height of a single block</span>
+            <input type="number" id="blockHeight" value="8" step="any" min="0" aria-label="Block Height">
+          </div>
+          <div class="form-group">
+            <label for="blockLength">Block Length <span class="unit-label">in</span></label>
+            <span class="label-hint">Length (face width) of a single block</span>
+            <input type="number" id="blockLength" value="16" step="any" min="0" aria-label="Block Length">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Cap Blocks</div>
+            <div class="detail-value" id="result-caps">—</div>
+            <div class="detail-unit">blocks</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-cost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Blocks Needed</div>
+            <div class="result-value" id="result-blocks">—</div>
+            <div class="result-unit">blocks</div>
+          </div>
+          </div>      <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Building a block retaining wall? Accurate block counts prevent costly supply runs and keep your project on schedule. Our calculator accounts for wall length, height, and your specific block dimensions.</p>
+        <ol>
+          <li>Measure the total length and exposed height of your wall</li>
+        <li>Check the dimensions printed on your block packaging</li>
+        <li>Enter wall and block dimensions into the calculator</li>
+        <li>Add 5-10% extra blocks for cuts, breaks, and waste</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Retaining Wall project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🧱</div>
+            <div class="insight-title">Block Style Smarts</div>
+            <div class="insight-desc">Interlocking blocks need no mortar and self-align with lips or pins. Modular blocks follow standard 2:1 length-to-height ratios for stable pattern coursing.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📏</div>
+            <div class="insight-title">Height Limit Guidance</div>
+            <div class="insight-desc">Without engineering, keep walls under 4 feet. Taller walls need geogrid reinforcement, deeper burial, and a licensed engineer's stamped design for safety.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">💧</div>
+            <div class="insight-title">Drainage Necessity</div>
+            <div class="insight-desc">Always add gravel backfill and a drain pipe behind the wall. Hydrostatic pressure from trapped water is the #1 cause of retaining wall failure.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Blocks per row = ceil(Wall length × 12 / Block length)
+Rows = ceil(Wall height × 12 / Block height)
+Blocks = Blocks per row × Rows
+Cap blocks = Blocks per row
+Estimated cost = ceil(Blocks × $3)</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Retaining Wall Material Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Material</th><th>Lifespan</th><th>Cost per sq ft</th><th>Max Height (no engineering)</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Concrete Landscape Block</td><td>50+ years</td><td>$10-20</td><td>4 ft</td><td>Planters, low walls</td></tr>
+              <tr><td>Natural Stone</td><td>100+ years</td><td>$25-75</td><td>3-4 ft</td><td>High-end decorative</td></tr>
+              <tr><td>Treated Timber</td><td>20-30 years</td><td>$8-15</td><td>4 ft</td><td>Budget, rustic look</td></tr>
+              <tr><td>Poured Concrete</td><td>75+ years</td><td>$15-30</td><td>Unlimited (engineered)</td><td>Structural walls</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>National Concrete Masonry Association (NCMA)</strong> — Segmental Retaining Wall Design Manual. <a href="https://ncma.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Building Code (IBC)</strong> — Chapter 18 — Soils and Foundations, Retaining Walls. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>National Association of Landscape Professionals (NALP)</strong> — Hardscape Installation Standards. <a href="https://www.landscapeprofessionals.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How many blocks do I need for a retaining wall?</div>
+          <div class="faq-answer">Divide the wall length in inches by the block length to get blocks per row, then divide wall height in inches by block height to get the number of rows. Multiply blocks per row by rows for total blocks.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How tall can a landscaping block wall be?</div>
+          <div class="faq-answer">Without engineering, most landscape block walls should stay under 4 feet. Walls over 4 feet typically require a permit, geogrid reinforcement, and a professional engineer's design.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need a

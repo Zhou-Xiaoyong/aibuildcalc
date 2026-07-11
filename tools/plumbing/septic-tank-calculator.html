@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Septic Tank Calculator: Size tank and drain field area | AIBuildCalc</title>
+  <meta name="description" content="Free septic tank calculator. Estimate tank size in gallons, drain field area, and bedrooms served based on household water usage.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/plumbing/septic-tank-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Septic Tank Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free septic tank calculator. Estimate tank size in gallons, drain field area, and bedrooms served based on household water usage.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/plumbing/septic-tank-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Septic Tank Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free septic tank calculator. Estimate tank size in gallons, drain field area, and bedrooms served based on household water usage.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Septic Tank Calculator","description":"Free septic tank calculator. Estimate tank size in gallons, drain field area, and bedrooms served based on household water usage.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How big of a septic tank do I need for a 3-bedroom house?","acceptedAnswer":{"@type":"Answer","text":"A 3-bedroom home typically needs a 1,000-gallon septic tank, which is the minimum size allowed by most codes. A 4-bedroom home usually requires 1,250 gallons or more."}},{"@type":"Question","name":"How far should a drain field be from the house?","acceptedAnswer":{"@type":"Answer","text":"Most codes require at least 10 feet between the septic tank and the house foundation, and a minimum of 5 feet between the drain field and the house. Local setbacks vary, so check county regulations."}},{"@type":"Question","name":"How often should a septic tank be pumped?","acceptedAnswer":{"@type":"Answer","text":"A residential septic tank should be pumped every 3 to 5 years depending on household size and water usage. Larger households or smaller tanks may need more frequent pumping."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Plumbing","item":"https://aibuildcalc.com/tools/plumbing/"},{"@type":"ListItem","position":3,"name":"Septic Tank Calculator","item":"https://aibuildcalc.com/tools/plumbing/septic-tank-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/plumbing/">Plumbing</a> <span>›</span> Septic Tank Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Septic Tank Calculator</h1>
+          <p>Size septic tank and drain field for your home</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="bedrooms">Bedrooms <span class="unit-label">count</span></label>
+            <span class="label-hint">Number of bedrooms in home</span>
+            <input type="number" id="bedrooms" value="3" step="any" min="0" aria-label="Bedrooms">
+          </div>
+          <div class="form-group">
+            <label for="gallonsPerPerson">Gallons Per Person <span class="unit-label">gal/day</span></label>
+            <span class="label-hint">Daily water use per occupant</span>
+            <input type="number" id="gallonsPerPerson" value="75" step="any" min="0" aria-label="Gallons Per Person">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-detail">
+            <div class="detail-label">Drain Field Area</div>
+            <div class="detail-value" id="result-drainfield">—</div>
+            <div class="detail-unit">sq ft</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Bedrooms Served</div>
+            <div class="detail-value" id="result-bedroomsServed">—</div>
+            <div class="detail-unit">bedrooms</div>
+          </div>
+          <div class="result-main">
+            <div class="result-label">Tank Size</div>
+            <div class="result-value" id="result-tankSize">—</div>
+            <div class="result-unit">gal</div>
+          </div>
+          </div>
+
+          <!-- Inline Disclaimer -->
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor, engineer, or architect. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <!-- AI Smart Tip -->
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- How to Use -->
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Correctly sized septic systems prevent backups and protect groundwater. Our calculator estimates tank and drain field requirements based on household size.</p>
+        <ol>
+          <li>Enter the number of bedrooms in the home</li>
+        <li>Set the daily gallons per person (default 75)</li>
+        <li>Review tank size, drain field area, and capacity</li>
+        <li>Verify results with local code requirements</li>
+        </ol>
+      </div>
+
+      <!-- Expert Insights -->
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your Plumbing project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏠</div>
+            <div class="insight-title">Bedroom-Based Sizing</div>
+            <div class="insight-desc">Code uses bedrooms plus one to estimate occupants. AI applies this convention so your tank matches typical regulatory formulas.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">💧</div>
+            <div class="insight-title">Drain Field Sizing</div>
+            <div class="insight-desc">Drain field area scales with tank size and soil percolation rate. AI estimates 0.6 sq ft per gallon as a planning baseline.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🔬</div>
+            <div class="insight-title">Soil Percolation Impact</div>
+            <div class="insight-desc">Clay soils need larger drain fields; sandy soils need less. AI reminds you to run a percolation test before final design.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">People = Bedrooms + 1
+Tank Size = People x Gallons Per Person x 1.5 (min 1,000 gal)
+Drain Field Area = ceil(Tank Size x 0.6)
+Bedrooms Served = input value</div>
+      </div>
+
+      <!-- Material Comparison -->
+      <div class="content-section">
+        <h2>Septic Tank Size Reference</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Bedrooms</th><th>Est. Occupants</th><th>Min Tank Size</th><th>Drain Field Area</th><th>Pump Interval</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2</td><td>3</td><td>1,000 gal</td><td>600 sq ft</td><td>5 years</td></tr>
+              <tr><td>3</td><td>4</td><td>1,000 gal</td><td>675 sq ft</td><td>4 years</td></tr>
+              <tr><td>4</td><td>5</td><td>1,250 gal</td><td>750 sq ft</td><td>3-4 years</td></tr>
+              <tr><td>5</td><td>6</td><td>1,500 gal</td><td>900 sq ft</td><td>3 years</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Authority References -->
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <p>Our calculations are based on guidelines and standards from these authoritative sources:</p>
+        <ul class="citation-list">
+          <li><strong>U.S. Environmental Protection Agency (EPA)</strong> — Onsite Wastewater Treatment Systems Manual. <a href="https://www.epa.gov/septic" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>International Code Council (ICC)</strong> — International Private Sewage Disposal Code (IPSDC). <a href="https://www.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>National Onsite Wastewater Recycling Association (NOWRA)</strong> — Site Evaluation &amp; System Sizing Standards. <a href="https://www.nowra.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <!-- Ad Slot -->
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How big of a septic tank do I need for a 3-bedroom house?</div>
+          <div class="faq-answer">A 3-bedroom home typically needs a 1,000-gallon septic tank, which is the minimum size allowed by most codes. A 4-bedroom home usually requires 1,250 gallons or more.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How far should a drain field be from the house?</div>
+          <div class="faq-answer">Most codes require at least 10 feet between the septic tank and the house foundation, and a minimum of 5 feet between the drain field and the house. Local setbacks vary, so check county regulations.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How often should a septic tank be pumped?</div>
+          <div class="faq-answer">A residential septic tank should be pumped every 3 to 5 years depending on household size and water usage. Larger households or smaller tanks may need more frequent pumping.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/plumbing/drain-pipe-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Drain Pipe Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/plumbing/water-flow-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Water Flow Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="active">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/plumbing/pipe-size-calculator.html">Pipe Size Calculator</a></li>
+          <li><a href="/tools/plumbing/water-flow-calculator.html">Water Flow Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+    // Calculator logic for: septic-tank-calculator
+    function calculate() {
+      try {
+        const bedrooms = parseFloat(document.getElementById('bedrooms').value) || 0;
+        const gallonsPerPerson = parseFloat(document.getElementById('gallonsPerPerson').value) || 0;
+
+        function setResult(id, value) {
+          const el = document.getElementById('result-' + id);
+          if (el) el.textContent = value;
+        }
+
+        
+        const people = bedrooms + 1;
+        let tankSize = people * gallonsPerPerson * 1.5;
+        if (tankSize < 1000) tankSize = 1000;
+        const drainfield = Math.ceil(tankSize * 0.6);
+        setResult('drainfield', drainfield);
+        setResult('bedroomsServed', bedrooms);
+        setResult('tankSize', tankSize.toFixed(0));
+        document.getElementById('resultSection').classList.add('show');
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        generateAITip();
+      } catch (e) {
+        console.error('Calculation error:', e);
+      }
+    }
+
+    function resetForm() {
+      document.getElementById('bedrooms').value = '3';
+      document.getElementById('gallonsPerPerson').value = '75';
+      document.getElementById('resultSection').classList.remove('show');
+      const aiTip = document.getElementById('aiTip');
+      if (aiTip) aiTip.style.display = 'none';
+      document.getElementById('result-drainfield').textContent = '—';
+      document.getElementById('result-bedroomsServed').textContent = '—';
+      document.getElementById('result-tankSize').textContent = '—';
+    }
+
+    // Pro Tip Generator
+    function generateAITip() {
+      const tips = ["Pump your septic tank every 3-5 years to prevent solids from clogging the drain field.","Avoid garbage disposals with septic systems — they increase solids and require more frequent pumping.","The minimum septic tank size for most US homes is 1,000 gallons, regardless of calculated need.","A percolation test determines soil absorption rate and is required before drain field design.","Keep heavy vehicles and structures off the drain field to prevent soil compaction and pipe damage."];
+      const tip = tips[Math.floor(Math.random() * tips.length)];
+      const el = document.getElementById('aiTip');
+      const text = document.getElementById('aiTipText');
+      if (el && text) { text.textContent = tip; el.style.display = 'flex'; }
+    }
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    // Allow Enter key to calculate
+    document.getElementById('calcForm').addEventListener('keypress', e => {
+      if (e.key === 'Enter') calculate();
+    });
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>
