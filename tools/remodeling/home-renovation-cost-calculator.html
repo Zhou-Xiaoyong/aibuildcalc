@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Renovation Cost Calculator: Estimate remodeling costs by room and scope | AIBuildCalc</title>
+  <meta name="description" content="Free home renovation cost calculator. Estimate remodeling costs by room type, square footage, finish level, and location. Budget smarter for your next project.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/remodeling/home-renovation-cost-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Home Renovation Cost Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free home renovation cost calculator. Estimate remodeling costs by room and scope.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/remodeling/home-renovation-cost-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Home Renovation Cost Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free home renovation cost calculator. Estimate remodeling costs by room and scope.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Home Renovation Cost Calculator","description":"Free home renovation cost calculator. Estimate remodeling costs by room type, square footage, finish level, and location.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a home renovation cost per square foot?","acceptedAnswer":{"@type":"Answer","text":"Home renovation costs typically range from $25-$75 per square foot for cosmetic updates, $75-$150 for mid-grade remodels, and $150-$300+ for high-end renovations. Kitchens and bathrooms cost more per square foot than living areas."}},{"@type":"Question","name":"What is the most expensive room to renovate?","acceptedAnswer":{"@type":"Answer","text":"Kitchens are the most expensive room to renovate, averaging $150-$300 per square foot due to cabinets, countertops, appliances, and plumbing. Bathrooms are second, averaging $125-$250 per square foot."}},{"@type":"Question","name":"Should I remodel or move?","acceptedAnswer":{"@type":"Answer","text":"If you like your location and the renovation cost is less than 30% of your home's value, remodeling is usually the better financial decision. Moving involves 8-10% in transaction costs alone."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Remodeling","item":"https://aibuildcalc.com/tools/remodeling/"},{"@type":"ListItem","position":3,"name":"Home Renovation Cost Calculator","item":"https://aibuildcalc.com/tools/remodeling/home-renovation-cost-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/remodeling/">Remodeling</a> <span>›</span> Home Renovation Cost Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Home Renovation Cost Calculator</h1>
+          <p>Estimate remodeling costs by room type, size, and finish level</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="roomType">Room Type </label>
+            <span class="label-hint">Select the room or area to renovate</span>
+            <select id="roomType" aria-label="Room Type">
+              <option value="kitchen" selected>Kitchen</option>
+              <option value="bathroom">Bathroom</option>
+              <option value="basement">Basement</option>
+              <option value="living">Living Room / Bedroom</option>
+              <option value="wholehouse">Whole House</option>
+              <option value="addition">Room Addition</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sqFt">Area <span class="unit-label">sq ft</span></label>
+            <span class="label-hint">Square footage of the renovation area</span>
+            <input type="number" id="sqFt" value="200" step="any" min="0" aria-label="Area">
+          </div>
+          <div class="form-group">
+            <label for="finishLevel">Finish Level </label>
+            <span class="label-hint">Budget, mid-grade, or luxury finishes</span>
+            <select id="finishLevel" aria-label="Finish Level">
+              <option value="budget">Budget / DIY-Friendly</option>
+              <option value="mid" selected>Mid-Grade</option>
+              <option value="luxury">Luxury / High-End</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="locationFactor">Location Cost Factor </label>
+            <span class="label-hint">Labor and material costs vary by region</span>
+            <select id="locationFactor" aria-label="Location Cost Factor">
+              <option value="0.8">Low-Cost Region (South, Midwest)</option>
+              <option value="1.0" selected>National Average</option>
+              <option value="1.3">High-Cost Region (Northeast, West Coast)</option>
+              <option value="1.6">Major Metro (NYC, SF, LA, Boston)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="demolition">Include Demolition? </label>
+            <span class="label-hint">Remove existing finishes before new install</span>
+            <select id="demolition" aria-label="Include Demolition">
+              <option value="yes" selected>Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Estimated Total Cost</div>
+            <div class="result-value" id="result-totalCost">—</div>
+            <div class="result-unit">USD</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Cost per Sq Ft</div>
+            <div class="detail-value" id="result-costPerSqft">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Low Estimate</div>
+            <div class="detail-value" id="result-low">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">High Estimate</div>
+            <div class="detail-value" id="result-high">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Labor (est.)</div>
+            <div class="detail-value" id="result-labor">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Materials (est.)</div>
+            <div class="detail-value" id="result-materials">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Demolition (est.)</div>
+            <div class="detail-value" id="result-demo">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on national averages and may vary significantly by contractor, material choices, and site conditions. Always get multiple quotes.
+          </div>
+
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Home renovation costs vary dramatically by room type, finish quality, and location. This calculator uses 2026 national cost data adjusted by region to help you budget realistically.</p>
+        <ol>
+          <li>Select the room or area you plan to renovate</li>
+          <li>Enter the square footage (measure wall to wall)</li>
+          <li>Choose a finish level that matches your budget and goals</li>
+          <li>Select your regional cost multiplier</li>
+          <li>Decide if you need demolition of existing finishes</li>
+        </ol>
+      </div>
+
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your renovation budget</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">💰</div>
+            <div class="insight-title">The 30% Rule</div>
+            <div class="insight-desc">Never spend more than 30% of your home's current value on a single renovation. This protects your investment and prevents over-improving for the neighborhood.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📊</div>
+            <div class="insight-title">Hidden Cost Buffer</div>
+            <div class="insight-desc">Add 15-20% contingency for unforeseen issues (water damage, outdated wiring, asbestos). Older homes (pre-1980) may need 25% contingency.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏠</div>
+            <div class="insight-title">ROI by Project</div>
+            <div class="insight-desc">Kitchens and bathrooms typically return 50-75% of cost. Exterior improvements (siding, roofing) return 60-80%. Swimming pools often return less than 50%.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Calculation Methodology</h2>
+        <div class="formula-box">Base Cost = Area x Cost per Sq Ft (by room type and finish level)
+Location Adjustment = Base Cost x Location Factor
+Demolition = Area x $3-$8/sq ft (if selected)
+Labor = Adjusted Cost x 0.55
+Materials = Adjusted Cost x 0.45</div>
+      </div>
+
+      <div class="content-section">
+        <h2>Average Renovation Costs by Room (2026)</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Room</th><th>Budget</th><th>Mid-Grade</th><th>Luxury</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Kitchen</td><td>$75-$125 / sq ft</td><td>$125-$225 / sq ft</td><td>$225-$400 / sq ft</td></tr>
+              <tr><td>Bathroom</td><td>$70-$120 / sq ft</td><td>$120-$200 / sq ft</td><td>$200-$350 / sq ft</td></tr>
+              <tr><td>Basement</td><td>$25-$50 / sq ft</td><td>$50-$90 / sq ft</td><td>$90-$150 / sq ft</td></tr>
+              <tr><td>Living/Bedroom</td><td>$20-$40 / sq ft</td><td>$40-$75 / sq ft</td><td>$75-$150 / sq ft</td></tr>
+              <tr><td>Room Addition</td><td>$150-$200 / sq ft</td><td>$200-$300 / sq ft</td><td>$300-$500 / sq ft</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <ul class="citation-list">
+          <li><strong>Remodeling Magazine</strong> — Cost vs. Value Report 2026. <a href="https://www.remodeling.hw.net/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>NAHB</strong> — National Association of Home Builders Cost Data. <a href="https://www.nahb.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>RSMeans</strong> — Construction Cost Database. <a href="https://www.rsmeans.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much does a home renovation cost per square foot?</div>
+          <div class="faq-answer">Home renovation costs typically range from $25-$75 per square foot for cosmetic updates, $75-$150 for mid-grade remodels, and $150-$300+ for high-end renovations. Kitchens and bathrooms cost more per square foot than living areas.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the most expensive room to renovate?</div>
+          <div class="faq-answer">Kitchens are the most expensive room to renovate, averaging $150-$300 per square foot due to cabinets, countertops, appliances, and plumbing. Bathrooms are second, averaging $125-$250 per square foot.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Should I remodel or move?</div>
+          <div class="faq-answer">If you like your location and the renovation cost is less than 30% of your home's value, remodeling is usually the better financial decision. Moving involves 8-10% in transaction costs alone.</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/kitchen-bath/cabinet-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Cabinet Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/kitchen-bath/countertop-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Countertop Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/painting/painting-cost-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Painting Cost Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/flooring/tile-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Tile Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/">Roofing</a></li>
+      <li><a href="/tools/painting/">Painting</a></li>
+      <li><a href="/tools/flooring/">Flooring</a></li>
+      <li><a href="/tools/fencing/">Fencing</a></li>
+      <li><a href="/tools/decking/">Decking</a></li>
+      <li><a href="/tools/insulation/">Insulation</a></li>
+      <li><a href="/tools/drywall/">Drywall</a></li>
+      <li><a href="/tools/plumbing/">Plumbing</a></li>
+      <li><a href="/tools/electrical/">Electrical</a></li>
+      <li><a href="/tools/landscaping/">Landscaping</a></li>
+      <li><a href="/tools/siding/">Siding</a></li>
+      <li><a href="/tools/hvac/">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      <li><a href="/tools/remodeling/" class="active">Remodeling</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/remodeling/home-renovation-cost-calculator.html">Home Renovation Cost Calculator</a></li>
+          <li><a href="/tools/painting/painting-cost-calculator.html">Painting Cost Calculator</a></li>
+          <li><a href="/tools/hvac/hvac-cost-calculator.html">HVAC Cost Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+  const costData = {
+    kitchen: { budget: 100, mid: 175, luxury: 312 },
+    bathroom: { budget: 95, mid: 160, luxury: 275 },
+    basement: { budget: 37.5, mid: 70, luxury: 120 },
+    living: { budget: 30, mid: 57.5, luxury: 112.5 },
+    wholehouse: { budget: 45, mid: 80, luxury: 150 },
+    addition: { budget: 175, mid: 250, luxury: 400 }
+  };
+
+  function calculate() {
+    const roomType = document.getElementById('roomType').value;
+    const sqFt = parseFloat(document.getElementById('sqFt').value) || 0;
+    const finishLevel = document.getElementById('finishLevel').value;
+    const locationFactor = parseFloat(document.getElementById('locationFactor').value) || 1.0;
+    const demolition = document.getElementById('demolition').value;
+
+    if (sqFt <= 0) {
+      alert('Please enter a valid area.');
+      return;
+    }
+
+    const baseCostPerSqft = costData[roomType][finishLevel];
+    const baseCost = sqFt * baseCostPerSqft;
+    const adjustedCost = baseCost * locationFactor;
+    const demoCost = demolition === 'yes' ? sqFt * 5.5 * locationFactor : 0;
+    const totalCost = adjustedCost + demoCost;
+    const low = totalCost * 0.85;
+    const high = totalCost * 1.15;
+    const labor = adjustedCost * 0.55;
+    const materials = adjustedCost * 0.45;
+
+    document.getElementById('result-totalCost').textContent = '$' + totalCost.toLocaleString(undefined, {maximumFractionDigits: 0});
+    document.getElementById('result-costPerSqft').textContent = '$' + (totalCost / sqFt).toFixed(2);
+    document.getElementById('result-low').textContent = '$' + low.toLocaleString(undefined, {maximumFractionDigits: 0});
+    document.getElementById('result-high').textContent = '$' + high.toLocaleString(undefined, {maximumFractionDigits: 0});
+    document.getElementById('result-labor').textContent = '$' + labor.toLocaleString(undefined, {maximumFractionDigits: 0});
+    document.getElementById('result-materials').textContent = '$' + materials.toLocaleString(undefined, {maximumFractionDigits: 0});
+    document.getElementById('result-demo').textContent = '$' + demoCost.toLocaleString(undefined, {maximumFractionDigits: 0});
+
+    document.getElementById('resultSection').style.display = 'block';
+
+    // Smart tip
+    const tipEl = document.getElementById('aiTip');
+    const tipText = document.getElementById('aiTipText');
+    let tip = '';
+    if (roomType === 'kitchen' && finishLevel === 'luxury') {
+      tip = 'Luxury kitchens see the highest ROI when you stay in the home 5+ years. If selling soon, mid-grade finishes often return a higher percentage.';
+    } else if (roomType === 'wholehouse' && totalCost > 150000) {
+      tip = 'Whole-house renovations over $150k should include a structural engineer review and full electrical/plumbing inspection before starting.';
+    } else if (demolition === 'yes') {
+      tip = 'Demolition can reveal hidden issues. Set aside an additional 15-20% contingency beyond the estimate for unexpected repairs.';
+    } else {
+      tip = 'Get at least 3 contractor quotes. Prices can vary 30-50% between contractors for the same scope of work.';
+    }
+    tipText.textContent = tip;
+    tipEl.style.display = 'block';
+  }
+
+  function resetForm() {
+    document.getElementById('roomType').value = 'kitchen';
+    document.getElementById('sqFt').value = 200;
+    document.getElementById('finishLevel').value = 'mid';
+    document.getElementById('locationFactor').value = '1.0';
+    document.getElementById('demolition').value = 'yes';
+    document.getElementById('resultSection').style.display = 'none';
+    document.getElementById('aiTip').style.display = 'none';
+  }
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>

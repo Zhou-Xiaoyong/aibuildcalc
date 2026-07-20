@@ -544,4 +544,52 @@
     <loc>https://aibuildcalc.com/disclaimer.html</loc>
     <priority>0.4</priority>
   </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/stairs/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/paving/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/remodeling/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/stairs/wood-stair-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/paving/asphalt-driveway-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/remodeling/home-renovation-cost-calculator.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/how-to-calculate-concrete-for-a-slab-patio-or-driveway.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/roof-replacement-cost-guide-2026.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/how-many-btus-do-i-need-room-by-room-guide.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/how-to-estimate-paint-avoiding-common-mistakes.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/fence-installation-cost-wood-vs-vinyl-vs-chain-link.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>

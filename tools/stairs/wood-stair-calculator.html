@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wood Stair Calculator: Estimate stringers, treads, risers, and cost | AIBuildCalc</title>
+  <meta name="description" content="Free wood stair calculator. Estimate stringer length, number of treads and risers, total rise, run, and material cost for wooden stairs.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/stairs/wood-stair-calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Wood Stair Calculator - AIBuildCalc">
+  <meta property="og:description" content="Free wood stair calculator. Estimate stringers, treads, risers, and cost for wooden stairs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/stairs/wood-stair-calculator.html">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wood Stair Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Free wood stair calculator. Estimate stringers, treads, risers, and cost for wooden stairs.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wood Stair Calculator","description":"Free wood stair calculator. Estimate stringers, treads, risers, and cost for wooden stairs.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the standard rise and run for stairs?","acceptedAnswer":{"@type":"Answer","text":"Standard rise is 7 to 7.75 inches per step. Standard run (tread depth) is 10 to 11 inches. The ideal sum of rise + run is 17-18 inches."}},{"@type":"Question","name":"How many stringers do I need for a staircase?","acceptedAnswer":{"@type":"Answer","text":"For stairs 36 inches wide, use 3 stringers. For stairs 48 inches wide, use 4 stringers. Space stringers 16-18 inches on center."}},{"@type":"Question","name":"What size lumber for stair stringers?","acceptedAnswer":{"@type":"Answer","text":"Use 2x12 lumber for stair stringers. Never use 2x10 or smaller, as the notches weaken the board significantly."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Stairs","item":"https://aibuildcalc.com/tools/stairs/"},{"@type":"ListItem","position":3,"name":"Wood Stair Calculator","item":"https://aibuildcalc.com/tools/stairs/wood-stair-calculator.html"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/stairs/">Stairs</a> <span>›</span> Wood Stair Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Wood Stair Calculator</h1>
+          <p>Estimate stringers, treads, risers, and cost for wooden stairs</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="totalRise">Total Rise <span class="unit-label">in</span></label>
+            <span class="label-hint">Vertical height from floor to floor</span>
+            <input type="number" id="totalRise" value="106" step="any" min="0" aria-label="Total Rise">
+          </div>
+          <div class="form-group">
+            <label for="desiredRise">Desired Riser Height <span class="unit-label">in</span></label>
+            <span class="label-hint">Standard: 7 to 7.75 inches</span>
+            <input type="number" id="desiredRise" value="7.33" step="any" min="0" aria-label="Desired Riser Height">
+          </div>
+          <div class="form-group">
+            <label for="treadDepth">Tread Depth (Run) <span class="unit-label">in</span></label>
+            <span class="label-hint">Standard: 10 to 11 inches</span>
+            <input type="number" id="treadDepth" value="10.5" step="any" min="0" aria-label="Tread Depth">
+          </div>
+          <div class="form-group">
+            <label for="stairWidth">Stair Width <span class="unit-label">in</span></label>
+            <span class="label-hint">Standard: 36 inches minimum</span>
+            <input type="number" id="stairWidth" value="36" step="any" min="0" aria-label="Stair Width">
+          </div>
+          <div class="form-group">
+            <label for="stringerCount">Number of Stringers </label>
+            <span class="label-hint">36" wide = 3, 48" wide = 4</span>
+            <select id="stringerCount" aria-label="Number of Stringers">
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="costPerBoard">Cost per 2x12 Board <span class="unit-label">USD</span></label>
+            <span class="label-hint">Local price for 2x12 lumber</span>
+            <input type="number" id="costPerBoard" value="45" step="any" min="0" aria-label="Cost per 2x12 Board">
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Number of Steps</div>
+            <div class="result-value" id="result-steps">—</div>
+            <div class="result-unit">steps</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Actual Riser Height</div>
+            <div class="detail-value" id="result-actualRise">—</div>
+            <div class="detail-unit">in</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Total Run</div>
+            <div class="detail-value" id="result-totalRun">—</div>
+            <div class="detail-unit">in</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Stringer Length</div>
+            <div class="detail-value" id="result-stringerLength">—</div>
+            <div class="detail-unit">in</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Stringer Boards</div>
+            <div class="detail-value" id="result-stringerBoards">—</div>
+            <div class="detail-unit">boards</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Tread Boards</div>
+            <div class="detail-value" id="result-treadBoards">—</div>
+            <div class="detail-unit">boards</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Estimated Cost</div>
+            <div class="detail-value" id="result-estimatedCost">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on standard formulas. Not a substitute for professional advice from a licensed contractor. Verify all calculations before making purchasing or construction decisions.
+          </div>
+
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Building a wooden staircase requires precise measurements to ensure safety and code compliance. Our calculator helps you determine the number of steps, stringer length, and material needs.</p>
+        <ol>
+          <li>Measure the total vertical rise (floor to floor height)</li>
+          <li>Choose a target riser height (7-7.75 inches is standard)</li>
+          <li>Select a tread depth (10-11 inches is standard)</li>
+          <li>Enter your stair width and number of stringers</li>
+          <li>The calculator adjusts to the nearest whole step and recalculates actual riser height</li>
+        </ol>
+      </div>
+
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your stair project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">📐</div>
+            <div class="insight-title">Rise + Run Rule</div>
+            <div class="insight-desc">The sum of one riser and one tread should equal 17-18 inches for comfortable stairs. Our calculator flags combinations outside this range.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏠</div>
+            <div class="insight-title">IRC Code Compliance</div>
+            <div class="insight-desc">International Residential Code requires max 7.75" riser height and min 10" tread depth. Our calculator verifies compliance automatically.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🪵</div>
+            <div class="insight-title">Stringer Lumber</div>
+            <div class="insight-desc">Always use 2x12 lumber for stringers. 2x10 boards do not leave enough wood after notching, creating a weak point at the throat.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Calculation Formula</h2>
+        <div class="formula-box">Number of Steps = Total Rise / Desired Riser Height (rounded)
+Actual Riser Height = Total Rise / Number of Steps
+Total Run = (Number of Steps - 1) x Tread Depth
+Stringer Length = sqrt(Total Rise^2 + Total Run^2)</div>
+      </div>
+
+      <div class="content-section">
+        <h2>Stair Component Comparison</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Component</th><th>Typical Size</th><th>Material</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Stringers</td><td>2x12</td><td>Pressure-treated or Douglas fir</td><td>Notched to accept treads and risers</td></tr>
+              <tr><td>Treads</td><td>1x10 or 2x10</td><td>Pine, oak, or composite</td><td>Actual width often 9.25-11.25"</td></tr>
+              <tr><td>Risers</td><td>1x8</td><td>Pine or MDF</td><td>Optional for open-riser designs</td></tr>
+              <tr><td>Header Board</td><td>2x10</td><td>Matching framing lumber</td><td>Secures top of stringers</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <ul class="citation-list">
+          <li><strong>International Residential Code (IRC)</strong> — R311.7 Stairways. <a href="https://codes.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>OSHA</strong> — Stairway and Ladder Safety. <a href="https://www.osha.gov/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>AWC</strong> — American Wood Council Span Tables. <a href="https://www.awc.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">What is the standard rise and run for stairs?</div>
+          <div class="faq-answer">Standard rise is 7 to 7.75 inches per step. Standard run (tread depth) is 10 to 11 inches. The ideal sum of rise + run is 17-18 inches.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How many stringers do I need for a staircase?</div>
+          <div class="faq-answer">For stairs 36 inches wide, use 3 stringers. For stairs 48 inches wide, use 4 stringers. Space stringers 16-18 inches on center.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What size lumber for stair stringers?</div>
+          <div class="faq-answer">Use 2x12 lumber for stair stringers. Never use 2x10 or smaller, as the notches weaken the board significantly.</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/concrete/concrete-stairs-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Concrete Stairs Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/decking/deck-stair-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Deck Stair Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/framing/header-calculator.html" class="related-tool-card">
+          <div>
+            <div class="tool-name">Header Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/">Roofing</a></li>
+      <li><a href="/tools/painting/">Painting</a></li>
+      <li><a href="/tools/flooring/">Flooring</a></li>
+      <li><a href="/tools/fencing/">Fencing</a></li>
+      <li><a href="/tools/decking/">Decking</a></li>
+      <li><a href="/tools/insulation/">Insulation</a></li>
+      <li><a href="/tools/drywall/">Drywall</a></li>
+      <li><a href="/tools/plumbing/">Plumbing</a></li>
+      <li><a href="/tools/electrical/">Electrical</a></li>
+      <li><a href="/tools/landscaping/">Landscaping</a></li>
+      <li><a href="/tools/siding/">Siding</a></li>
+      <li><a href="/tools/hvac/">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+      <li><a href="/tools/stairs/" class="active">Stairs</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/stairs/wood-stair-calculator.html">Wood Stair Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/decking/deck-stair-calculator.html">Deck Stair Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator.html">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator.html">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator.html">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator.html">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator.html">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator.html">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator.html">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator.html">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/terms-of-use.html">Terms of Use</a></li>
+        <li><a href="/disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script>
+  function calculate() {
+    const totalRise = parseFloat(document.getElementById('totalRise').value) || 0;
+    const desiredRise = parseFloat(document.getElementById('desiredRise').value) || 7.33;
+    const treadDepth = parseFloat(document.getElementById('treadDepth').value) || 10.5;
+    const stairWidth = parseFloat(document.getElementById('stairWidth').value) || 36;
+    const stringerCount = parseInt(document.getElementById('stringerCount').value) || 3;
+    const costPerBoard = parseFloat(document.getElementById('costPerBoard').value) || 45;
+
+    if (totalRise <= 0 || desiredRise <= 0 || treadDepth <= 0) {
+      alert('Please enter valid positive numbers for rise and run.');
+      return;
+    }
+
+    const steps = Math.round(totalRise / desiredRise);
+    const actualRise = totalRise / steps;
+    const totalRun = (steps - 1) * treadDepth;
+    const stringerLength = Math.sqrt(Math.pow(totalRise, 2) + Math.pow(totalRun, 2));
+    const stringerBoards = stringerCount * Math.ceil(stringerLength / 144); // 12ft boards = 144in
+    const treadCount = steps;
+    const treadBoards = Math.ceil((treadCount * stairWidth) / 120); // assume 10ft boards
+    const totalCost = (stringerBoards + treadBoards) * costPerBoard;
+
+    document.getElementById('result-steps').textContent = steps;
+    document.getElementById('result-actualRise').textContent = actualRise.toFixed(2);
+    document.getElementById('result-totalRun').textContent = totalRun.toFixed(1);
+    document.getElementById('result-stringerLength').textContent = stringerLength.toFixed(1);
+    document.getElementById('result-stringerBoards').textContent = stringerBoards;
+    document.getElementById('result-treadBoards').textContent = treadBoards;
+    document.getElementById('result-estimatedCost').textContent = '$' + totalCost.toFixed(2);
+
+    document.getElementById('resultSection').style.display = 'block';
+
+    // Smart tip
+    const tipEl = document.getElementById('aiTip');
+    const tipText = document.getElementById('aiTipText');
+    let tip = '';
+    if (actualRise > 7.75) {
+      tip = 'Your actual riser height exceeds IRC maximum of 7.75". Consider adding one more step or reducing total rise to comply with code.';
+    } else if (actualRise < 7) {
+      tip = 'Your riser height is comfortable for most users. For shallow rises, ensure total run does not exceed available space.';
+    } else {
+      tip = 'Your stair dimensions fall within standard comfortable ranges. Verify headroom clearance of at least 6\' 8" above all treads.';
+    }
+    tipText.textContent = tip;
+    tipEl.style.display = 'block';
+  }
+
+  function resetForm() {
+    document.getElementById('totalRise').value = 106;
+    document.getElementById('desiredRise').value = 7.33;
+    document.getElementById('treadDepth').value = 10.5;
+    document.getElementById('stairWidth').value = 36;
+    document.getElementById('stringerCount').value = 3;
+    document.getElementById('costPerBoard').value = 45;
+    document.getElementById('resultSection').style.display = 'none';
+    document.getElementById('aiTip').style.display = 'none';
+  }
+  </script>
+  <script src="/js/ai-assistant.js" defer></script>
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>
