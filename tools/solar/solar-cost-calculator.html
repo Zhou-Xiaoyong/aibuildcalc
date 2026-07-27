@@ -162,7 +162,7 @@
           <div class="ai-insight-card">
             <div class="insight-icon">⚡</div>
             <div class="insight-title">Savings Estimation</div>
-            <div class="insight-desc">We estimate roughly $1,300 in annual bill offset per kW of solar. Higher local electric rates push savings — and speed up payback.</div>
+            <div class="insight-desc">We estimate roughly $210 in annual bill offset per kW of solar (about 1,200 kWh per kW at $0.17/kWh). Higher local electric rates push savings — and speed up payback.</div>
           </div>
           <div class="ai-insight-card">
             <div class="insight-icon">📍</div>
@@ -177,7 +177,7 @@
         <h2>Calculation Formula</h2>
         <div class="formula-box">Gross cost = ceil(System size * $3,000 per kW)
 Net cost = ceil(Gross cost * 0.7)  (after 30% federal tax credit)
-Annual savings = ceil(System size * $1,300 per kW)
+Annual savings = ceil(System size * $210 per kW per year)
 Payback years = ceil(Net cost / Annual savings * 10) / 10</div>
       </div>
 
@@ -366,8 +366,8 @@ Payback years = ceil(Net cost / Annual savings * 10) / 10</div>
 
         const gross = Math.ceil(systemSize * 3000);
         const net = Math.ceil(gross * 0.7);
-        const savings = Math.ceil(systemSize * 1300);
-        const payback = Math.ceil(net / savings * 10) / 10;
+        const savings = Math.ceil(systemSize * 210); // ~1,200 kWh/kW/yr x ~$0.17/kWh
+        const payback = savings > 0 ? Math.ceil(net / savings * 10) / 10 : 0;
         setResult('net', '$' + net);
         setResult('savings', '$' + savings);
         setResult('gross', '$' + gross);
@@ -411,7 +411,7 @@ Payback years = ceil(Net cost / Annual savings * 10) / 10</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

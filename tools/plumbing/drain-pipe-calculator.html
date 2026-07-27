@@ -170,7 +170,8 @@
       <div class="content-section">
         <h2>Calculation Formula</h2>
         <div class="formula-box">Drain Capacity (GPM) = 20 x Pipe Diameter (in)
-Flow Velocity (ft/s) = Capacity / (0.0408 x Diameter x Diameter)
+Flow Velocity (ft/s) = (Capacity / 448.8) / (pi x (Diameter / 24)^2)
+  where Capacity / 448.8 = cfs, pi x (Diameter / 24)^2 = flow area (sq ft)
 Pipe Length = input value</div>
       </div>
 
@@ -351,7 +352,7 @@ Pipe Length = input value</div>
 
         
         const capacity = 20 * pipeDiameter;
-        const velocity = (pipeDiameter > 0) ? capacity / (0.0408 * pipeDiameter * pipeDiameter) : 0;
+        const velocity = (pipeDiameter > 0) ? capacity / 448.8 / (Math.PI * Math.pow(pipeDiameter / 24, 2)) : 0;
         setResult('pipeLength', pipeLength.toFixed(0));
         setResult('velocity', velocity.toFixed(2));
         setResult('capacity', capacity.toFixed(0));
@@ -394,7 +395,7 @@ Pipe Length = input value</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

@@ -73,9 +73,9 @@
         <div class="tool-card-body">
           <div class="calc-form" id="calcForm">
           <div class="form-group">
-            <label for="span">Building Span <span class="unit-label">ft</span></label>
-            <span class="label-hint">Width of the building</span>
-            <input type="number" id="span" value="24" step="any" min="0" aria-label="Building Span">
+            <label for="span">Building Length (along ridge) <span class="unit-label">ft</span></label>
+            <span class="label-hint">Length of building measured along the ridge</span>
+            <input type="number" id="span" value="24" step="any" min="0" aria-label="Building Length (along ridge)">
           </div>
           <div class="form-group">
             <label for="pitch">Roof Pitch <span class="unit-label">/12</span></label>
@@ -148,7 +148,7 @@
         <h2>How to Use This Calculator</h2>
         <p>Our rafter calculator determines rafter length, plumb cut angles, and material quantities for your roof framing project.</p>
         <ol>
-          <li>Measure building span</li>
+          <li>Measure building length (along the ridge)</li>
         <li>Determine roof pitch</li>
         <li>Select rafter spacing</li>
         <li>Enter specifications</li>
@@ -186,7 +186,7 @@
         <h2>Calculation Formula</h2>
         <div class="formula-box">Rafter length = (Span / 2) / cos(arctan(pitch/12))
 Plumb cut angle = arctan(pitch/12) x (180/pi)
-Rafters = (Ridge length / Spacing) + 1</div>
+Rafters = ((Ridge length / Spacing) + 1) x 2 (both sides)</div>
       </div>
 
       <!-- Material Comparison -->
@@ -392,7 +392,7 @@ Rafters = (Ridge length / Spacing) + 1</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

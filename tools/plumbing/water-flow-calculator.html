@@ -186,8 +186,9 @@
       <!-- Formula -->
       <div class="content-section">
         <h2>Calculation Formula</h2>
-        <div class="formula-box">Hazen-Williams: Q = 0.442 x C x D^2.63 x (P/L)^0.54
-Where C = roughness, D = diameter, P = pressure, L = length</div>
+        <div class="formula-box">Flow Rate: Q = 0.442 x C x D^2.63 x (P/L)^0.54
+Pressure Loss (psi) = 4.52 x Q^1.85 / (C^1.85 x D^4.87) x L
+Where C = roughness, D = diameter (in), P = pressure (psi), L = length (ft), Q = flow (GPM)</div>
       </div>
 
       <!-- Material Comparison -->
@@ -349,7 +350,7 @@ Where C = roughness, D = diameter, P = pressure, L = length</div>
         const flowRate = 0.442 * c * Math.pow(d, 2.63) * Math.pow(pressure / pipeLength, 0.54);
         const areaSqFt = Math.PI * Math.pow(d/24, 2);
         const velocity = flowRate / (448.8 * areaSqFt);
-        const pressureLoss = (pressure * 0.4335 * pipeLength * (1/c) * Math.pow(flowRate/100, 1.85)) / 100;
+        const pressureLoss = 4.52 * Math.pow(flowRate, 1.85) / (Math.pow(c, 1.85) * Math.pow(d, 4.87)) * pipeLength;
         setResult('flowRate', flowRate.toFixed(1));
         setResult('velocity', velocity.toFixed(1));
         setResult('pressureLoss', pressureLoss.toFixed(1));
@@ -393,7 +394,7 @@ Where C = roughness, D = diameter, P = pressure, L = length</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

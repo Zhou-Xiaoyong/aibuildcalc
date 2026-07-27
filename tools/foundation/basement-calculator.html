@@ -32,7 +32,7 @@
   <script type="application/ld+json">
     [
     {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Basement Cost Calculator","description":"Free basement cost calculator. Estimate excavation volume, concrete needed, and total cost for finished or unfinished basements.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost to dig a basement?","acceptedAnswer":{"@type":"Answer","text":"Excavation for a basement typically runs $20-30 per square foot unfinished and $50-70 finished. A 40x30 ft unfinished basement costs about $30,000, while a finished one runs around $66,000."}},{"@type":"Question","name":"How much concrete is in a basement?","acceptedAnswer":{"@type":"Answer","text":"Basement walls use roughly 2 x (length + width) x wall height x (thickness / 12) / 27 cubic yards of concrete. A 40x30 ft basement with 8 ft, 8-inch walls needs about 12-13 cubic yards."}},{"@type":"Question","name":"Is a finished basement worth it?","acceptedAnswer":{"@type":"Answer","text":"Finished basements add livable square footage at about $55 per sq ft — roughly half the cost of a home addition. They typically return 70-75% of cost at resale."}}]},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost to dig a basement?","acceptedAnswer":{"@type":"Answer","text":"Excavation for a basement typically runs $20-30 per square foot unfinished and $50-70 finished. A 40x30 ft unfinished basement costs about $30,000, while a finished one runs around $66,000."}},{"@type":"Question","name":"How much concrete is in a basement?","acceptedAnswer":{"@type":"Answer","text":"Basement walls use roughly 2 x (length + width) x wall height x (thickness / 12) / 27 cubic yards of concrete. A 40x30 ft basement with 8 ft, 8-inch walls needs about 27-28 cubic yards (140 ft perimeter x 8 ft x 0.67 ft / 27)."}},{"@type":"Question","name":"Is a finished basement worth it?","acceptedAnswer":{"@type":"Answer","text":"Finished basements add livable square footage at about $55 per sq ft — roughly half the cost of a home addition. They typically return 70-75% of cost at resale."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Foundation","item":"https://aibuildcalc.com/tools/foundation/"},{"@type":"ListItem","position":3,"name":"Basement Cost Calculator","item":"https://aibuildcalc.com/tools/foundation/basement-calculator.html"}]}
   ]
   </script>
@@ -164,7 +164,7 @@
           <div class="ai-insight-card">
             <div class="insight-icon">🏗️</div>
             <div class="insight-title">Concrete Wall Estimate</div>
-            <div class="insight-desc">Our model uses 8-inch poured walls at 8 ft tall — the standard basement wall. Thicker walls or deeper pours add concrete and forming cost.</div>
+            <div class="insight-desc">Our model uses 8-inch poured walls at your excavation depth (8 ft is the standard basement wall). Thicker walls or deeper pours add concrete and forming cost.</div>
           </div>
           <div class="ai-insight-card">
             <div class="insight-icon">🎨</div>
@@ -226,7 +226,7 @@ Estimated cost = ceil(House length x House width x Cost per sq ft)</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">How much concrete is in a basement?</div>
-          <div class="faq-answer">Basement walls use roughly 2 x (length + width) x wall height x (thickness / 12) / 27 cubic yards of concrete. A 40x30 ft basement with 8 ft, 8-inch walls needs about 12-13 cubic yards.</div>
+          <div class="faq-answer">Basement walls use roughly 2 x (length + width) x wall height x (thickness / 12) / 27 cubic yards of concrete. A 40x30 ft basement with 8 ft, 8-inch walls needs about 27-28 cubic yards (140 ft perimeter x 8 ft x 0.67 ft / 27).</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">Is a finished basement worth it?</div>
@@ -368,7 +368,8 @@ Estimated cost = ceil(House length x House width x Cost per sq ft)</div>
         }
 
         const excavation = houseLength * houseWidth * depth / 27;
-        const concrete = 2 * (houseLength + houseWidth) * 8 * (8 / 12) / 27;
+        const wallHeight = depth > 0 ? depth : 8; // wall height follows excavation depth
+        const concrete = 2 * (houseLength + houseWidth) * wallHeight * (8 / 12) / 27;
         const costPerSqFt = finishLevel === 'Finished' ? 55 : 25;
         const cost = Math.ceil(houseLength * houseWidth * costPerSqFt);
         setResult('concrete', concrete.toFixed(1));
@@ -414,7 +415,7 @@ Estimated cost = ceil(House length x House width x Cost per sq ft)</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

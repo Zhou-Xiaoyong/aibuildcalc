@@ -186,7 +186,7 @@
         <div class="formula-box">Wall area = 2 x (L + W) x H
 Gallons = Wall area x 2 coats / 350
 DIY = Gallons x Price + $75 supplies
-Pro = Wall area x $2.50/sqft</div>
+Pro = Wall area x $2.00/sqft</div>
       </div>
 
       <!-- Material Comparison -->
@@ -366,7 +366,7 @@ Pro = Wall area x $2.50/sqft</div>
         const gallonsNeeded = Math.ceil((wallArea * 2) / 350);
         const pricePerGal = paintQuality.includes('Economy') ? 25 : paintQuality.includes('Standard') ? 40 : 60;
         const diyCost = Math.round((gallonsNeeded * pricePerGal + 75) * 100) / 100;
-        const proCost = Math.round(wallArea * 2.5 * 100) / 100;
+        const proCost = Math.round(wallArea * 2.0 * 100) / 100; // ~$2 per sq ft professional labor+paint
         setResult('wallArea', wallArea.toFixed(0));
         setResult('gallonsNeeded', gallonsNeeded);
         setResult('diyCost', '$' + diyCost.toFixed(0));
@@ -412,7 +412,7 @@ Pro = Wall area x $2.50/sqft</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

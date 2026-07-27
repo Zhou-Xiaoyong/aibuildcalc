@@ -174,7 +174,7 @@
         <h2>Calculation Formula</h2>
         <div class="formula-box">Blocks per row = Ceiling(Wall length × 12 / Block length)
 Rows = Ceiling(Wall height × 12 / Block height)
-Total blocks = Blocks per row × Rows
+Total blocks = Ceiling(Blocks per row × Rows × 1.05)  [+5% waste]
 Cap blocks = Blocks per row
 Estimated cost = Total blocks × $3.00/block</div>
       </div>
@@ -359,7 +359,7 @@ Estimated cost = Total blocks × $3.00/block</div>
         
         const blocksPerRow = Math.ceil(wallLength * 12 / blockLength);
         const rows = Math.ceil(wallHeight * 12 / blockHeight);
-        const blocks = blocksPerRow * rows;
+        const blocks = Math.ceil(blocksPerRow * rows * 1.05); // +5% waste
         const caps = blocksPerRow;
         const cost = Math.ceil(blocks * 3);
         setResult('caps', caps);
@@ -405,7 +405,7 @@ Estimated cost = Total blocks × $3.00/block</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

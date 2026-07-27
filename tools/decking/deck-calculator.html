@@ -193,7 +193,7 @@
       <div class="content-section">
         <h2>Calculation Formula</h2>
         <div class="formula-box">Area = L x W
-Boards = ((W x 12) / Board width) x (L + 1)
+Boards = ceil((W x 12 / Board width) x L x 1.10)  [+10% waste]
 Joists = (L x 12 / Joist spacing) + 1</div>
       </div>
 
@@ -375,7 +375,7 @@ Joists = (L x 12 / Joist spacing) + 1</div>
         const deckArea = deckLength * deckWidth;
         const boardW = parseFloat(boardWidth) || 5.5;
         const boardsPerRow = Math.ceil((deckWidth * 12) / boardW);
-        const boards = Math.ceil(boardsPerRow * (deckLength + 1)); // +10% waste approx
+        const boards = Math.ceil(boardsPerRow * deckLength * 1.10); // +10% waste
         const joistSp = parseInt(joistSpacing) || 16;
         const joists = Math.ceil((deckLength * 12) / joistSp) + 1;
         const footings = Math.max(4, Math.ceil(joists / 2));
@@ -427,7 +427,7 @@ Joists = (L x 12 / Joist spacing) + 1</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

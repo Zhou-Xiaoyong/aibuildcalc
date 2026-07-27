@@ -32,7 +32,7 @@
   <script type="application/ld+json">
     [
     {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Stud Calculator","description":"Free stud calculator. Estimate studs for wall framing based on wall length, spacing, and openings.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far apart should wall studs be?","acceptedAnswer":{"@type":"Answer","text":"16\" on center for load-bearing walls, 24\" for non-load-bearing interior walls."}},{"@type":"Question","name":"How many studs for a 20-foot wall?","acceptedAnswer":{"@type":"Answer","text":"About 16 field studs + 6 extra for corners and plates = about 22 studs total with 16\" spacing."}}]},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How far apart should wall studs be?","acceptedAnswer":{"@type":"Answer","text":"16\" on center for load-bearing walls, 24\" for non-load-bearing interior walls."}},{"@type":"Question","name":"How many studs for a 20-foot wall?","acceptedAnswer":{"@type":"Answer","text":"With 16\" spacing and no openings: about 16 field studs + 6 extra for corners = 22 studs. Each door or window adds about 4 more studs (king + jack studs)."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Framing & Structure","item":"https://aibuildcalc.com/tools/framing/"},{"@type":"ListItem","position":3,"name":"Stud Calculator","item":"https://aibuildcalc.com/tools/framing/stud-calculator.html"}]}
   ]
   </script>
@@ -191,7 +191,7 @@
       <div class="content-section">
         <h2>Calculation Formula</h2>
         <div class="formula-box">Field studs = (Wall length / Spacing) + 1
-Extra studs = 3 per corner + 2 per opening + 2 per header
+Extra studs = 6 (corners &amp; wall ends) + 4 per door + 4 per window (king + jack studs)
 Plates = Wall length x 3 / Board length</div>
       </div>
 
@@ -215,7 +215,7 @@ Plates = Wall length x 3 / Board length</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">How many studs for a 20-foot wall?</div>
-          <div class="faq-answer">About 16 field studs + 6 extra for corners and plates = about 22 studs total with 16&quot; spacing.</div>
+          <div class="faq-answer">With 16&quot; spacing and no openings: about 16 field studs + 6 extra for corners = 22 studs. Each door or window adds about 4 more studs (king + jack studs), so a wall with 1 door and 2 windows needs about 34.</div>
         </div>
       </div>
 
@@ -398,7 +398,7 @@ Plates = Wall length x 3 / Board length</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

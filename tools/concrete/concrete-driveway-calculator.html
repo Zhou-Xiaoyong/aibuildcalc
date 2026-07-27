@@ -362,7 +362,7 @@ Estimated cost = ceil(Cubic yards x $6)</div>
         const cy = volume / 27;
         const bags = Math.ceil(volume / 0.6);
         const rebarMats = Math.ceil((length * width) / (8 * 8));
-        const cost = Math.ceil(cy * 6);
+        const cost = Math.ceil(cy * 140); // ~$140 per cubic yard ready-mix
         setResult('cubicYards', cy.toFixed(2));
         setResult('bags', bags);
         setResult('rebarMats', rebarMats);
@@ -407,7 +407,7 @@ Estimated cost = ceil(Cubic yards x $6)</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

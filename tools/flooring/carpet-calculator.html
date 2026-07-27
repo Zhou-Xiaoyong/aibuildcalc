@@ -375,7 +375,7 @@ Padding = Sq yards</div>
         const padding = sqYards;
         const pricePerYd = carpetPrice.includes('$3') ? 3 : carpetPrice.includes('$5') ? 5 : carpetPrice.includes('$8') ? 8 : 12;
         const estimatedCost = Math.round(sqYards * pricePerYd * 100) / 100;
-        const installCost = Math.round(area * 3 * 100) / 100;
+        const installCost = Math.round(area * 4 * 100) / 100; // ~$2.5 material + $1.5 install per sq ft
         setResult('area', area.toFixed(0));
         setResult('sqYards', sqYards);
         setResult('padding', padding);
@@ -422,7 +422,7 @@ Padding = Sq yards</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

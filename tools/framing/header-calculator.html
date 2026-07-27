@@ -172,9 +172,9 @@
         <h2>Calculation Formula</h2>
         <div class="formula-box">Header depth (in) = Bearing: &lt; 4 ft → 4 | &lt; 6 ft → 6 | else → 8
 Non-bearing: always 4
-Lumber pieces = 2 (doubled header)
+Lumber pieces = 2 for 2x4 wall, 3 for 2x6 wall (based on wall thickness)
 Jack studs = opening &lt; 5 ft → 1 per side | else → 2 per side
-Header size = 2 x [depth] (double)</div>
+Header size = [pieces] x [depth] (double or triple)</div>
       </div>
 
       <!-- Material Comparison -->
@@ -355,9 +355,9 @@ Header size = 2 x [depth] (double)</div>
 
         
         const headerDepth = loadBearing === 'Bearing' ? (openingWidth < 4 ? 4 : openingWidth < 6 ? 6 : 8) : 4;
-        const pieces = 2;
+        const pieces = wallThickness <= 4 ? 2 : 3; // 2x4 wall = double header, 2x6 wall = triple header
         const jackStuds = openingWidth < 5 ? 1 : 2;
-        const headerSize = '2 x ' + headerDepth + ' (double)';
+        const headerSize = pieces + ' x ' + headerDepth + (pieces === 2 ? ' (double)' : ' (triple)');
         setResult('pieces', pieces);
         setResult('jackStuds', jackStuds);
         setResult('headerSize', headerSize);
@@ -400,7 +400,7 @@ Header size = 2 x [depth] (double)</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

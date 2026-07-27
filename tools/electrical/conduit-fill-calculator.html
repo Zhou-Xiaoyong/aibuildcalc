@@ -180,7 +180,7 @@
         <div class="formula-box">Wire area (sq in): 12 AWG = 0.0133, 10 AWG = 0.0211, 8 AWG = 0.0366
 Conduit area (sq in): 1/2 in EMT = 0.122, 3/4 in EMT = 0.213, 1 in EMT = 0.344
 Fill % = (Wire area x Wire count) / Conduit area x 100
-Status = OK if fill &lt;= 31%, otherwise Overfill</div>
+Status = OK if fill &lt;= NEC limit (53% for 1 wire, 31% for 2 wires, 40% for 3+ wires), otherwise Overfill</div>
       </div>
 
       <!-- Material Comparison -->
@@ -362,7 +362,8 @@ Status = OK if fill &lt;= 31%, otherwise Overfill</div>
         const wireArea = wireGauge === '12 AWG' ? 0.0133 : wireGauge === '10 AWG' ? 0.0211 : 0.0366;
         const conduitArea = conduitType === '1/2 in EMT' ? 0.122 : conduitType === '3/4 in EMT' ? 0.213 : 0.344;
         const fillPercentage = conduitArea > 0 ? wireArea * wireCount / conduitArea * 100 : 0;
-        const status = fillPercentage <= 31 ? 'OK' : 'Overfill';
+        const maxFill = wireCount === 1 ? 53 : (wireCount === 2 ? 31 : 40);
+        const status = fillPercentage <= maxFill ? 'OK' : 'Overfill';
         const conduitSize = conduitType.replace(' in EMT', '');
         setResult('conduitSize', conduitSize);
         setResult('status', status);
@@ -406,7 +407,7 @@ Status = OK if fill &lt;= 31%, otherwise Overfill</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

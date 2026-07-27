@@ -367,16 +367,18 @@ Minimum gauge based on NEC Table 310.16</div>
         // Check voltage drop and upgrade if needed
         const gauges = ['14', '12', '10', '8', '6', '4', '2', '1/0', '2/0', '4/0'];
         let startIdx = gauges.indexOf(gauge);
+        let chosenGauge = null;
         for (let i = startIdx; i < gauges.length; i++) {
           const res = wireResistances[gauges[i]] || 0.1;
           const vDrop = (2 * len * amp * res) / 1000;
           const dropPct = vDrop / volt;
           if (dropPct <= maxDropPct) {
-            gauge = gauges[i];
+            chosenGauge = gauges[i];
             break;
           }
-          gauge = gauges[i];
         }
+        // If no gauge meets the voltage-drop limit, fall back to the largest gauge
+        gauge = chosenGauge || gauges[gauges.length - 1];
         const res = wireResistances[gauge] || 0.1;
         const actualDrop = (2 * len * amp * res) / 1000;
         const actualDropPct = (actualDrop / volt * 100);
@@ -427,7 +429,7 @@ Minimum gauge based on NEC Table 310.16</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

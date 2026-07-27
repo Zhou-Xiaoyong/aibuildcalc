@@ -169,9 +169,9 @@
       <div class="content-section">
         <h2>Calculation Formula</h2>
         <div class="formula-box">Coverage = Drywall 300 | Bare Wood 200 | Patched 250 (sq ft/gal)
-Gallons = ceil(Wall Area / Coverage x 10) / 10
-Quarts = ceil((Wall Area mod Coverage) / 100)
-Cost = ceil(Gallons x $25)</div>
+Gallons = floor(Wall Area / Coverage)
+Quarts = ceil((Wall Area / Coverage - Gallons) x 4)
+Cost = ceil((Gallons + Quarts/4) x $25)</div>
       </div>
 
       <!-- Material Comparison -->
@@ -351,9 +351,11 @@ Cost = ceil(Gallons x $25)</div>
         }
 
         const coverage = surfaceType === 'Drywall' ? 300 : surfaceType === 'Bare Wood' ? 200 : 250;
-        const gallons = Math.ceil(wallArea / coverage * 10) / 10;
-        const quarts = Math.ceil((wallArea % coverage) / 100);
-        const cost = Math.ceil(gallons * 25);
+        const gallonsExact = wallArea / coverage;
+        let gallons = Math.floor(gallonsExact);
+        let quarts = Math.ceil((gallonsExact - gallons) * 4);
+        if (quarts >= 4) { gallons += 1; quarts = 0; }
+        const cost = Math.ceil((gallons + quarts / 4) * 25);
         setResult('gallons', gallons.toFixed(1));
         setResult('quarts', quarts);
         setResult('estimatedCost', '$' + cost);
@@ -395,7 +397,7 @@ Cost = ceil(Gallons x $25)</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

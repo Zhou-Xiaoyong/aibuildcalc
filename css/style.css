@@ -1337,3 +1337,7 @@ img { max-width: 100%; height: auto; }
   background: #fef7e0; border-left: 4px solid var(--accent);
   padding: 14px 18px; border-radius: 6px; margin: 16px 0; font-size: 0.9375rem; color: var(--text);
 }
+
+/* Related guide box (backlink from tools to blog) */
+.related-guide-box{margin:18px 0;padding:10px 14px;border-left:3px solid #2e7d32;background:#f4faf4;font-size:14px;border-radius:4px}
+.related-guide-box a{font-weight:600;color:#1b5e20;text-decoration:none}

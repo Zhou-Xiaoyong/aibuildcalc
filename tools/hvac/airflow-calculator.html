@@ -171,7 +171,7 @@
         <h2>Calculation Formula</h2>
         <div class="formula-box">Duct Area (sq ft) = pi x (Diameter / 2)^2 / 144
 CFM = Duct Area x Velocity
-Friction Loss = ceil(Duct Length x 0.06 x Velocity / 1000 x 100) / 100 (in w.g.)</div>
+Friction Loss = Duct Length x 0.1 / 100 (in w.g.)  [simplified estimate: ~0.1 in w.c. per 100 ft]</div>
       </div>
 
       <!-- Material Comparison -->
@@ -354,7 +354,7 @@ Friction Loss = ceil(Duct Length x 0.06 x Velocity / 1000 x 100) / 100 (in w.g.)
         
         const area = 3.14159 * (ductDiameter / 2) * (ductDiameter / 2) / 144;
         const cfm = area * velocity;
-        const frictionLoss = Math.ceil(ductLength * 0.06 * velocity / 1000 * 100) / 100;
+        const frictionLoss = ductLength * 0.1 / 100; // simplified estimate: ~0.1 in w.c. per 100 ft
         setResult('airVelocity', Math.round(velocity).toLocaleString());
         setResult('cfm', Math.round(cfm).toLocaleString());
         setResult('frictionLoss', frictionLoss.toFixed(2));
@@ -397,7 +397,7 @@ Friction Loss = ceil(Duct Length x 0.06 x Velocity / 1000 x 100) / 100 (in w.g.)
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

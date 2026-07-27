@@ -206,7 +206,7 @@
         <div class="formula-box">Wall area = 2 x (L + W) x H
 Sheets = Total area / Sheet area + 10% waste
 Screws ~ 32 per sheet
-Mud ~ 0.05 gal/sq ft</div>
+Mud ~ 0.02 gal/sq ft</div>
       </div>
 
       <!-- Material Comparison -->
@@ -366,8 +366,8 @@ Mud ~ 0.05 gal/sq ft</div>
         const sheetArea = sheetParts[0] * sheetParts[1];
         const sheets = Math.ceil((totalArea * 1.1) / sheetArea);
         const screws = sheets * 32;
-        const mud = Math.ceil(totalArea * 0.05);
-        const tape = Math.ceil(totalArea * 1.2);
+        const mud = Math.ceil(totalArea * 0.02);
+        const tape = Math.ceil(totalArea * 1.3);
         const estimatedCost = Math.round(sheets * 12 * 100) / 100;
         setResult('totalArea', totalArea.toFixed(0));
         setResult('sheets', sheets);
@@ -419,7 +419,7 @@ Mud ~ 0.05 gal/sq ft</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

@@ -179,7 +179,7 @@
       <!-- Formula -->
       <div class="content-section">
         <h2>Calculation Formula</h2>
-        <div class="formula-box">Effective Roll = Roll Width x Roll Length x (1 - 0.06)
+        <div class="formula-box">Effective Roll = Roll Width x Roll Length x (1 - Overlap / (Roll Width x 12))
 Needed = Floor Area x 1.1
 Rolls = ceil(Needed / Effective Roll)
 Tape = ceil(Needed / 10)
@@ -364,7 +364,8 @@ Poly Sheets = ceil(Needed)</div>
           if (el) el.textContent = value;
         }
 
-        const effectiveRoll = rollWidth * rollLength * (1 - 0.06);
+        const overlapFactor = 1 - (overlap / (rollWidth * 12));
+        const effectiveRoll = rollWidth * rollLength * overlapFactor;
         const needed = floorArea * 1.1;
         const rolls = Math.ceil(needed / effectiveRoll);
         const tape = Math.ceil(needed / 10);
@@ -414,7 +415,7 @@ Poly Sheets = ceil(Needed)</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

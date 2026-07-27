@@ -361,6 +361,7 @@ Estimated Cost = ceil(frameFt × 4)</div>
         setResult('boards', boards);
         setResult('hardware', hardware);
         setResult('frameFt', frameFt.toFixed(1));
+        setResult('estimatedCost', '$' + estimatedCost);
         document.getElementById('resultSection').classList.add('show');
         document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         generateAITip();
@@ -400,7 +401,7 @@ Estimated Cost = ceil(frameFt × 4)</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

@@ -359,8 +359,8 @@ Roof area = Panels * 18 sq ft per panel</div>
         }
 
         const dailyKwh = monthlyUsage / 30;
-        const systemKw = Math.ceil(dailyKwh / sunHours / 0.8 * 10) / 10;
-        const panels = Math.ceil(systemKw * 1000 / panelWattage);
+        const systemKw = sunHours > 0 ? Math.ceil(dailyKwh / sunHours / 0.8 * 10) / 10 : 0;
+        const panels = panelWattage > 0 ? Math.ceil(systemKw * 1000 / panelWattage) : 0;
         const roofArea = panels * 18;
         setResult('panels', panels);
         setResult('systemSize', systemKw.toFixed(1));
@@ -404,7 +404,7 @@ Roof area = Panels * 18 sq ft per panel</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

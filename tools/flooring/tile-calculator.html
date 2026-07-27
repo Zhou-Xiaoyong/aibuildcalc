@@ -99,7 +99,6 @@
             <select id="waste" aria-label="Waste Factor">
               <option value="5%">5%</option>
               <option value="10%" selected>10%</option>
-              <option value="10%" >10%</option>
               <option value="15%" >15%</option>
             </select>
           </div>
@@ -122,7 +121,7 @@
           </div>
           <div class="result-details">
           <div class="result-detail">
-            <div class="detail-label">Boxes (10 per box)</div>
+            <div class="detail-label">Boxes (10 sq ft per box typical)</div>
             <div class="detail-value" id="result-boxesNeeded">—</div>
             <div class="detail-unit">boxes</div>
           </div>
@@ -388,7 +387,8 @@ Grout ~ 1 lb per 15 sq ft</div>
         const tileAreaSqFt = (tileSizeParts[0] * tileSizeParts[1]) / 144;
         const wastePercent = parseInt(waste) / 100;
         const tilesNeeded = Math.ceil((area / tileAreaSqFt) * (1 + wastePercent));
-        const boxesNeeded = Math.ceil(tilesNeeded / 10);
+        const areaWithWaste = area * (1 + wastePercent);
+        const boxesNeeded = Math.ceil(areaWithWaste / 10);
         const groutNeeded = Math.ceil(area / 15);
         const estimatedCost = Math.round(boxesNeeded * 25 * 100) / 100;
         setResult('area', area.toFixed(0));
@@ -438,7 +438,7 @@ Grout ~ 1 lb per 15 sq ft</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

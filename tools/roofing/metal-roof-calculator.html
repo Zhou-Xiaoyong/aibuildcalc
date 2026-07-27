@@ -184,7 +184,7 @@
 Roof area = Length x Width x Pitch factor
 Panel coverage (ft) = Panel width (in) / 12
 Panels = ceil(Roof area / (Panel coverage x 10))
-Linear feet = Panels x Roof length
+Linear feet = Panels x (Roof length x Pitch factor)
 Estimated cost = ceil(Roof area x $7/sq ft)</div>
       </div>
 
@@ -370,8 +370,9 @@ Estimated cost = ceil(Roof area x $7/sq ft)</div>
         const pitchFactor = Math.sqrt(pitch * pitch + 144) / 12;
         const roofArea = roofLength * roofWidth * pitchFactor;
         const panelCoverageFt = panelWidth / 12;
-        const panels = Math.ceil(roofArea / (panelCoverageFt * 10)); // 10 ft panel length
-        const linearFeet = panels * roofLength;
+        const PANEL_LENGTH = 10; // ft standard metal panel length
+        const panels = Math.ceil(roofArea / (panelCoverageFt * PANEL_LENGTH));
+        const linearFeet = panels * (roofLength * pitchFactor); // slope length
         const estimatedCost = Math.ceil(roofArea * 7); // ~$7/sq ft installed
         setResult('roofArea', roofArea.toFixed(0));
         setResult('linearFeet', linearFeet.toFixed(0));
@@ -418,7 +419,7 @@ Estimated cost = ceil(Roof area x $7/sq ft)</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>

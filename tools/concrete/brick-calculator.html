@@ -32,7 +32,7 @@
   <script type="application/ld+json">
     [
     {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Brick Calculator","description":"Free brick calculator. Estimate the number of bricks, mortar bags, and sand needed for your brick wall project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many bricks do I need per square foot?","acceptedAnswer":{"@type":"Answer","text":"A standard modular brick (8\" x 2.25\" with a 3/8\" mortar joint) covers about 7 bricks per square foot of wall area."}},{"@type":"Question","name":"How much mortar do I need for 1000 bricks?","acceptedAnswer":{"@type":"Answer","text":"Approximately 33 bags of 80 lb premixed mortar are required to lay 1000 standard bricks, plus about 1 cubic yard of masonry sand."}},{"@type":"Question","name":"What waste factor should I add for bricks?","acceptedAnswer":{"@type":"Answer","text":"A 5% waste factor is standard for straight walls. Use 10-15% for walls with many cuts, corners, or openings."}}]},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many bricks do I need per square foot?","acceptedAnswer":{"@type":"Answer","text":"A standard modular brick (8\" x 2.25\" with a 3/8\" mortar joint) covers about 7 bricks per square foot of wall area."}},{"@type":"Question","name":"How much mortar do I need for 1000 bricks?","acceptedAnswer":{"@type":"Answer","text":"Approximately 71 bags of 80 lb premixed mortar are required to lay 1000 standard bricks, plus about 1 cubic yard of masonry sand."}},{"@type":"Question","name":"What waste factor should I add for bricks?","acceptedAnswer":{"@type":"Answer","text":"A 5% waste factor is standard for straight walls. Use 10-15% for walls with many cuts, corners, or openings."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Concrete & Masonry","item":"https://aibuildcalc.com/tools/concrete/"},{"@type":"ListItem","position":3,"name":"Brick Calculator","item":"https://aibuildcalc.com/tools/concrete/brick-calculator.html"}]}
   ]
   </script>
@@ -171,7 +171,7 @@
           <div class="ai-insight-card">
             <div class="insight-icon">🪣</div>
             <div class="insight-title">Mortar Yield Optimization</div>
-            <div class="insight-desc">One 80 lb bag of premixed mortar lays roughly 30 standard bricks. Field conditions and joint depth can shift yield by 10-15%.</div>
+            <div class="insight-desc">One 80 lb bag of premixed mortar lays roughly 14 standard bricks. Field conditions and joint depth can shift yield by 10-15%.</div>
           </div>
           <div class="ai-insight-card">
             <div class="insight-icon">📏</div>
@@ -189,7 +189,7 @@ Effective height = Brick height + Mortar joint (in)
 Bricks per sq ft = 144 / (Effective width x Effective height)
 Wall area = Wall length x Wall height (sq ft)
 Bricks = ceil(Wall area x Bricks per sq ft x 1.05) (5% waste)
-Mortar bags = ceil(Bricks / 30)
+Mortar bags = ceil(Bricks / 14)
 Sand (cu yd) = ceil(Bricks / 500)</div>
       </div>
 
@@ -236,7 +236,7 @@ Sand (cu yd) = ceil(Bricks / 500)</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">How much mortar do I need for 1000 bricks?</div>
-          <div class="faq-answer">Approximately 33 bags of 80 lb premixed mortar are required to lay 1000 standard bricks, plus about 1 cubic yard of masonry sand.</div>
+          <div class="faq-answer">Approximately 71 bags of 80 lb premixed mortar are required to lay 1000 standard bricks, plus about 1 cubic yard of masonry sand.</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">What waste factor should I add for bricks?</div>
@@ -377,7 +377,7 @@ Sand (cu yd) = ceil(Bricks / 500)</div>
         const bricksPerSqFt = 144 / (effW * effH);
         const area = wallLength * wallHeight;
         const bricks = Math.ceil(area * bricksPerSqFt * 1.05); // 5% waste
-        const mortarBags = Math.ceil(bricks / 30);
+        const mortarBags = Math.ceil(bricks / 14);
         const sand = Math.ceil(bricks / 500);
         setResult('bricks', bricks);
         setResult('mortarBags', mortarBags);
@@ -425,7 +425,7 @@ Sand (cu yd) = ceil(Bricks / 500)</div>
       if (e.key === 'Enter') calculate();
     });
   </script>
-  <script src="/js/ai-assistant.js" defer></script>
+  
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
 </body>
