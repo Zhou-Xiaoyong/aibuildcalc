@@ -20,3 +20,6 @@ Thumbs.db
 .env.*
 *.key
 *.pem
+
+# Local agent workspace (memory, automation logs, generator scripts)
+.workbuddy/
