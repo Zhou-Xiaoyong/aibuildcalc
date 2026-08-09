@@ -1,9 +1,13 @@
+# 站点使用 Cloudflare Pages 的干净 URL（无 .html 后缀）。
+# 注意：页面请求路径不含 .html，因此不要再写 /*.html 规则——它永远匹配不到。
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Cache-Control: public, max-age=3600, must-revalidate
 
+# 以下更具体的规则会覆盖上面 /* 的 Cache-Control
 /css/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -12,6 +16,3 @@
 
 /images/*
   Cache-Control: public, max-age=604800
-
-/*.html
-  Cache-Control: public, max-age=86400
