@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calculate Concrete Stairs | AIBuildCalc</title>
+  <meta name="description" content="How to calculate concrete stairs: set rise and run, apply the step-volume formula, add the landing and waist slab, and get cubic yards or bag counts.">
+  <link rel="canonical" href="https://aibuildcalc.com/blog/how-to-calculate-concrete-stairs">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to Calculate Concrete Stairs">
+  <meta property="og:description" content="Step-by-step method for calculating concrete stair volume from rise, run, tread count and width, including the waist slab and landing.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aibuildcalc.com/blog/how-to-calculate-concrete-stairs">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Calculate Concrete Stairs">
+  <meta name="twitter:description" content="Step-by-step method for calculating concrete stair volume from rise, run, tread count and width, including the waist slab and landing.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Calculate Concrete Stairs",
+    "description": "How to calculate concrete stairs: set rise and run, apply the step-volume formula, add the landing and waist slab, and get cubic yards or bag counts.",
+    "author": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
+    "publisher": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
+    "datePublished": "2026-08-10",
+    "dateModified": "2026-08-10",
+    "mainEntityOfPage": "https://aibuildcalc.com/blog/how-to-calculate-concrete-stairs"
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aibuildcalc.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Calculate Concrete Stairs","item":"https://aibuildcalc.com/blog/how-to-calculate-concrete-stairs"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog/">Blog</a> <span>&rsaquo;</span> Calculating Concrete Stairs
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <article class="report-article">
+        <h1>How to Calculate Concrete Stairs</h1>
+        <div class="research-meta">Published August 2026 &middot; 8 min read &middot; By AIBuildCalc</div>
+
+        <p class="report-lead">Concrete stairs are one of the few pours where the geometry is not obvious, and guessing usually means you are short. The good news is that a straight flight reduces to a single clean formula once you have fixed the rise and run. This guide walks through setting the step dimensions, calculating the stepped volume, adding the supporting waist slab and landing, and converting to cubic yards or bags.</p>
+
+        <div class="callout">
+          <strong>Quick answer:</strong> For a straight flight, total step volume equals width x run x rise x N(N+1)/2, where N is the number of risers. Add the waist slab and any landing, then add 10% waste. The <a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a> does all of it for you.
+        </div>
+
+        <h2>Step 1: fix the rise and run</h2>
+        <p>Everything downstream depends on these two numbers, so settle them first. Measure the total vertical height from the finished lower surface to the finished upper surface. That is your total rise.</p>
+        <div class="formula-box">Number of risers N = round( Total rise / Target riser height )
+Actual riser height = Total rise / N
+Total run = (N - 1) x Tread depth        [flush-with-landing flight]</div>
+        <p>Typical US residential code allows a maximum riser of about 7-3/4 inches and requires a tread depth of at least 10 inches, with all risers within roughly 3/8 inch of each other. Exterior stairs are often built to a gentler 6 to 7 inch rise with an 11 to 12 inch tread. Always confirm the figures that apply in your jurisdiction before forming.</p>
+        <p><strong>Worked example:</strong> a 49-inch total rise. 49 / 7 = 7 risers exactly, so each riser is 7 inches. With an 11-inch tread and the top step flush with the landing, the total run is 6 x 11 = 66 inches, or 5 feet 6 inches of horizontal space.</p>
+
+        <h2>Step 2: calculate the stepped volume</h2>
+        <p>The trick is to picture each step as a rectangular block sitting on the one below it. Counting from the top down, the first block is one riser tall, the second is two risers tall, and so on. Summing that series gives a compact formula:</p>
+        <div class="formula-box">Step volume (cu ft) = Width x Run x Rise x [ N x (N + 1) / 2 ]
+
+  where Width, Run and Rise are all in FEET
+
+Example: 4 ft wide, 7 risers, rise 7 in (0.583 ft), run 11 in (0.917 ft)
+  Series term = 7 x 8 / 2 = 28
+  Volume = 4 x 0.917 x 0.583 x 28 = 59.9 cu ft
+  Cubic yards = 59.9 / 27 = 2.22 cu yd</div>
+        <p>This is the solid-fill figure &mdash; it assumes the space under the stairs is completely filled with concrete, which is how most short exterior stoops are actually built on compacted fill or a gravel base.</p>
+
+        <h2>Step 3: add the waist slab, if the flight is suspended</h2>
+        <p>If the stairs span between two supports rather than sitting on grade, they need a structural slab underneath, called the waist or throat. Its volume is a simple sloped rectangle:</p>
+        <div class="formula-box">Slope length = sqrt( Total rise^2 + Total run^2 )
+Waist volume (cu ft) = Slope length x Width x Waist thickness
+
+Example: rise 4.08 ft, run 5.5 ft, width 4 ft, waist 6 in
+  Slope length = sqrt(16.6 + 30.3) = 6.85 ft
+  Waist volume = 6.85 x 4 x 0.5 = 13.7 cu ft = 0.51 cu yd</div>
+        <p>A suspended flight also needs designed reinforcement. Waist thickness and bar layout should come from a structural engineer, not from a rule of thumb.</p>
+
+        <h2>Step 4: add landings and footings</h2>
+        <p>Landings are ordinary slabs: length x width x thickness / 27. A 4 x 4 ft landing at 5 inches thick is 4 x 4 x 0.417 / 27 = 0.25 cubic yards. Most exterior stair flights also sit on a footing at the bottom, sized to local frost depth. Add each element separately and total them at the end.</p>
+
+        <h2>Step 5: convert to yards, bags, and cost</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Item</th><th>Volume</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Steps (7 risers, 4 ft wide)</td><td>2.22 cu yd</td><td>Solid fill on grade</td></tr>
+              <tr><td>Landing 4 x 4 ft at 5 in</td><td>0.25 cu yd</td><td>Top platform</td></tr>
+              <tr><td>Subtotal</td><td>2.47 cu yd</td><td>&mdash;</td></tr>
+              <tr><td>Plus 10% waste</td><td><strong>2.72 cu yd</strong></td><td>Order 3 yards of ready-mix</td></tr>
+              <tr><td>Equivalent 80 lb bags</td><td>~124 bags</td><td>0.022 cu yd yield per bag</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>At roughly 2.7 cubic yards, this job is firmly in ready-mix territory. Mixing 124 bags by hand is a long day for a crew and risks cold joints between lifts. Expect $150 to $220 per cubic yard delivered in most 2026 US markets, plus a short-load fee under about 4 yards.</p>
+
+        <h2>Common mistakes</h2>
+        <ul>
+          <li><strong>Counting treads instead of risers.</strong> A flight always has one more riser than tread when the top step is flush with the landing. Using the wrong count throws the series term off by a full step.</li>
+          <li><strong>Mixing inches and feet.</strong> Convert rise and run to feet before multiplying, or divide the final cubic-inch figure by 1,728.</li>
+          <li><strong>Forgetting the form gain.</strong> Forms bow slightly under load; 10% waste is a minimum on stairs, and 15% is safer on wide flights.</li>
+          <li><strong>Ignoring the nosing.</strong> A 1-inch nosing adds a small amount of volume but changes your tread depth for code purposes.</li>
+          <li><strong>Skipping the base.</strong> Stairs on grade still need 4 to 6 inches of compacted gravel underneath for drainage.</li>
+        </ul>
+
+        <h2>Check your numbers</h2>
+        <p>Enter your total rise, tread depth, width, and landing size into the <a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a> for an instant volume, bag count, and cost estimate. If your project includes a block retaining wall alongside the stairs, size that separately with the <a href="/tools/concrete/block-calculator">Concrete Block Calculator</a>.</p>
+
+
+        <div class="content-section">
+          <h2>Related Calculators</h2>
+          <div class="related-tools">
+            <a href="/tools/concrete/concrete-stairs-calculator" class="related-tool-card"><div><div class="tool-name">Concrete Stairs Calculator</div></div></a>
+            <a href="/tools/concrete/block-calculator" class="related-tool-card"><div><div class="tool-name">Concrete Block Calculator</div></div></a>
+            <a href="/tools/concrete/brick-calculator" class="related-tool-card"><div><div class="tool-name">Brick Calculator</div></div></a>
+            <a href="/tools/concrete/" class="related-tool-card"><div><div class="tool-name">All Concrete &amp; Masonry Calculators</div></div></a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300&times;250)</div>
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+        </ul>
+      </div>
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300&times;600)</div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates &mdash; verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>
