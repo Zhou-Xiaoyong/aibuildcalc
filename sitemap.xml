@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/concrete/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -109,6 +109,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/concrete/concrete-footing-calculator</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -117,6 +118,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/concrete/concrete-slab-calculator</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -575,7 +577,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -667,6 +669,30 @@
   <url>
     <loc>https://aibuildcalc.com/blog/stamped-concrete-cost-per-square-foot</loc>
     <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/concrete-delivery-cost-per-yard-2026</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/how-much-concrete-do-i-need-for-fence-posts</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/how-much-does-a-4-inch-concrete-slab-cost</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/how-to-finish-a-concrete-slab-like-a-pro</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
