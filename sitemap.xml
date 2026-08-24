@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/concrete/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -75,6 +75,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/roofing/</loc>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -118,7 +119,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/concrete/concrete-slab-calculator</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -132,6 +133,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/concrete/mortar-calculator</loc>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -465,6 +467,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/roofing/roof-pitch-calculator</loc>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -481,6 +484,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/roofing/roofing-calculator</loc>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -577,7 +581,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -693,6 +697,30 @@
   <url>
     <loc>https://aibuildcalc.com/blog/how-to-finish-a-concrete-slab-like-a-pro</loc>
     <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/brick-mortar-calculator-how-many-bags</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/concrete-cure-time-before-framing</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/how-much-does-it-cost-to-roof-a-2000-sq-ft-house</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/how-to-calculate-roof-pitch-multiplier</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

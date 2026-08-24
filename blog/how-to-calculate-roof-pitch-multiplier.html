@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calculate Roof Pitch Multiplier | AIBuildCalc</title>
+  <meta name="description" content="How to calculate roof pitch multiplier from rise over run, plus a pitch-to-multiplier table, the formula, and how it changes your material order.">
+  <link rel="canonical" href="https://aibuildcalc.com/blog/how-to-calculate-roof-pitch-multiplier">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to Calculate Roof Pitch Multiplier">
+  <meta property="og:description" content="Calculate roof pitch multiplier from rise-over-run, read a pitch-to-multiplier table, and apply the multiplier to material orders and cost estimates.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aibuildcalc.com/blog/how-to-calculate-roof-pitch-multiplier">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Calculate Roof Pitch Multiplier">
+  <meta name="twitter:description" content="Calculate roof pitch multiplier from rise-over-run, read a pitch-to-multiplier table, and apply the multiplier to material orders and cost estimates.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Calculate Roof Pitch Multiplier",
+    "description": "How to calculate roof pitch multiplier from rise over run, plus a pitch-to-multiplier table, the formula, and how it changes your material order.",
+    "author": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
+    "publisher": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
+    "datePublished": "2026-08-24",
+    "dateModified": "2026-08-24",
+    "mainEntityOfPage": "https://aibuildcalc.com/blog/how-to-calculate-roof-pitch-multiplier"
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aibuildcalc.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Calculate Roof Pitch Multiplier","item":"https://aibuildcalc.com/blog/how-to-calculate-roof-pitch-multiplier"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog/">Blog</a> <span>&rsaquo;</span> Roof Pitch Multiplier
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <article class="report-article">
+        <h1>How to Calculate Roof Pitch Multiplier</h1>
+        <div class="research-meta">Published August 2026 &middot; 8 min read &middot; By AIBuildCalc</div>
+
+        <p class="report-lead">Pitch multiplier is the small number that turns a roof footprint into a roof surface. Get it right and your material order matches the roof; get it wrong and you short yourself by a square or two on a steep gable, or over-order and pay to return extra. The math is simple geometry, but most DIY estimates guess instead of using the table. This guide explains the rise-over-run notation, gives you the pitch-to-multiplier table every estimator uses, walks through the formula, and shows you where the pitch multiplier matters and where it does not.</p>
+
+        <div class="callout">
+          <strong>Quick answer:</strong> To find the multiplier, take the square root of <strong>1 + (rise/run)^2</strong>. A 6/12 pitch (rise 6, run 12) gives <strong>1.118</strong>, so a 2,000 sq ft footprint becomes about 22.4 squares. Check your roof with the <a href="/tools/roofing/roof-pitch-calculator">Roof Pitch Calculator</a>.
+        </div>
+
+        <h2>What the pitch notation means</h2>
+        <p>Roof pitch in the US is written as <em>rise over run</em>. The rise is how many inches the roof goes up over a 12-inch horizontal run. So a &quot;6/12 pitch&quot; means the roof climbs 6 inches for every 12 inches of horizontal travel. The run is always 12 by convention; the rise is what tells you the steepness. A 3/12 is a shallow walkable roof; a 12/12 is a 45-degree angle. The pitch multiplier is the number that converts the home's horizontal footprint to the actual slanted roof surface.</p>
+
+        <h2>The geometry</h2>
+        <p>The slanted length of a single rafter is the hypotenuse of a right triangle whose legs are the run (12 in) and the rise (the rise in inches). Using the Pythagorean theorem:</p>
+        <div class="formula-box">Rafter length factor = sqrt(1 + (rise / 12)^2)  =  sqrt(144 + rise^2) / 12
+                                = sqrt(run^2 + rise^2) / run
+
+Examples:
+  4/12 pitch  -&gt; sqrt(1 + (4/12)^2) = sqrt(1 + 0.111)  = 1.054
+  6/12 pitch  -&gt; sqrt(1 + (6/12)^2) = sqrt(1 + 0.250)  = 1.118
+  8/12 pitch  -&gt; sqrt(1 + (8/12)^2) = sqrt(1 + 0.444)  = 1.202
+ 12/12 pitch  -&gt; sqrt(1 + (12/12)^2) = sqrt(1 + 1.000) = 1.414</div>
+        <p>That factor is the <strong>pitch multiplier</strong> you multiply the footprint by to get the slanted roof area. A 2,000 sq ft single-story home at 6/12 has a roof area of 2,000 x 1.118 = 2,236 sq ft, or 22.4 roofing squares.</p>
+
+        <h2>The full pitch-to-multiplier table</h2>
+        <p>Most estimators keep this table taped inside a kitchen cabinet. It is the single most-used lookup in any roofing takeoff:</p>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Pitch (rise/12)</th><th>Multiplier</th><th>Angle (degrees)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1/12</td><td>1.003</td><td>4.8&deg;</td></tr>
+              <tr><td>2/12</td><td>1.014</td><td>9.5&deg;</td></tr>
+              <tr><td>3/12</td><td>1.031</td><td>14.0&deg;</td></tr>
+              <tr><td>4/12</td><td>1.054</td><td>18.4&deg;</td></tr>
+              <tr><td>5/12</td><td>1.083</td><td>22.6&deg;</td></tr>
+              <tr><td>6/12</td><td>1.118</td><td>26.6&deg;</td></tr>
+              <tr><td>7/12</td><td>1.158</td><td>30.3&deg;</td></tr>
+              <tr><td>8/12</td><td>1.202</td><td>33.7&deg;</td></tr>
+              <tr><td>9/12</td><td>1.250</td><td>36.9&deg;</td></tr>
+              <tr><td>10/12</td><td>1.302</td><td>39.8&deg;</td></tr>
+              <tr><td>11/12</td><td>1.357</td><td>42.5&deg;</td></tr>
+              <tr><td>12/12</td><td>1.414</td><td>45.0&deg;</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>For most US residential roofs the pitch sits between 4/12 and 9/12; the multiplier stays between 1.05 and 1.25. Steep-slope homes past 10/12 see the multiplier pull away fast.</p>
+
+        <h2>How to measure pitch from the ground</h2>
+        <p>You can measure pitch with nothing more than a level and a tape measure. Pick a rafter tail at the eave, hold a 12-inch level horizontally against the underside, and measure straight up from the 12-inch mark to the underside of the rafter. That vertical distance is the rise:</p>
+        <ul>
+          <li><strong>Inches up at the 12-inch mark = rise / 12</strong> (so 6 inches up = 6/12 pitch).</li>
+          <li>If you can only see the roof from across the street, count the rise from any straight rafter visible in the attic.</li>
+        </ul>
+        <p>If you can't safely access the attic, an alternative is the <a href="/tools/roofing/roof-pitch-calculator">Roof Pitch Calculator</a>, which also accepts the rise-over-run as inches and returns the multiplier and the angle in degrees. Pitch gauges and smartphone inclinometers work too, but the level-and-tape method is what most appraisers and insurance adjusters use.</p>
+
+        <h2>Where the multiplier matters</h2>
+        <ul>
+          <li><strong>Shingles:</strong> multiply footprint by the multiplier to get squares.</li>
+          <li><strong>Sheathing:</strong> plywood and OSB orders follow the same rule; add 10% waste.</li>
+          <li><strong>Underlayment and ice-and-water shield:</strong> sold by the square of roof surface, not footprint.</li>
+          <li><strong>Labor:</strong> contractors price labor per square; steeper pitches get a &quot;steep-charge&quot; surcharge, often 10-25% on anything over 8/12.</li>
+        </ul>
+
+        <h2>Where the multiplier does NOT matter</h2>
+        <ul>
+          <li><strong>Insulation:</strong> attic floor insulation is sized to ceiling footprint, not roof surface.</li>
+          <li><strong>Drywall:</strong> interior ceilings are flat, so pitch does not change the drywall needed.</li>
+        </ul>
+
+        <h2>Common mistakes</h2>
+        <ul>
+          <li><strong>Using footprint as roof area:</strong> leaves you 5-40% short on steeper roofs; always use the multiplier table.</li>
+          <li><strong>Confusing pitch with slope:</strong> in US roofing, pitch is rise over 12; slope is rise over run in any unit.</li>
+          <li><strong>Forgetting waste:</strong> shingles are sold in bundles covering 1/3 of a square; add 10% for a simple gable, 12-15% for hips.</li>
+        </ul>
+
+        <h2>Find your pitch and finish the takeoff</h2>
+        <p>Measure rise over a 12-inch run, look up (or compute) the multiplier, then multiply the roof footprint to get squares. Drop the result into the <a href="/tools/roofing/roof-pitch-calculator">Roof Pitch Calculator</a> for the multiplier and angle, then the <a href="/tools/roofing/roofing-calculator">Roofing Calculator</a> for material cost. If you also need new sheathing, size it with the <a href="/tools/roofing/roof-sheathing-calculator">Roof Sheathing Calculator</a> so the whole order lines up.</p>
+
+
+        <div class="content-section">
+          <h2>Related Calculators</h2>
+          <div class="related-tools">
+            <a href="/tools/roofing/roof-pitch-calculator" class="related-tool-card"><div><div class="tool-name">Roof Pitch Calculator</div></div></a>
+            <a href="/tools/roofing/metal-roof-calculator" class="related-tool-card"><div><div class="tool-name">Metal Roof Calculator</div></div></a>
+            <a href="/tools/roofing/roof-sheathing-calculator" class="related-tool-card"><div><div class="tool-name">Roof Sheathing Calculator</div></div></a>
+            <a href="/tools/roofing/" class="related-tool-card"><div><div class="tool-name">All Roofing Calculators</div></div></a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300&times;250)</div>
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+        </ul>
+      </div>
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300&times;600)</div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates &mdash; verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>
