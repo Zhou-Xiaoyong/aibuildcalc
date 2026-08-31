@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roof Vent Calculation Per Square Foot (IRC 1/150 NFA Rule) | AIBuildCalc</title>
+  <meta name="description" content="Roof vent calculation per square foot: the IRC 1/150 rule divides attic area by 150 to get total NFA, split 50/50 intake and exhaust.">
+  <link rel="canonical" href="https://aibuildcalc.com/blog/roof-vent-calculation-per-square-foot">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Roof Vent Calculation Per Square Foot (IRC 1/150 NFA Rule)">
+  <meta property="og:description" content="Size attic ventilation from the attic floor area, not the roof area. IRC 1/150 rule, NFA ratings by vent type, and a worked 1,500 sq ft example.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aibuildcalc.com/blog/roof-vent-calculation-per-square-foot">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Roof Vent Calculation Per Square Foot (IRC 1/150 NFA Rule)">
+  <meta name="twitter:description" content="Size attic ventilation from the attic floor area, not the roof area. IRC 1/150 rule, NFA ratings by vent type, and a worked 1,500 sq ft example.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Roof Vent Calculation Per Square Foot",
+    "description": "Roof vent calculation per square foot: the IRC 1/150 rule divides attic area by 150 to get total NFA, split 50/50 intake and exhaust.",
+    "author": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
+    "publisher": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
+    "datePublished": "2026-08-31",
+    "dateModified": "2026-08-31",
+    "mainEntityOfPage": "https://aibuildcalc.com/blog/roof-vent-calculation-per-square-foot"
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aibuildcalc.com/blog/"},{"@type":"ListItem","position":3,"name":"Roof Vent Calculation Per Square Foot","item":"https://aibuildcalc.com/blog/roof-vent-calculation-per-square-foot"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>&rsaquo;</span> <a href="/blog/">Blog</a> <span>&rsaquo;</span> Roof vent NFA per sq ft
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <article class="report-article">
+        <h1>Roof Vent Calculation Per Square Foot</h1>
+        <div class="research-meta">Published August 2026 &middot; 8 min read &middot; By AIBuildCalc</div>
+
+        <p class="report-lead">Attic ventilation is sized off net free area, and the rule is simple: one square foot of net free area per 150 square feet of attic floor. The mistakes come from what people plug into it &mdash; roof square footage, roofing squares and the house footprint are all the wrong numbers. This guide covers the IRC rule, the 1/300 exception, NFA ratings by vent type, and a worked example.</p>
+
+        <div class="callout">
+          <strong>Quick answer:</strong> Required NFA in square feet equals the attic floor area divided by 150, split roughly 50/50 between intake at the soffits and exhaust at the ridge. A 1,500 sq ft attic needs 1,440 sq in of total NFA. Size yours with the <a href="/tools/roofing/roof-vent-calculator">Roof Vent Calculator</a>.
+        </div>
+
+
+        <h2>The rule: one square foot of NFA per 150 square feet</h2>
+        <p>The International Residential Code sets minimum attic ventilation at 1/150 of the attic floor area expressed as net free area, or NFA. Crucially, the input is the <strong>attic floor</strong> &mdash; the horizontal area of the ceiling below &mdash; not the sloped roof surface and not the roofing "squares" a contractor quoted you. A steep roof has far more roof area than attic area, and sizing off roof area is the most common over-ventilation error.</p>
+        <p>A widely used 1/300 exception halves that, but only in two cases: a Class I or II vapor retarder on the warm-in-winter side of the ceiling, or where 40% to 50% of the NFA sits in high vents at least 3 ft above the eaves and the balance is at the eaves. Many departments enforce 1/150 regardless, so confirm locally.</p>
+
+        <h2>NFA is not the hole you cut</h2>
+        <p>Net free area is the free air passage after you subtract everything that obstructs it: the louvers, the insect screen, the weather baffles and the mesh that keeps wasps out. A vent with a 60 sq in gross opening might rate only 40 to 45 sq in of NFA. Manufacturers publish an NFA figure for every product and that is what you size with; guessing from the opening leaves you 25% to 50% short.</p>
+        <div class="formula-box">Required NFA (sq ft)  = attic floor area / 150
+Required NFA (sq in)  = (attic floor area / 150) x 144
+
+Intake NFA   = total NFA / 2      (at the soffits or eaves)
+Exhaust NFA  = total NFA / 2      (at the ridge or gable)
+
+Ridge vent length (ft) = exhaust NFA / NFA per linear foot
+Soffit vent count      = intake NFA / NFA per vent</div>
+
+        <h2>Worked example: a 1,500 sq ft attic</h2>
+        <p>Take a single-story home with a 1,500 sq ft attic floor. Total NFA is 1,500 / 150 = 10 sq ft, which is 1,440 sq in. Splitting that evenly gives 720 sq in of intake and 720 sq in of exhaust.</p>
+        <p>For exhaust, a shingle-over ridge vent rates about 14 to 18 sq in of NFA per linear foot. Using 18, you need 720 / 18 = 40 linear feet. For intake, a standard 16 x 8 inch soffit vent rates 50 to 60 sq in, so at 56 you need 720 / 56 &asymp; 13 vents, rounded up. That is the whole calculation &mdash; and it is why a house with almost no soffit overhang needs a different intake strategy, such as a drip-edge or over-fascia vent, rather than more ridge vent.</p>
+        <p>One hard rule: do not combine a ridge vent with gable-end vents on the same attic. The gable vents short-circuit the airflow path and the ridge stops pulling from the soffits, so pick one exhaust strategy and let it work. Powered attic fans are rated in CFM rather than NFA and need enough intake to feed them, or they depressurize the house and can back-draft a naturally vented water heater.</p>
+
+        <h2>Typical NFA ratings by vent type</h2>
+        <p>Typical published ranges for 2026 products; always check the spec sheet on the vent you buy:</p>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Vent type</th><th>Typical NFA</th><th>Used for</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Ridge vent (shingle-over)</td><td>14 &ndash; 18 sq in per linear foot</td><td>Exhaust</td></tr>
+              <tr><td>Box / turtle vent</td><td>50 &ndash; 60 sq in each</td><td>Exhaust</td></tr>
+              <tr><td>Turbine / whirlybird, 12 inch</td><td>70 &ndash; 100 sq in each</td><td>Exhaust</td></tr>
+              <tr><td>Gable-end vent, 12 x 18 inch</td><td>100 &ndash; 120 sq in each</td><td>Exhaust (cross-ventilation)</td></tr>
+              <tr><td>Soffit vent, 16 x 8 inch</td><td>50 &ndash; 60 sq in each</td><td>Intake</td></tr>
+              <tr><td>Soffit vent, 4 inch round</td><td>10 &ndash; 14 sq in each</td><td>Intake</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Common mistakes that defeat the calculation</h2>
+        <p>Insulation blocking the soffits is the most common failure: the vents are sized correctly on paper and then buried under blown-in cellulose. Baffles, also called rafter vents, hold a clear air channel above the insulation at every bay. Exhaust that badly exceeds intake is the second: without enough intake, the exhaust pulls conditioned air from the living space, raising energy bills and potentially back-drafting combustion appliances.</p>
+
+        <h2>When these rules do not apply</h2>
+        <p>Unvented or "hot roof" assemblies change the picture. Spray closed-cell foam against the underside of the roof deck, or a cathedral ceiling with no attic, and the 1/150 rule is not the governing requirement. Because metal is impermeable, condensation detailing matters more rather than less &mdash; check the provisions when pricing the job in the <a href="/tools/roofing/metal-roof-calculator">Metal Roof Calculator</a>. Confirm the pitch with the <a href="/tools/roofing/roof-pitch-calculator">Roof Pitch Calculator</a> while you measure.</p>
+
+
+        <div class="content-section">
+          <h2>Related Calculators</h2>
+          <div class="related-tools">
+            <a href="/tools/roofing/roof-vent-calculator" class="related-tool-card"><div><div class="tool-name">Roof Vent Calculator</div></div></a>
+            <a href="/tools/roofing/metal-roof-calculator" class="related-tool-card"><div><div class="tool-name">Metal Roof Calculator</div></div></a>
+            <a href="/tools/roofing/roof-pitch-calculator" class="related-tool-card"><div><div class="tool-name">Roof Pitch Calculator</div></div></a>
+            <a href="/tools/roofing/" class="related-tool-card"><div><div class="tool-name">All Roofing Calculators</div></div></a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300&times;250)</div>
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+        </ul>
+      </div>
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300&times;600)</div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates &mdash; verify with a professional for critical projects.</p>
+  </div>
+</footer>
+
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+</body>
+</html>
