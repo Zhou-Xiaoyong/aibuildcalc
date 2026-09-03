@@ -1339,5 +1339,5 @@ img { max-width: 100%; height: auto; }
 }
 
 /* Related guide box (backlink from tools to blog) */
-.related-guide-box{margin:18px 0;padding:10px 14px;border-left:3px solid #2e7d32;background:#f4faf4;font-size:14px;border-radius:4px}
+.related-guide-box{max-width:var(--max-width);margin:18px auto;padding:10px 24px;border-left:3px solid #2e7d32;background:#f4faf4;font-size:14px;border-radius:4px}
 .related-guide-box a{font-weight:600;color:#1b5e20;text-decoration:none}
