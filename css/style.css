@@ -176,6 +176,46 @@ img { max-width: 100%; height: auto; }
   font-size: 0.8125rem;
 }
 
+/* ===== Amazon Affiliate / Recommended Tools ===== */
+.amazon-ad-section {
+  margin-top: 32px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.amazon-ad-section h2 {
+  font-size: 1.125rem;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+.amazon-ad-section .ad-subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-light);
+  margin: 0 0 16px;
+}
+.amazon-ad-section .amzn-native-container {
+  margin: 0 auto;
+}
+.affiliate-disclosure {
+  font-size: 0.6875rem;
+  color: var(--text-light);
+  margin-top: 10px;
+  line-height: 1.4;
+  text-align: center;
+}
+.affiliate-disclosure a {
+  color: var(--text-light);
+  text-decoration: underline;
+}
+.footer-affiliate-disclosure {
+  font-size: 0.6875rem;
+  color: #aab2bd;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
 /* ===== Breadcrumb ===== */
 .breadcrumb {
   max-width: var(--max-width);
