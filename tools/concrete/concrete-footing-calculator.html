@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -86,6 +90,15 @@
             <label for="quantity">Number of Footings </label>
             <span class="label-hint">Total footings needed</span>
             <input type="number" id="quantity" value="6" step="any" min="0" aria-label="Number of Footings">
+          </div>
+          <div class="form-group">
+            <label for="waste">Waste Factor</label>
+            <span class="label-hint">Extra concrete for spillage &amp; over-excavation</span>
+            <select id="waste" aria-label="Waste Factor">
+              <option value="5">5% (minimum)</option>
+              <option value="10" selected>10% (recommended)</option>
+              <option value="15">15% (large/complex)</option>
+            </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
               <span class="btn-icon">✦</span> Calculate
@@ -361,6 +374,7 @@ Total volume = Volume per footing x Quantity</div>
         const diameter = parseFloat(document.getElementById('diameter').value) || 0;
         const depth = parseFloat(document.getElementById('depth').value) || 0;
         const quantity = parseFloat(document.getElementById('quantity').value) || 0;
+        const wasteMult = 1 + (parseFloat(document.getElementById('waste').value) || 0) / 100;
 
         function setResult(id, value) {
           const el = document.getElementById('result-' + id);
@@ -371,7 +385,7 @@ Total volume = Volume per footing x Quantity</div>
         const radiusFt = (diameter / 2) / 12;
         const depthFt = depth / 12;
         const volumePerFooting = Math.PI * radiusFt * radiusFt * depthFt;
-        const totalVolumeFt = volumePerFooting * quantity;
+        const totalVolumeFt = volumePerFooting * quantity * wasteMult;
         const totalVolumeYd = totalVolumeFt / 27;
         const bags80 = Math.ceil(totalVolumeYd * 45);
         const estimatedCost = Math.round(totalVolumeYd * 140 * 100) / 100;
@@ -422,5 +436,6 @@ Total volume = Volume per footing x Quantity</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

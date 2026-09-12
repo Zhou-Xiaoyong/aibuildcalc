@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -91,6 +95,15 @@
             <label for="treadDepth">Tread Depth <span class="unit-label">in</span></label>
             <span class="label-hint">Depth of each step</span>
             <input type="number" id="treadDepth" value="11" step="any" min="0" aria-label="Tread Depth">
+          </div>
+          <div class="form-group">
+            <label for="waste">Waste Factor</label>
+            <span class="label-hint">Extra concrete for spillage &amp; form variations</span>
+            <select id="waste" aria-label="Waste Factor">
+              <option value="5">5% (minimum)</option>
+              <option value="10" selected>10% (recommended)</option>
+              <option value="15">15% (large/complex)</option>
+            </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
               <span class="btn-icon">✦</span> Calculate
@@ -356,6 +369,7 @@ Total = Sum of all step volumes / 27</div>
         const stepWidth = parseFloat(document.getElementById('stepWidth').value) || 0;
         const riserHeight = parseFloat(document.getElementById('riserHeight').value) || 0;
         const treadDepth = parseFloat(document.getElementById('treadDepth').value) || 0;
+        const wasteMult = 1 + (parseFloat(document.getElementById('waste').value) || 0) / 100;
 
         function setResult(id, value) {
           const el = document.getElementById('result-' + id);
@@ -370,6 +384,7 @@ Total = Sum of all step volumes / 27</div>
         for (let i = 1; i <= numSteps; i++) {
           totalVolumeFt += w * t * (r * i);
         }
+        totalVolumeFt *= wasteMult;
         const totalVolumeYd = totalVolumeFt / 27;
         const bags80 = Math.ceil(totalVolumeYd * 45);
         const estimatedCost = Math.round(totalVolumeYd * 140 * 100) / 100;
@@ -419,5 +434,6 @@ Total = Sum of all step volumes / 27</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

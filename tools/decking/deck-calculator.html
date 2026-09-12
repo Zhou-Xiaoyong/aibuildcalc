@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -374,10 +378,10 @@ Joists = (L x 12 / Joist spacing) + 1</div>
         
         const deckArea = deckLength * deckWidth;
         const boardW = parseFloat(boardWidth) || 5.5;
-        const boardsPerRow = Math.ceil((deckWidth * 12) / boardW);
+        const boardsPerRow = boardW > 0 ? Math.ceil((deckWidth * 12) / boardW) : 0;
         const boards = Math.ceil(boardsPerRow * deckLength * 1.10); // +10% waste
         const joistSp = parseInt(joistSpacing) || 16;
-        const joists = Math.ceil((deckLength * 12) / joistSp) + 1;
+        const joists = joistSp > 0 ? Math.ceil((deckLength * 12) / joistSp) + 1 : 0;
         const footings = Math.max(4, Math.ceil(joists / 2));
         const estimatedCost = Math.round(deckArea * 22 * 100) / 100; // ~$22/sqft
         setResult('deckArea', deckArea.toFixed(0));
@@ -430,5 +434,6 @@ Joists = (L x 12 / Joist spacing) + 1</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

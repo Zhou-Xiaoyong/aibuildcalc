@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -346,7 +350,7 @@ Plates = Wall length x 3 / Board length</div>
 
         
         const spacingIn = parseInt(studSpacing);
-        const fieldStuds = Math.ceil(wallLength * 12 / spacingIn) + 1;
+        const fieldStuds = spacingIn > 0 ? Math.ceil(wallLength * 12 / spacingIn) + 1 : 0;
         const extraStuds = 6 + numDoors * 4 + numWindows * 4;
         const totalStuds = fieldStuds + extraStuds;
         const plates = Math.ceil(wallLength * 3 / 8);
@@ -401,5 +405,6 @@ Plates = Wall length x 3 / Board length</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

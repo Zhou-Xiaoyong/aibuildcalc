@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -359,8 +363,9 @@ Top rail = Length</div>
         }
 
         
-        const posts = Math.ceil(railingLength / postSpacing) + 1;
-        const balusters = Math.ceil((railingLength * 12) / (balusterWidth + balusterSpacing));
+        const posts = postSpacing > 0 ? Math.ceil(railingLength / postSpacing) + 1 : 0;
+        const balusterGap = balusterWidth + balusterSpacing;
+        const balusters = balusterGap > 0 ? Math.ceil((railingLength * 12) / balusterGap) : 0;
         const topRail = railingLength;
         const estimatedCost = Math.round((posts * 15 + balusters * 3 + topRail * 4) * 100) / 100;
         setResult('posts', posts);
@@ -411,5 +416,6 @@ Top rail = Length</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -94,6 +98,15 @@
             <label for="quantity">Number of Columns </label>
             <span class="label-hint">Total columns needed</span>
             <input type="number" id="quantity" value="4" step="any" min="0" aria-label="Number of Columns">
+          </div>
+          <div class="form-group">
+            <label for="waste">Waste Factor</label>
+            <span class="label-hint">Extra concrete for spillage &amp; form variations</span>
+            <select id="waste" aria-label="Waste Factor">
+              <option value="5">5% (minimum)</option>
+              <option value="10" selected>10% (recommended)</option>
+              <option value="15">15% (large/complex)</option>
+            </select>
           </div>
             <button type="button" class="btn-calculate" onclick="calculate()">
               <span class="btn-icon">✦</span> Calculate
@@ -364,6 +377,7 @@ Total = V x Qty / 27</div>
         const diameter = parseFloat(document.getElementById('diameter').value) || 0;
         const height = parseFloat(document.getElementById('height').value) || 0;
         const quantity = parseFloat(document.getElementById('quantity').value) || 0;
+        const wasteMult = 1 + (parseFloat(document.getElementById('waste').value) || 0) / 100;
 
         function setResult(id, value) {
           const el = document.getElementById('result-' + id);
@@ -375,7 +389,7 @@ Total = V x Qty / 27</div>
         const volPerCol = shape === 'Round' 
           ? Math.PI * (dFt/2) * (dFt/2) * height
           : dFt * dFt * height;
-        const totalVolFt = volPerCol * quantity;
+        const totalVolFt = volPerCol * quantity * wasteMult;
         const totalVolYd = totalVolFt / 27;
         const bags80 = Math.ceil(totalVolYd * 45);
         const estimatedCost = Math.round(totalVolYd * 140 * 100) / 100;
@@ -427,5 +441,6 @@ Total = V x Qty / 27</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

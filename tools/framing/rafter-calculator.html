@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -344,7 +348,7 @@ Rafters = ((Ridge length / Spacing) + 1) x 2 (both sides)</div>
         const plumbCutAngle = Math.atan(pitch / 12) * (180 / Math.PI);
         const spacingIn = parseInt(spacing);
         const ridgeLength = span;
-        const numRafters = Math.ceil((ridgeLength * 12 / spacingIn) + 1) * 2;
+        const numRafters = spacingIn > 0 ? Math.ceil((ridgeLength * 12 / spacingIn) + 1) * 2 : 0;
         const estimatedCost = Math.round(numRafters * rafterLength * 4.5 * 100) / 100;
         setResult('rafterLength', rafterLength.toFixed(2));
         setResult('plumbCut', plumbCutAngle.toFixed(1));
@@ -395,5 +399,6 @@ Rafters = ((Ridge length / Spacing) + 1) x 2 (both sides)</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

@@ -401,12 +401,12 @@ Stringer Length = sqrt(Total Rise^2 + Total Run^2)</div>
       return;
     }
 
-    const steps = Math.round(totalRise / desiredRise);
-    const actualRise = totalRise / steps;
+    const steps = desiredRise > 0 ? Math.round(totalRise / desiredRise) : 0;
+    const actualRise = steps > 0 ? totalRise / steps : 0;
     const totalRun = (steps - 1) * treadDepth;
     const stringerLength = Math.sqrt(Math.pow(totalRise, 2) + Math.pow(totalRun, 2));
     const stringerBoards = stringerCount * Math.ceil(stringerLength / 144); // 12ft boards = 144in
-    const treadCount = steps;
+    const treadCount = Math.max(0, steps - 1); // top tread is the landing/floor
     const treadBoards = Math.ceil((treadCount * stairWidth) / 120); // assume 10ft boards
     const totalCost = (stringerBoards + treadBoards) * costPerBoard;
 
@@ -449,5 +449,6 @@ Stringer Length = sqrt(Total Rise^2 + Total Run^2)</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

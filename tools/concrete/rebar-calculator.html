@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -384,8 +388,8 @@ Weight = Total length x lbs/ft (by bar size)</div>
 
         
         const spacingIn = parseInt(spacing);
-        const barsL = Math.ceil(slabLength * 12 / spacingIn) + 1;
-        const barsW = Math.ceil(slabWidth * 12 / spacingIn) + 1;
+        const barsL = spacingIn > 0 ? Math.ceil(slabLength * 12 / spacingIn) + 1 : 0;
+        const barsW = spacingIn > 0 ? Math.ceil(slabWidth * 12 / spacingIn) + 1 : 0;
         const totalLength = (barsL * slabWidth) + (barsW * slabLength);
         const weightPerFt = {'#3': 0.376, '#4': 0.668, '#5': 1.043, '#6': 1.502};
         const totalWeight = totalLength * (weightPerFt[barSize] || 0.668);
@@ -440,5 +444,6 @@ Weight = Total length x lbs/ft (by bar size)</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>

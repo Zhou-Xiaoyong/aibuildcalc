@@ -53,6 +53,10 @@
         <a href="/tools/decking/">Decking</a>
         <a href="/tools/landscaping/">Landscaping</a>
         <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
       </nav>
       <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
     </div>
@@ -370,9 +374,10 @@ Pickets = Length / ((PicketWidth + Spacing) / 12)</div>
         }
 
         
-        const posts = Math.ceil(fenceLength / postSpacing) + 1;
+        const posts = postSpacing > 0 ? Math.ceil(fenceLength / postSpacing) + 1 : 0;
         const rails = (posts - 1) * 2; // 2 rails per section
-        const picketsPerFt = 12 / (picketWidth + picketSpacing);
+        const picketGap = picketWidth + picketSpacing;
+        const picketsPerFt = picketGap > 0 ? 12 / picketGap : 0;
         const pickets = Math.ceil(fenceLength * picketsPerFt);
         const concreteBags = Math.ceil(posts * 2); // 2 bags per post
         const estimatedCost = Math.round((pickets * 3 + posts * 12 + rails * 5 + concreteBags * 6) * 100) / 100;
@@ -427,5 +432,6 @@ Pickets = Length / ((PicketWidth + Spacing) / 12)</div>
   
   <script src="/js/shopping-list.js" defer></script>
   <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
 </body>
 </html>
