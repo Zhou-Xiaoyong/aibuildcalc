@@ -216,6 +216,45 @@ img { max-width: 100%; height: auto; }
   line-height: 1.4;
 }
 
+/* Amazon Affiliate Shop Button */
+.amz-shop-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ff9900, #ff7f00);
+  color: #232f3e !important;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 8px rgba(255,153,0,0.3);
+  margin: 8px 0 4px;
+}
+.amz-shop-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255,153,0,0.4);
+  text-decoration: none;
+  color: #232f3e !important;
+}
+.amz-btn-icon { font-size: 1.1rem; }
+.amz-sub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.amz-sub-link {
+  font-size: 0.8125rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.amz-sub-link:hover { text-decoration: underline; }
+
 /* ===== Breadcrumb ===== */
 .breadcrumb {
   max-width: var(--max-width);
