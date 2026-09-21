@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calculate Roof Truss Span: Step by Step | AIBuildCalc</title>
+  <meta name="description" content="How to calculate roof truss span from bearing wall to bearing wall, how spacing and snow load change the answer, and how to read a span table.">
+  <link rel="canonical" href="https://aibuildcalc.com/blog/how-to-calculate-roof-truss-span">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How to Calculate Roof Truss Span">
+  <meta property="og:description" content="Measure bearing to bearing, confirm the load, choose the spacing, then read the span table correctly.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aibuildcalc.com/blog/how-to-calculate-roof-truss-span">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Calculate Roof Truss Span">
+  <meta name="twitter:description" content="Truss span, spacing and load explained with a worked 24-foot example.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Calculate Roof Truss Span",
+    "description": "How to calculate roof truss span from bearing wall to bearing wall, how spacing and snow load change the answer, and how to read a span table.",
+    "author": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
+    "publisher": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
+    "datePublished": "2026-09-21",
+    "dateModified": "2026-09-21",
+    "mainEntityOfPage": "https://aibuildcalc.com/blog/how-to-calculate-roof-truss-span"
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aibuildcalc.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Calculate Roof Truss Span","item":"https://aibuildcalc.com/blog/how-to-calculate-roof-truss-span"}]}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/blog/">Blog</a> <span>›</span> How to Calculate Roof Truss Span
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <article class="report-article">
+        <h1>How to Calculate Roof Truss Span</h1>
+        <div class="research-meta">Published September 2026 &middot; 8 min read &middot; By AIBuildCalc</div>
+
+        <p class="report-lead">A truss span is not the length of a rafter, and it is not the width of the roof. It is the horizontal distance the truss carries between two supports, measured before pitch, overhang, or surface area enter the picture. Get that number right and a manufacturer's span table becomes readable.</p>
+
+        <div class="callout">
+          <strong>Quick answer:</strong> Measure from the outside face of one bearing wall to the outside face of the opposite bearing wall. For a gable roof over a rectangular house, that is normally the full building width. Then confirm the load the truss must carry and the spacing you plan to use, because a truss rated for a 30-foot span at 24 inches on center may be rated for only 24 feet under a heavier snow load. Run the numbers with our <a href="/tools/roofing/roof-truss-calculator">Roof Truss Calculator</a> once you have both.
+        </div>
+
+        <h2>What span actually measures</h2>
+        <p>A truss span is a bearing-to-bearing measurement taken horizontally. Three things it is not:</p>
+        <ul>
+          <li><strong>Not the slope length.</strong> A truss spanning 24 feet at a 6/12 pitch has top chords about 13.4 feet long, not 12, because each chord runs diagonally to the ridge.</li>
+          <li><strong>Not the roof width including overhang.</strong> The eaves cantilever past the wall, and that overhang is specified separately as a top-chord cantilever.</li>
+          <li><strong>Not the interior room width.</strong> Measuring inside face to inside face ignores wall framing and sheathing. On a truss near its limit, those two or three inches can decide whether the profile is rated at all.</li>
+        </ul>
+        <p>Where trusses bear on a center beam, the building width splits into two spans.</p>
+
+        <h2>Step 1: measure the clear span</h2>
+        <ol>
+          <li>Identify every bearing wall the truss will sit on, then measure from the outside face of one to the outside face of the opposite wall. Bearing walls carry load to the foundation; partitions added later do not.</li>
+          <li>Measure at both ends of the building and use the larger figure if the two differ.</li>
+          <li>Record the result in feet and inches. Rounding 23 ft 8 in. up to 24 ft is safe; rounding down is not.</li>
+        </ol>
+
+        <h2>Step 2: work out slope length, ridge height, and truss count</h2>
+        <p>The run of each top chord is half the span, and the rise follows from the pitch.</p>
+        <div class="formula-box">Span (ft) = distance between outside faces of the two bearing walls
+Run (ft) = Span / 2
+Rise at ridge (ft) = Run x (Pitch / 12)
+Slope length (ft) = Run / cos(atan(Pitch / 12))
+Truss count = (Roof length (ft) x 12 / Spacing (in)) + 1</div>
+        <p>Worked example: a 24-foot span at a 6/12 pitch. Run is 12 feet, so the rise is 12 x (6 / 12), or 6 feet. The pitch angle of about 26.6 degrees makes each top chord 12 / cos(26.6), roughly 13.4 feet. A 40-foot roof with trusses 24 inches on center needs (40 x 12 / 24) + 1, which is 21 trusses.</p>
+
+        <h2>Step 3: confirm the load the truss carries</h2>
+        <p>A span table is valid only at the load it was calculated for. Residential trusses across much of the United States are designed for a top chord live load of 20 pounds per square foot, a top chord dead load of 10 psf for the roofing, and a bottom chord load allowing for ceiling drywall and insulation. Where ground snow load is significant, the required top chord live load rises to 30, 40, or 50 psf and the rated span drops accordingly. Attic and storage trusses add load beyond those assumptions.</p>
+
+        <h2>Step 4: choose the spacing</h2>
+        <p>Trusses are economical because a deep, triangulated assembly carries a roof at wider spacing than a single rafter of the same material.</p>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Spacing</th><th>Typical use</th><th>Effect on cost and span</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>24 in. on center</td><td>The residential default for asphalt shingle roofs under normal loads</td><td>Fewest trusses, lowest material and labor cost, shortest rated span for a given profile</td></tr>
+              <tr><td>19.2 in. on center</td><td>Between the two, often so a sheathing module lines up</td><td>Slightly more trusses; modest span gain</td></tr>
+              <tr><td>16 in. on center</td><td>Heavy coverings such as clay or concrete tile and slate; higher snow load; stiffer ceilings</td><td>Roughly 50 percent more trusses; allows a longer span or a lighter profile</td></tr>
+              <tr><td>12 in. on center</td><td>Very heavy coverings, high snow regions, or where the profile cannot be deepened</td><td>Double the trusses; maximum span for a given depth</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Reading a span table the right way</h2>
+        <p>Span tables are published per truss profile and per design condition. A table header might specify a Fink profile, a 20 psf top chord live load, and 24 inches on center, and every one of those qualifiers is part of the answer. Step down the table to the largest span that is greater than or equal to your measured dimension, then confirm the spacing and the load in the header match your project exactly. Two traps cause most of the confusion: comparing a rating taken at 16 inches on center against a plan drawn at 24, and comparing a table calculated for 20 psf against a site that needs 40.</p>
+
+        <h2>Common mistakes</h2>
+        <ul>
+          <li>Assuming a steeper pitch increases allowable span. It does not. Pitch changes height and slope length, not the capacity of the profile.</li>
+          <li>Forgetting to tell the supplier about overhangs, which are fabricated into the truss and cannot be added on site.</li>
+          <li>Ordering without checking delivery access. Trusses arrive on a long truck and are placed by crane; narrow streets and low branches change the plan.</li>
+          <li>Mixing profiles from two manufacturers, or two span tables, on one roof.</li>
+        </ul>
+
+        <h2>When to stop calculating and call an engineer</h2>
+        <p>Spans beyond the published table, roofs that are not rectangular, point loads such as a rooftop air handler, vaulted ceilings without a bottom chord, and any project where an existing interior wall comes out all need a design professional. Price the roofing material next with the <a href="/tools/roofing/metal-roof-calculator">Metal Roofing Calculator</a>, check the geometry with the <a href="/tools/roofing/roof-pitch-calculator">Roof Pitch Calculator</a>, or browse the <a href="/tools/roofing/">roofing calculators index</a>.</p>
+
+        <div class="content-section">
+          <h2>Related Calculators</h2>
+          <div class="related-tools">
+            <a href="/tools/roofing/roof-truss-calculator" class="related-tool-card"><div><div class="tool-name">Roof Truss Calculator</div></div></a>
+            <a href="/tools/roofing/metal-roof-calculator" class="related-tool-card"><div><div class="tool-name">Metal Roofing Calculator</div></div></a>
+            <a href="/tools/roofing/roof-pitch-calculator" class="related-tool-card"><div><div class="tool-name">Roof Pitch Calculator</div></div></a>
+            <a href="/tools/roofing/" class="related-tool-card"><div><div class="tool-name">All Roofing Tools</div></div></a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+        </ul>
+      </div>
+      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+    </aside>
+  </div>
+
+  <div class="amazon-ad-section" style="max-width: var(--max-width); margin: 0 auto 24px;">
+    <h2>Recommended Home Improvement Tools</h2>
+    <p class="ad-subtitle">Find quality tools &amp; supplies for your home improvement project on Amazon</p>
+    <a class="amz-shop-btn" href="https://www.amazon.com/s?k=home%20improvement%20power%20tools&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">
+      <span class="amz-btn-icon">&#128722;</span> Shop Home Improvement Tools on Amazon
+    </a>
+    <p class="affiliate-disclosure">As an Amazon Associate, AIBuildCalc earns from qualifying purchases. Prices and availability are subject to change.</p>
+  </div>
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+    <p class="footer-affiliate-disclosure">As an Amazon Associate, we earn from qualifying purchases. Product links may redirect to Amazon.com.</p>
+  </div>
+</footer>
+
+
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
+</body>
+</html>
