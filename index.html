@@ -28,7 +28,50 @@
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebSite","name":"AIBuildCalc","url":"https://aibuildcalc.com/","description":"Free AI-Powered Home Improvement Calculators. Smart estimates, intelligent recommendations, instant accuracy."}
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://aibuildcalc.com/#organization",
+        "name": "AIBuildCalc",
+        "url": "https://aibuildcalc.com/",
+        "logo": "https://aibuildcalc.com/images/og-image.png",
+        "description": "AIBuildCalc is a team of construction industry professionals, software engineers, and AI specialists providing free AI-powered home improvement calculators for concrete, roofing, painting, flooring, and 20+ more categories.",
+        "email": "hello@aibuildcalc.com",
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "email": "hello@aibuildcalc.com",
+          "contactType": "customer support",
+          "areaServed": "US",
+          "availableLanguage": ["English"]
+        }],
+        "knowsAbout": [
+          "Concrete and masonry estimation",
+          "Roofing material calculation",
+          "HVAC sizing and cost",
+          "Flooring and tile estimation",
+          "Building code compliance (ACI, IRC, NEC, NRCA)"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://aibuildcalc.com/#website",
+        "name": "AIBuildCalc",
+        "url": "https://aibuildcalc.com/",
+        "description": "Free AI-Powered Home Improvement Calculators. Smart estimates, intelligent recommendations, instant accuracy.",
+        "publisher": {"@id": "https://aibuildcalc.com/#organization"},
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://aibuildcalc.com/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>

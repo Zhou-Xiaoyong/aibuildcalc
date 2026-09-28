@@ -43,6 +43,21 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aibuildcalc.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Calculate Concrete for a Slab, Patio, or Driveway","item":"https://aibuildcalc.com/blog/how-to-calculate-concrete-for-a-slab-patio-or-driveway"}]}
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate Concrete for a Slab, Patio, or Driveway",
+    "description": "Step-by-step guide to calculating concrete volume for slabs, patios, and driveways, including waste factors and bag count estimation.",
+    "totalTime": "PT10M",
+    "step": [
+      {"@type": "HowToStep", "position": 1, "name": "Convert thickness to feet", "text": "Convert the slab thickness from inches to feet by dividing by 12. For example, 4 inches / 12 = 0.333 feet."},
+      {"@type": "HowToStep", "position": 2, "name": "Calculate cubic feet", "text": "Multiply length x width x thickness (in feet) to get cubic feet. For a 10x10 slab: 10 x 10 x 0.333 = 33.3 cubic feet."},
+      {"@type": "HowToStep", "position": 3, "name": "Calculate cubic yards", "text": "Divide cubic feet by 27 to convert to cubic yards. 33.3 / 27 = 1.23 cubic yards."},
+      {"@type": "HowToStep", "position": 4, "name": "Add waste factor", "text": "Add 5-10% for waste and spillage. Multiply by 1.10 for 10%: 1.23 x 1.10 = 1.36 cubic yards."}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -149,7 +164,7 @@ Volume (cubic yards) = Volume (cubic feet) / 27</div>
     </main>
 
     <aside class="sidebar">
-      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
       <div class="sidebar-section">
         <h3>Categories</h3>
         <ul class="sidebar-links">
@@ -161,7 +176,7 @@ Volume (cubic yards) = Volume (cubic feet) / 27</div>
           <li><a href="/tools/decking/">Decking</a></li>
         </ul>
       </div>
-      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
     </aside>
   </div>
 

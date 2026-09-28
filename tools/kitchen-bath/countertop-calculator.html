@@ -244,7 +244,7 @@ Cost = Area x Price per sq ft</div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
       
       <div class="sidebar-section">
         <h3>Categories</h3>
@@ -267,7 +267,7 @@ Cost = Area x Price per sq ft</div>
         </ul>
       </div>
 
-      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
 
       <div class="sidebar-section">
         <h3>Popular Tools</h3>
@@ -355,8 +355,10 @@ Cost = Area x Price per sq ft</div>
         const priceMatch = material.match(/\$(\d+)-?(\d+)?/);
         const lowP = parseInt(priceMatch?.[1] || 50);
         const highP = parseInt(priceMatch?.[2] || lowP + 50);
-        const materialCost = Math.round(area * ((lowP + highP) / 2));
-        const installCost = Math.round(materialCost * 0.6);
+        // Dropdown prices are INSTALLED prices per FAQ; split into material (~60%) and total installed
+        const totalInstalled = Math.round(area * ((lowP + highP) / 2));
+        const materialCost = Math.round(totalInstalled * 0.6); // material portion ~60% of installed cost
+        const installCost = totalInstalled; // "With Installation" = total (material + labor)
         setResult('area', area.toFixed(0));
         setResult('slabsNeeded', slabsNeeded);
         setResult('materialCost', '$' + materialCost.toLocaleString());

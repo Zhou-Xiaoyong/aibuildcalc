@@ -197,7 +197,9 @@
       <div class="content-section">
         <h2>Calculation Formula</h2>
         <div class="formula-box">Area = L x W
-Boards = ceil((W x 12 / Board width) x L x 1.10)  [+10% waste]
+Boards per row = ceil(W x 12 / Board width)
+Boards per section = ceil(L / 16)  (standard 16 ft board length)
+Boards = ceil(Boards per row x Boards per section x 1.10)  [+10% waste]
 Joists = (L x 12 / Joist spacing) + 1</div>
       </div>
 
@@ -279,7 +281,7 @@ Joists = (L x 12 / Joist spacing) + 1</div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
       
       <div class="sidebar-section">
         <h3>Categories</h3>
@@ -302,7 +304,7 @@ Joists = (L x 12 / Joist spacing) + 1</div>
         </ul>
       </div>
 
-      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
 
       <div class="sidebar-section">
         <h3>Popular Tools</h3>
@@ -388,8 +390,10 @@ Joists = (L x 12 / Joist spacing) + 1</div>
         
         const deckArea = deckLength * deckWidth;
         const boardW = parseFloat(boardWidth) || 5.5;
+        const boardLength = 16; // standard 16 ft decking board length
         const boardsPerRow = boardW > 0 ? Math.ceil((deckWidth * 12) / boardW) : 0;
-        const boards = Math.ceil(boardsPerRow * deckLength * 1.10); // +10% waste
+        const boardsPerSection = Math.ceil(deckLength / boardLength); // boards needed end-to-end if deck is longer than one board
+        const boards = Math.ceil(boardsPerRow * boardsPerSection * 1.10); // +10% waste
         const joistSp = parseInt(joistSpacing) || 16;
         const joists = joistSp > 0 ? Math.ceil((deckLength * 12) / joistSp) + 1 : 0;
         const footings = Math.max(4, Math.ceil(joists / 2));
