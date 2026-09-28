@@ -32,7 +32,7 @@
   <script type="application/ld+json">
     [
     {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Concrete Stairs Calculator","description":"Free concrete stairs calculator. Estimate concrete volume for steps and stairs.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are standard step dimensions?","acceptedAnswer":{"@type":"Answer","text":"Standard residential steps: 7\" riser and 11\" tread (7-11 rule). Max riser height is 7.75\" per IRC code."}},{"@type":"Question","name":"How much concrete for 4 steps?","acceptedAnswer":{"@type":"Answer","text":"Four steps (4ft wide, 7\" riser, 11\" tread) need approximately 0.5 cubic yards or about 23 bags of 80lb concrete."}}]},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are standard step dimensions?","acceptedAnswer":{"@type":"Answer","text":"Standard residential steps: 7\" riser and 11\" tread (7-11 rule). Max riser height is 7.75\" per IRC code."}},{"@type":"Question","name":"How much concrete for 4 steps?","acceptedAnswer":{"@type":"Answer","text":"Four steps (4ft wide, 7\" riser, 11\" tread) need approximately 0.44 cubic yards or about 20 bags of 80lb concrete (with 10% waste, using triangular step profile)."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Concrete & Masonry","item":"https://aibuildcalc.com/tools/concrete/"},{"@type":"ListItem","position":3,"name":"Concrete Stairs Calculator","item":"https://aibuildcalc.com/tools/concrete/concrete-stairs-calculator"}]}
   ]
   </script>
@@ -187,8 +187,9 @@
       <!-- Formula -->
       <div class="content-section">
         <h2>Calculation Formula</h2>
-        <div class="formula-box">Volume per step = Width x Tread x Riser
-Total = Sum of all step volumes / 27</div>
+        <div class="formula-box">Volume per step (triangular wedge) = (Width x Tread x Riser x step number) / 2
+Total volume (cu ft) = Sum of all step wedges x waste factor
+Total volume (cu yd) = Total volume (cu ft) / 27</div>
       </div>
 
       <!-- Material Comparison -->
@@ -236,7 +237,7 @@ Total = Sum of all step volumes / 27</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">How much concrete for 4 steps?</div>
-          <div class="faq-answer">Four steps (4ft wide, 7&quot; riser, 11&quot; tread) need approximately 0.5 cubic yards or about 23 bags of 80lb concrete.</div>
+          <div class="faq-answer">Four steps (4ft wide, 7&quot; riser, 11&quot; tread) need approximately 0.44 cubic yards or about 20 bags of 80lb concrete (with 10% waste, using triangular step profile).</div>
         </div>
       </div>
 
@@ -275,7 +276,7 @@ Total = Sum of all step volumes / 27</div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
       
       <div class="sidebar-section">
         <h3>Categories</h3>
@@ -298,7 +299,7 @@ Total = Sum of all step volumes / 27</div>
         </ul>
       </div>
 
-      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
 
       <div class="sidebar-section">
         <h3>Popular Tools</h3>
@@ -392,7 +393,7 @@ Total = Sum of all step volumes / 27</div>
         const t = treadDepth / 12;
         let totalVolumeFt = 0;
         for (let i = 1; i <= numSteps; i++) {
-          totalVolumeFt += w * t * (r * i);
+          totalVolumeFt += (w * t * (r * i)) / 2; // divide by 2 for triangular step wedge profile
         }
         totalVolumeFt *= wasteMult;
         const totalVolumeYd = totalVolumeFt / 27;

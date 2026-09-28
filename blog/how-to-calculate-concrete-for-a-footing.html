@@ -43,6 +43,22 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://aibuildcalc.com/blog/"},{"@type":"ListItem","position":3,"name":"How to Calculate Concrete for a Footing","item":"https://aibuildcalc.com/blog/how-to-calculate-concrete-for-a-footing"}]}
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Calculate Concrete for a Footing",
+    "description": "How to calculate concrete for a footing using length x width x thickness, divide by 27 for cubic yards, and add 10% for waste. A step-by-step worked example for a continuous footing.",
+    "totalTime": "PT10M",
+    "step": [
+      {"@type": "HowToStep", "position": 1, "name": "Convert width to feet", "text": "Convert width to feet: 16 / 12 = 1.333 ft"},
+      {"@type": "HowToStep", "position": 2, "name": "Convert thickness to feet", "text": "Convert thickness to feet: 8 / 12 = 0.667 ft"},
+      {"@type": "HowToStep", "position": 3, "name": "Calculate volume in cubic feet", "text": "Volume in cubic feet: 40 x 1.333 x 0.667 = 35.6 cu ft"},
+      {"@type": "HowToStep", "position": 4, "name": "Convert to cubic yards", "text": "Cubic yards: 35.6 / 27 = 1.32 cu yd"},
+      {"@type": "HowToStep", "position": 5, "name": "Add 10% waste factor", "text": "Add 10% waste: 1.32 x 1.10 = 1.45 cubic yards"}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -143,7 +159,7 @@ Total yards = Total / 27 x 1.10</div>
     </main>
 
     <aside class="sidebar">
-      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
       <div class="sidebar-section">
         <h3>Categories</h3>
         <ul class="sidebar-links">
@@ -155,7 +171,7 @@ Total yards = Total / 27 x 1.10</div>
           <li><a href="/tools/decking/">Decking</a></li>
         </ul>
       </div>
-      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
     </aside>
   </div>
 

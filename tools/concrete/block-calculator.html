@@ -32,7 +32,7 @@
   <script type="application/ld+json">
     [
     {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Concrete Block Calculator","description":"Free concrete block calculator. Estimate the number of CMU blocks and mortar bags needed for your block wall project.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many concrete blocks do I need per square foot?","acceptedAnswer":{"@type":"Answer","text":"A standard 8\" x 16\" CMU block with a 3/8\" mortar joint covers about 1.125 blocks per square foot of wall area."}},{"@type":"Question","name":"How many blocks can one bag of mortar lay?","acceptedAnswer":{"@type":"Answer","text":"One 80 lb bag of premixed mortar lays approximately 14 standard 8\" x 16\" concrete blocks."}},{"@type":"Question","name":"What is the standard size of a concrete block?","acceptedAnswer":{"@type":"Answer","text":"The standard CMU (concrete masonry unit) is 16\" long x 8\" high, with nominal widths of 4\", 6\", 8\", 10\", or 12\". The 8\" wide block is the most common for structural walls."}}]},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many concrete blocks do I need per square foot?","acceptedAnswer":{"@type":"Answer","text":"A standard 8\" x 16\" CMU block with a 3/8\" mortar joint covers about 1.125 blocks per square foot of wall area."}},{"@type":"Question","name":"How many blocks can one bag of mortar lay?","acceptedAnswer":{"@type":"Answer","text":"One 80 lb bag of premixed mortar lays approximately 33 standard 8\" x 16\" concrete blocks (NCMA TEK 9-1A: ~3 bags per 100 blocks)."}},{"@type":"Question","name":"What is the standard size of a concrete block?","acceptedAnswer":{"@type":"Answer","text":"The standard CMU (concrete masonry unit) is 16\" long x 8\" high, with nominal widths of 4\", 6\", 8\", 10\", or 12\". The 8\" wide block is the most common for structural walls."}}]},
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Concrete & Masonry","item":"https://aibuildcalc.com/tools/concrete/"},{"@type":"ListItem","position":3,"name":"Concrete Block Calculator","item":"https://aibuildcalc.com/tools/concrete/block-calculator"}]}
   ]
   </script>
@@ -170,7 +170,7 @@
           <div class="ai-insight-card">
             <div class="insight-icon">🪣</div>
             <div class="insight-title">Mortar Yield per Bag</div>
-            <div class="insight-desc">One 80 lb bag of premixed mortar lays roughly 14 standard blocks. Wider blocks (10&quot; or 12&quot;) require more mortar per block.</div>
+            <div class="insight-desc">One 80 lb bag of premixed mortar lays roughly 33 standard 8&quot; x 16&quot; blocks (NCMA TEK 9-1A: ~3 bags per 100 blocks). Wider blocks (10&quot; or 12&quot;) require more mortar per block.</div>
           </div>
           <div class="ai-insight-card">
             <div class="insight-icon">🔩</div>
@@ -188,7 +188,7 @@ Effective height = Block height + Mortar joint (in)
 Blocks per sq ft = 144 / (Effective width x Effective height)
 Wall area = Wall length x Wall height (sq ft)
 Blocks = ceil(Wall area x Blocks per sq ft x 1.05) (5% waste)
-Mortar bags = ceil(Blocks / 14)</div>
+Mortar bags = ceil(Blocks / 33) (NCMA TEK 9-1A: ~3 bags per 100 blocks)</div>
       </div>
 
       <!-- Material Comparison -->
@@ -200,10 +200,10 @@ Mortar bags = ceil(Blocks / 14)</div>
               <tr><th>Block Type</th><th>Dimensions (in)</th><th>Blocks/sq ft</th><th>Mortar Bags/100</th><th>Typical Use</th></tr>
             </thead>
             <tbody>
-              <tr><td>Standard CMU</td><td>16 x 8</td><td>~1.125</td><td>8</td><td>Foundation, walls</td></tr>
-              <tr><td>Half Block</td><td>8 x 8</td><td>~2.25</td><td>16</td><td>Corners, ends</td></tr>
-              <tr><td>Bond Beam</td><td>16 x 8</td><td>~1.125</td><td>8</td><td>Horizontal rebar</td></tr>
-              <tr><td>Slump Block</td><td>16 x 6</td><td>~1.5</td><td>10</td><td>Decorative walls</td></tr>
+              <tr><td>Standard CMU</td><td>16 x 8</td><td>~1.125</td><td>4</td><td>Foundation, walls</td></tr>
+              <tr><td>Half Block</td><td>8 x 8</td><td>~2.25</td><td>7</td><td>Corners, ends</td></tr>
+              <tr><td>Bond Beam</td><td>16 x 8</td><td>~1.125</td><td>4</td><td>Horizontal rebar</td></tr>
+              <tr><td>Slump Block</td><td>16 x 6</td><td>~1.5</td><td>5</td><td>Decorative walls</td></tr>
             </tbody>
           </table>
         </div>
@@ -234,7 +234,7 @@ Mortar bags = ceil(Blocks / 14)</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">How many blocks can one bag of mortar lay?</div>
-          <div class="faq-answer">One 80 lb bag of premixed mortar lays approximately 14 standard 8&quot; x 16&quot; concrete blocks.</div>
+          <div class="faq-answer">One 80 lb bag of premixed mortar lays approximately 33 standard 8&quot; x 16&quot; concrete blocks (NCMA TEK 9-1A: ~3 bags per 100 blocks).</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">What is the standard size of a concrete block?</div>
@@ -272,7 +272,7 @@ Mortar bags = ceil(Blocks / 14)</div>
 
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="ad-slot" id="ad-sidebar-top">Ad Space (300×250)</div>
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
       
       <div class="sidebar-section">
         <h3>Categories</h3>
@@ -295,7 +295,7 @@ Mortar bags = ceil(Blocks / 14)</div>
         </ul>
       </div>
 
-      <div class="ad-slot" id="ad-sidebar-mid">Ad Space (300×600)</div>
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
 
       <div class="sidebar-section">
         <h3>Popular Tools</h3>
@@ -386,7 +386,7 @@ Mortar bags = ceil(Blocks / 14)</div>
         const blocksPerSqFt = 144 / (effW * effH);
         const area = wallLength * wallHeight;
         const blocks = Math.ceil(area * blocksPerSqFt * 1.05); // 5% waste
-        const mortarBags = Math.ceil(blocks / 14);
+        const mortarBags = Math.ceil(blocks / 33); // ~33 blocks per 80 lb bag (NCMA TEK 9-1A: ~3 bags per 100 blocks)
         setResult('blocks', blocks);
         setResult('mortarBags', mortarBags);
         setResult('wallArea', area.toFixed(0));
