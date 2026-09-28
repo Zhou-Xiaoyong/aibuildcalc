@@ -17,6 +17,7 @@
     {name: "Stamped Concrete Calculator", url: "/tools/concrete/stamped-concrete-calculator", cat: "Concrete & Masonry"},
     {name: "Deck Beam Calculator", url: "/tools/decking/deck-beam-calculator", cat: "Decking"},
     {name: "Deck Calculator", url: "/tools/decking/deck-calculator", cat: "Decking"},
+    {name: "Deck Cost Calculator", url: "/tools/decking/deck-cost-calculator", cat: "Decking"},
     {name: "Deck Joist Calculator", url: "/tools/decking/deck-joist-calculator", cat: "Decking"},
     {name: "Deck Post Calculator", url: "/tools/decking/deck-post-calculator", cat: "Decking"},
     {name: "Deck Railing Calculator", url: "/tools/decking/deck-railing-calculator", cat: "Decking"},
@@ -33,12 +34,14 @@
     {name: "Wire Gauge Calculator", url: "/tools/electrical/wire-gauge-calculator", cat: "Electrical"},
     {name: "Chain Link Fence Calculator", url: "/tools/fencing/chain-link-calculator", cat: "Fencing"},
     {name: "Fence Calculator", url: "/tools/fencing/fence-calculator", cat: "Fencing"},
+    {name: "Fence Cost Calculator", url: "/tools/fencing/fence-cost-calculator", cat: "Fencing"},
     {name: "Fence Gate Calculator", url: "/tools/fencing/gate-calculator", cat: "Fencing"},
     {name: "Post Spacing Calculator", url: "/tools/fencing/post-spacing-calculator", cat: "Fencing"},
     {name: "Vinyl Fence Calculator", url: "/tools/fencing/vinyl-fence-calculator", cat: "Fencing"},
     {name: "Wood Fence Calculator", url: "/tools/fencing/wood-fence-calculator", cat: "Fencing"},
     {name: "Carpet Calculator", url: "/tools/flooring/carpet-calculator", cat: "Flooring"},
     {name: "Floor Joist Calculator", url: "/tools/flooring/floor-joist-calculator", cat: "Flooring"},
+    {name: "Flooring Cost Calculator", url: "/tools/flooring/flooring-cost-calculator", cat: "Flooring"},
     {name: "Hardwood Floor Calculator", url: "/tools/flooring/hardwood-calculator", cat: "Flooring"},
     {name: "Laminate Floor Calculator", url: "/tools/flooring/laminate-calculator", cat: "Flooring"},
     {name: "Linoleum Calculator", url: "/tools/flooring/linoleum-calculator", cat: "Flooring"},
@@ -109,6 +112,7 @@
     {name: "Brick Veneer Calculator", url: "/tools/siding/brick-veneer-calculator", cat: "Siding"},
     {name: "Gutter Calculator", url: "/tools/siding/gutter-calculator", cat: "Siding"},
     {name: "Siding Calculator", url: "/tools/siding/siding-calculator", cat: "Siding"},
+    {name: "Siding Cost Calculator", url: "/tools/siding/siding-cost-calculator", cat: "Siding"},
     {name: "Stucco Calculator", url: "/tools/siding/stucco-calculator", cat: "Siding"},
     {name: "Vinyl Siding Calculator", url: "/tools/siding/vinyl-siding-calculator", cat: "Siding"},
     {name: "Solar Cost Calculator", url: "/tools/solar/solar-cost-calculator", cat: "Solar"},
@@ -117,7 +121,8 @@
     {name: "Door Calculator", url: "/tools/windows-doors/door-calculator", cat: "Windows & Doors"},
     {name: "Egress Window Calculator", url: "/tools/windows-doors/egress-window-calculator", cat: "Windows & Doors"},
     {name: "Garage Door Calculator", url: "/tools/windows-doors/garage-door-calculator", cat: "Windows & Doors"},
-    {name: "Window Calculator", url: "/tools/windows-doors/window-calculator", cat: "Windows & Doors"}
+    {name: "Window Calculator", url: "/tools/windows-doors/window-calculator", cat: "Windows & Doors"},
+    {name: "Window Cost Calculator", url: "/tools/windows-doors/window-cost-calculator", cat: "Windows & Doors"}
   ];
 
   function init() {
@@ -128,7 +133,7 @@
     var wrap = document.createElement('div');
     wrap.className = 'site-search';
     wrap.innerHTML =
-      '<input type="search" id="siteSearchInput" placeholder="Search 116 calculators..." autocomplete="off" aria-label="Search calculators">' +
+      '<input type="search" id="siteSearchInput" placeholder="Search 121 calculators..." autocomplete="off" aria-label="Search calculators">' +
       '<div class="search-results" id="siteSearchResults" hidden></div>';
     header.insertBefore(wrap, header.querySelector('.mobile-menu-btn'));
 

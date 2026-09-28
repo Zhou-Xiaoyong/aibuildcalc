@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Cost Calculator: Estimate Window Replacement Cost by Type | AIBuildCalc</title>
+  <meta name="description" content="Free window cost calculator. Estimate window replacement cost by type (single-hung, double-hung, casement, bay), frame material, glass type, and location. 2026 national cost data.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/windows-doors/window-cost-calculator">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Window Cost Calculator - AIBuildCalc">
+  <meta property="og:description" content="Estimate window replacement cost by type, frame material, and glass type.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/windows-doors/window-cost-calculator">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Window Cost Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Estimate window replacement cost by type, frame material, and glass type.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Window Cost Calculator","description":"Free window cost calculator. Estimate window replacement cost by type, frame material, glass type, and location.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost to replace windows?","acceptedAnswer":{"@type":"Answer","text":"The national average window replacement cost is $450-$850 per window installed, including labor. A full-house window replacement for 10-15 windows costs $6,000-$18,000. Double-hung vinyl windows with double-pane glass are the most popular choice at $350-$700 each."}},{"@type":"Question","name":"What is the cheapest window type?","acceptedAnswer":{"@type":"Answer","text":"Single-hung and double-hung vinyl windows with double-pane glass are the most cost-effective, ranging from $300-$700 installed. Picture windows (fixed, no operable sash) are also affordable at $250-$500. Casement and sliding windows cost $400-$800. Bay and bow windows are the most expensive at $1,500-$3,500."}},{"@type":"Question","name":"Are new windows worth the investment?","acceptedAnswer":{"@type":"Answer","text":"Yes. Energy-efficient double-pane or triple-pane windows with Low-E coating can reduce heating and cooling bills by 10-25%. Window replacement typically returns 70-80% of cost at resale, making it one of the highest-ROI home improvements."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Windows &amp; Doors","item":"https://aibuildcalc.com/tools/windows-doors/"},{"@type":"ListItem","position":3,"name":"Window Cost Calculator","item":"https://aibuildcalc.com/tools/windows-doors/window-cost-calculator"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/windows-doors/">Windows &amp; Doors</a> <span>›</span> Window Cost Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Window Cost Calculator</h1>
+          <p>Estimate window replacement cost by type, frame material, and glass</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="numWindows">Number of Windows</label>
+            <span class="label-hint">How many windows are you replacing?</span>
+            <input type="number" id="numWindows" value="10" step="1" min="0" aria-label="Number of Windows">
+          </div>
+          <div class="form-group">
+            <label for="windowType">Window Type </label>
+            <span class="label-hint">Select the style of window</span>
+            <select id="windowType" aria-label="Window Type">
+              <option value="singlehung">Single-Hung</option>
+              <option value="doublehung" selected>Double-Hung</option>
+              <option value="casement">Casement</option>
+              <option value="sliding">Sliding</option>
+              <option value="picture">Picture (Fixed)</option>
+              <option value="baybow">Bay / Bow</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="frameMaterial">Frame Material </label>
+            <span class="label-hint">Vinyl is most popular; wood is premium</span>
+            <select id="frameMaterial" aria-label="Frame Material">
+              <option value="vinyl" selected>Vinyl</option>
+              <option value="wood">Wood</option>
+              <option value="aluminum">Aluminum</option>
+              <option value="fiberglass">Fiberglass</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="glassType">Glass Type </label>
+            <span class="label-hint">More panes = better insulation &amp; cost</span>
+            <select id="glassType" aria-label="Glass Type">
+              <option value="single">Single-Pane</option>
+              <option value="double" selected>Double-Pane</option>
+              <option value="triple">Triple-Pane</option>
+              <option value="lowe">Double-Pane with Low-E</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="installType">Installation Type </label>
+            <span class="label-hint">Retrofit fits in existing frame; full frame replaces everything</span>
+            <select id="installType" aria-label="Installation Type">
+              <option value="retrofit" selected>Retrofit (insert)</option>
+              <option value="fullframe">Full Frame (complete replacement)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="locationFactor">Location Cost Factor </label>
+            <span class="label-hint">Labor costs vary by region</span>
+            <select id="locationFactor" aria-label="Location Cost Factor">
+              <option value="0.8">Low-Cost Region (South, Midwest)</option>
+              <option value="1.0" selected>National Average</option>
+              <option value="1.3">High-Cost Region (Northeast, West Coast)</option>
+              <option value="1.6">Major Metro (NYC, SF, LA, Boston)</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Estimated Total Cost</div>
+            <div class="result-value" id="result-totalCost">—</div>
+            <div class="result-unit">USD</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Cost per Window</div>
+            <div class="detail-value" id="result-perWindow">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Low Estimate</div>
+            <div class="detail-value" id="result-low">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">High Estimate</div>
+            <div class="detail-value" id="result-high">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Window Units (est.)</div>
+            <div class="detail-value" id="result-units">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Labor &amp; Install (est.)</div>
+            <div class="detail-value" id="result-labor">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on 2026 national averages and may vary by window size, brand, and contractor. Always get multiple quotes from licensed window installers.
+          </div>
+
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Window replacement costs depend on window type, frame material, glass technology, and installation method. This calculator uses 2026 national cost data to estimate your total project cost.</p>
+        <ol>
+          <li>Enter the number of windows you plan to replace</li>
+          <li>Select the window type (style)</li>
+          <li>Choose the frame material</li>
+          <li>Select the glass type (single, double, triple pane, or Low-E)</li>
+          <li>Choose the installation type (retrofit or full frame)</li>
+          <li>Select your regional cost factor</li>
+        </ol>
+      </div>
+
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your window project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">💡</div>
+            <div class="insight-title">Energy Efficiency Pays Off</div>
+            <div class="insight-desc">Double-pane windows with Low-E coating cost ~20% more but reduce energy bills by 10-25%. They pay for themselves in 5-10 years through heating and cooling savings.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏠</div>
+            <div class="insight-title">High ROI Upgrade</div>
+            <div class="insight-desc">Window replacement returns 70-80% of cost at resale. Vinyl double-hung windows offer the best balance of cost, durability, and energy efficiency for most homes.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">⚙️</div>
+            <div class="insight-title">Retrofit vs. Full Frame</div>
+            <div class="insight-desc">Retrofit installation saves 20-30% by reusing the existing frame. Choose full frame only if the existing frame is damaged, rotted, or you're changing the window size.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Calculation Methodology</h2>
+        <div class="formula-box">Base Cost per Window = Window Type Price (vinyl, double-pane)
+Frame Material Multiplier: Vinyl x1.0, Wood x1.6, Aluminum x1.3, Fiberglass x1.5
+Glass Multiplier: Single x0.85, Double x1.0, Triple x1.4, Low-E x1.2
+Installation Multiplier: Retrofit x1.0, Full Frame x1.2
+Adjusted Cost = Base x Frame x Glass x Installation x Location
+Total = Adjusted Cost x Number of Windows
+Units = Total x 0.55, Labor = Total x 0.45</div>
+      </div>
+
+      <div class="content-section">
+        <h2>Average Window Costs by Type (2026, Vinyl Double-Pane, Installed)</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Window Type</th><th>Cost per Window (Installed)</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Single-Hung</td><td>$300 - $600</td><td>Budget, bedrooms</td></tr>
+              <tr><td>Double-Hung</td><td>$350 - $700</td><td>Most popular, all rooms</td></tr>
+              <tr><td>Casement</td><td>$400 - $800</td><td>Kitchen, bathrooms (ventilation)</td></tr>
+              <tr><td>Sliding</td><td>$400 - $750</td><td>Wide openings, patios</td></tr>
+              <tr><td>Picture (Fixed)</td><td>$250 - $500</td><td>Large views, no ventilation needed</td></tr>
+              <tr><td>Bay / Bow</td><td>$1,500 - $3,500</td><td>Feature windows, added space</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <ul class="citation-list">
+          <li><strong>ENERGY STAR</strong> — Energy-efficient window specifications. <a href="https://www.energystar.gov/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>NFRC</strong> — National Fenestration Rating Council. <a href="https://www.nfrc.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Remodeling Magazine</strong> — Cost vs. Value Report 2026. <a href="https://www.remodeling.hw.net/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much does it cost to replace windows?</div>
+          <div class="faq-answer">The national average window replacement cost is $450-$850 per window installed, including labor. A full-house window replacement for 10-15 windows costs $6,000-$18,000. Double-hung vinyl windows with double-pane glass are the most popular choice at $350-$700 each.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the cheapest window type?</div>
+          <div class="faq-answer">Single-hung and double-hung vinyl windows with double-pane glass are the most cost-effective, ranging from $300-$700 installed. Picture windows (fixed, no operable sash) are also affordable at $250-$500. Casement and sliding windows cost $400-$800. Bay and bow windows are the most expensive at $1,500-$3,500.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Are new windows worth the investment?</div>
+          <div class="faq-answer">Yes. Energy-efficient double-pane or triple-pane windows with Low-E coating can reduce heating and cooling bills by 10-25%. Window replacement typically returns 70-80% of cost at resale, making it one of the highest-ROI home improvements.</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/windows-doors/window-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Window Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/windows-doors/door-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Door Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/windows-doors/egress-window-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Egress Window Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+      <section class="amazon-ad-section">
+        <h2>Recommended Window Tools</h2>
+        <p class="ad-subtitle">Find quality tools &amp; supplies for your window project on Amazon</p>
+        <a class="amz-shop-btn" href="https://www.amazon.com/s?k=window%20installation%20tools&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">
+          <span class="amz-btn-icon">&#128722;</span> Shop Window Tools on Amazon
+        </a>
+        <div class="amz-sub-links"><a class="amz-sub-link" href="https://www.amazon.com/s?k=caulking%20gun&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Caulk Guns →</a><a class="amz-sub-link" href="https://www.amazon.com/s?k=window%20film%20insulation&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Window Film →</a><a class="amz-sub-link" href="https://www.amazon.com/s?k=window%20hardware&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Hardware →</a></div>
+        <p class="affiliate-disclosure">As an Amazon Associate, AIBuildCalc earns from qualifying purchases. Prices and availability are subject to change.</p>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
+
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+      <li><a href="/tools/windows-doors/" class="active">Windows &amp; Doors</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/windows-doors/window-cost-calculator">Window Cost Calculator</a></li>
+          <li><a href="/tools/windows-doors/window-calculator">Window Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+    <p class="footer-affiliate-disclosure">As an Amazon Associate, we earn from qualifying purchases. Product links may redirect to Amazon.com.</p>
+  </div>
+</footer>
+
+  <script>
+  // Base cost per window (vinyl, double-pane, installed) — 2026 national average midpoint
+  const windowBaseCost = {
+    singlehung: 450,
+    doublehung: 525,
+    casement:   600,
+    sliding:    575,
+    picture:    375,
+    baybow:     2500
+  };
+
+  const frameMult = { vinyl: 1.0, wood: 1.6, aluminum: 1.3, fiberglass: 1.5 };
+  const glassMult = { single: 0.85, double: 1.0, triple: 1.4, lowe: 1.2 };
+  const installMult = { retrofit: 1.0, fullframe: 1.2 };
+
+  function calculate() {
+    const numWindows = parseInt(document.getElementById('numWindows').value) || 0;
+    const windowType = document.getElementById('windowType').value;
+    const frameMaterial = document.getElementById('frameMaterial').value;
+    const glassType = document.getElementById('glassType').value;
+    const installType = document.getElementById('installType').value;
+    const locationFactor = parseFloat(document.getElementById('locationFactor').value) || 1.0;
+
+    if (numWindows <= 0) {
+      alert('Please enter a valid number of windows.');
+      return;
+    }
+
+    const base = windowBaseCost[windowType] || 525;
+    const perWindow = base * frameMult[frameMaterial] * glassMult[glassType] * installMult[installType] * locationFactor;
+    const total = Math.round(perWindow * numWindows);
+    const low = Math.round(total * 0.85);
+    const high = Math.round(total * 1.15);
+    const units = total * 0.55;
+    const labor = total * 0.45;
+
+    document.getElementById('result-totalCost').textContent = '$' + total.toLocaleString();
+    document.getElementById('result-perWindow').textContent = '$' + Math.round(perWindow).toLocaleString();
+    document.getElementById('result-low').textContent = '$' + low.toLocaleString();
+    document.getElementById('result-high').textContent = '$' + high.toLocaleString();
+    document.getElementById('result-units').textContent = '$' + Math.round(units).toLocaleString();
+    document.getElementById('result-labor').textContent = '$' + Math.round(labor).toLocaleString();
+
+    document.getElementById('resultSection').style.display = 'block';
+
+    const tipEl = document.getElementById('aiTip');
+    const tipText = document.getElementById('aiTipText');
+    let tip = '';
+    if (glassType === 'single') {
+      tip = 'Single-pane windows are rarely worth installing. They lose significantly more heat than double-pane. The extra cost of double-pane usually pays back in 3-5 years through energy savings.';
+    } else if (frameMaterial === 'wood') {
+      tip = 'Wood windows offer premium aesthetics but require regular painting and maintenance. Fiberglass or vinyl-clad wood frames offer similar looks with less upkeep.';
+    } else if (installType === 'fullframe') {
+      tip = 'Full-frame replacement costs ~20% more but allows inspection of the rough opening for rot and damage. Choose this if your existing frames are old or damaged.';
+    } else {
+      tip = 'Get at least 3 window installation quotes. Prices can vary 25-40% between contractors. Verify licenses, insurance, and check recent references.';
+    }
+    tipText.textContent = tip;
+    tipEl.style.display = 'block';
+  }
+
+  function resetForm() {
+    document.getElementById('numWindows').value = '10';
+    document.getElementById('windowType').value = 'doublehung';
+    document.getElementById('frameMaterial').value = 'vinyl';
+    document.getElementById('glassType').value = 'double';
+    document.getElementById('installType').value = 'retrofit';
+    document.getElementById('locationFactor').value = '1.0';
+    document.getElementById('resultSection').style.display = 'none';
+    document.getElementById('aiTip').style.display = 'none';
+  }
+  </script>
+
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
+</body>
+</html>

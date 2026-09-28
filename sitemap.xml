@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/decking/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -37,12 +37,12 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/fencing/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/flooring/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/siding/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/windows-doors/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -446,6 +446,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://aibuildcalc.com/tools/decking/deck-cost-calculator</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aibuildcalc.com/blog/cost-to-paint-a-house-exterior-2026</loc>
     <lastmod>2026-09-28</lastmod>
     <priority>0.6</priority>
@@ -531,6 +536,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://aibuildcalc.com/tools/fencing/fence-cost-calculator</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aibuildcalc.com/tools/fencing/gate-calculator</loc>
     <lastmod>2026-08-10</lastmod>
     <priority>0.6</priority>
@@ -559,6 +569,11 @@
     <loc>https://aibuildcalc.com/tools/flooring/floor-joist-calculator</loc>
     <lastmod>2026-08-10</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/flooring/flooring-cost-calculator</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/flooring/hardwood-calculator</loc>
@@ -911,6 +926,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://aibuildcalc.com/tools/siding/siding-cost-calculator</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aibuildcalc.com/tools/siding/stucco-calculator</loc>
     <lastmod>2026-08-10</lastmod>
     <priority>0.6</priority>
@@ -954,5 +974,10 @@
     <loc>https://aibuildcalc.com/tools/windows-doors/window-calculator</loc>
     <lastmod>2026-08-10</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/tools/windows-doors/window-cost-calculator</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>

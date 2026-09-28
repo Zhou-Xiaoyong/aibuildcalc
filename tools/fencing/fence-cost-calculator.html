@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fence Cost Calculator: Estimate Fence Installation Cost by Type | AIBuildCalc</title>
+  <meta name="description" content="Free fence cost calculator. Estimate fence installation cost by type (wood, vinyl, chain link, aluminum, wrought iron), height, gates, and location. 2026 national cost data.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/fencing/fence-cost-calculator">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Fence Cost Calculator - AIBuildCalc">
+  <meta property="og:description" content="Estimate fence installation cost by type, height, and gates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/fencing/fence-cost-calculator">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fence Cost Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Estimate fence installation cost by type, height, and gates.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Fence Cost Calculator","description":"Free fence cost calculator. Estimate fence installation cost by type, height, gates, and location.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost to install a fence?","acceptedAnswer":{"@type":"Answer","text":"The national average fence installation cost is $1,500-$4,000 for 150 linear feet. Wood privacy fences cost $15-$45 per linear foot, vinyl $30-$60, chain link $15-$30, aluminum $40-$70, and wrought iron $50-$100 per linear foot installed."}},{"@type":"Question","name":"What is the cheapest fence to install?","acceptedAnswer":{"@type":"Answer","text":"Chain link is the cheapest fence at $15-$30 per linear foot installed. Wood picket fences are also affordable at $15-$30 per foot. Wood privacy fences cost $25-$45 per foot. Vinyl and aluminum are premium options at $30-$70 per foot."}},{"@type":"Question","name":"How long does a fence last?","acceptedAnswer":{"@type":"Answer","text":"Chain link: 15-20 years. Wood: 10-15 years (with staining). Vinyl: 20-30 years. Aluminum: 20-30 years. Wrought iron: 50+ years with proper maintenance. Vinyl and aluminum offer the best balance of durability and low maintenance."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Fencing","item":"https://aibuildcalc.com/tools/fencing/"},{"@type":"ListItem","position":3,"name":"Fence Cost Calculator","item":"https://aibuildcalc.com/tools/fencing/fence-cost-calculator"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/fencing/">Fencing</a> <span>›</span> Fence Cost Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Fence Cost Calculator</h1>
+          <p>Estimate fence installation cost by type, height, and gates</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="fenceLength">Fence Length <span class="unit-label">linear ft</span></label>
+            <span class="label-hint">Total length of fencing needed (typical lot: 150-300 ft)</span>
+            <input type="number" id="fenceLength" value="150" step="any" min="0" aria-label="Fence Length">
+          </div>
+          <div class="form-group">
+            <label for="fenceType">Fence Type </label>
+            <span class="label-hint">Select fencing material</span>
+            <select id="fenceType" aria-label="Fence Type">
+              <option value="woodprivacy">Wood Privacy</option>
+              <option value="woodpicket" selected>Wood Picket</option>
+              <option value="chainlink">Chain Link</option>
+              <option value="vinyl">Vinyl (PVC)</option>
+              <option value="aluminum">Aluminum</option>
+              <option value="wroughtiron">Wrought Iron</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fenceHeight">Fence Height </label>
+            <span class="label-hint">Taller fences cost more per foot</span>
+            <select id="fenceHeight" aria-label="Fence Height">
+              <option value="4">4 Feet</option>
+              <option value="6" selected>6 Feet</option>
+              <option value="8">8 Feet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gates">Gates </label>
+            <span class="label-hint">Walk gates (~4ft) and drive gates (~10-16ft)</span>
+            <select id="gates" aria-label="Gates">
+              <option value="none">No Gates</option>
+              <option value="1walk" selected>1 Walk Gate</option>
+              <option value="2walk">2 Walk Gates</option>
+              <option value="1walk1drive">1 Walk + 1 Drive Gate</option>
+              <option value="2walk1drive">2 Walk + 1 Drive Gate</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="locationFactor">Location Cost Factor </label>
+            <span class="label-hint">Labor costs vary by region</span>
+            <select id="locationFactor" aria-label="Location Cost Factor">
+              <option value="0.8">Low-Cost Region (South, Midwest)</option>
+              <option value="1.0" selected>National Average</option>
+              <option value="1.3">High-Cost Region (Northeast, West Coast)</option>
+              <option value="1.6">Major Metro (NYC, SF, LA, Boston)</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Estimated Total Cost</div>
+            <div class="result-value" id="result-totalCost">—</div>
+            <div class="result-unit">USD</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Cost per Linear Ft</div>
+            <div class="detail-value" id="result-perFt">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Low Estimate</div>
+            <div class="detail-value" id="result-low">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">High Estimate</div>
+            <div class="detail-value" id="result-high">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Fencing Material (est.)</div>
+            <div class="detail-value" id="result-materials">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Labor &amp; Install (est.)</div>
+            <div class="detail-value" id="result-labor">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Gates (est.)</div>
+            <div class="detail-value" id="result-gates">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on 2026 national averages and may vary by terrain, site conditions, and contractor. Always get multiple quotes and check local HOA rules and setback requirements.
+          </div>
+
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Fence costs depend on material type, height, length, and number of gates. This calculator uses 2026 national cost data to estimate your total fence installation cost.</p>
+        <ol>
+          <li>Measure the total linear footage of fencing needed</li>
+          <li>Select the fence material type</li>
+          <li>Choose the fence height</li>
+          <li>Select the number and type of gates</li>
+          <li>Choose your regional cost factor</li>
+        </ol>
+      </div>
+
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your fence project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🏡</div>
+            <div class="insight-title">Vinyl = Low Maintenance</div>
+            <div class="insight-desc">Vinyl fences cost ~50% more than wood upfront but never need staining or painting. Over 20 years, vinyl often costs less than wood when factoring in maintenance.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">📏</div>
+            <div class="insight-title">Height &amp; Privacy Rules</div>
+            <div class="insight-desc">Most cities limit front-yard fences to 4 feet and back/side yards to 6 feet. 8-foot fences usually require a variance. Check local codes before installing.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">🚪</div>
+            <div class="insight-title">Gate Costs Add Up</div>
+            <div class="insight-desc">A single walk gate adds $200-$400, and a double drive gate $800-$1,500. Plan gate locations carefully — extra gates significantly increase total project cost.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Calculation Methodology</h2>
+        <div class="formula-box">Base Cost = Length x Cost per Linear Foot (by type)
+Height Factor: 4ft x0.8, 6ft x1.0, 8ft x1.3
+Gate Costs: Walk gate $300, Drive gate $1,150
+Fence Cost = Base x Height Factor x Location Factor
+Materials = Fence Cost x 0.60, Labor = Fence Cost x 0.40
+Total = Fence Cost + Gates</div>
+      </div>
+
+      <div class="content-section">
+        <h2>Average Fence Costs by Type (2026, 6ft, Installed)</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Fence Type</th><th>Cost / Linear Ft</th><th>Lifespan</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Wood Privacy</td><td>$25 - $45</td><td>10-15 years</td></tr>
+              <tr><td>Wood Picket</td><td>$15 - $30</td><td>10-15 years</td></tr>
+              <tr><td>Chain Link</td><td>$15 - $30</td><td>15-20 years</td></tr>
+              <tr><td>Vinyl (PVC)</td><td>$30 - $60</td><td>20-30 years</td></tr>
+              <tr><td>Aluminum</td><td>$40 - $70</td><td>20-30 years</td></tr>
+              <tr><td>Wrought Iron</td><td>$50 - $100</td><td>50+ years</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <ul class="citation-list">
+          <li><strong>AFA</strong> — American Fence Association. <a href="https://www.americanfenceassociation.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Remodeling Magazine</strong> — Cost vs. Value Report 2026. <a href="https://www.remodeling.hw.net/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>RSMeans</strong> — Construction Cost Database 2026. <a href="https://www.rsmeans.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much does it cost to install a fence?</div>
+          <div class="faq-answer">The national average fence installation cost is $1,500-$4,000 for 150 linear feet. Wood privacy fences cost $15-$45 per linear foot, vinyl $30-$60, chain link $15-$30, aluminum $40-$70, and wrought iron $50-$100 per linear foot installed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the cheapest fence to install?</div>
+          <div class="faq-answer">Chain link is the cheapest fence at $15-$30 per linear foot installed. Wood picket fences are also affordable at $15-$30 per foot. Wood privacy fences cost $25-$45 per foot. Vinyl and aluminum are premium options at $30-$70 per foot.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How long does a fence last?</div>
+          <div class="faq-answer">Chain link: 15-20 years. Wood: 10-15 years (with staining). Vinyl: 20-30 years. Aluminum: 20-30 years. Wrought iron: 50+ years with proper maintenance. Vinyl and aluminum offer the best balance of durability and low maintenance.</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/fencing/fence-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Fence Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/fencing/wood-fence-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Wood Fence Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/fencing/post-spacing-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Post Spacing Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+      <section class="amazon-ad-section">
+        <h2>Recommended Fencing Tools</h2>
+        <p class="ad-subtitle">Find quality tools &amp; supplies for your fence project on Amazon</p>
+        <a class="amz-shop-btn" href="https://www.amazon.com/s?k=fencing%20tools&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">
+          <span class="amz-btn-icon">&#128722;</span> Shop Fencing Tools on Amazon
+        </a>
+        <div class="amz-sub-links"><a class="amz-sub-link" href="https://www.amazon.com/s?k=post%20hole%20digger&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Post Hole Digger →</a><a class="amz-sub-link" href="https://www.amazon.com/s?k=fence%20stretcher&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Fence Stretcher →</a><a class="amz-sub-link" href="https://www.amazon.com/s?k=fence%20gate%20hardware&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Gate Hardware →</a></div>
+        <p class="affiliate-disclosure">As an Amazon Associate, AIBuildCalc earns from qualifying purchases. Prices and availability are subject to change.</p>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
+
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="active">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/fencing/fence-cost-calculator">Fence Cost Calculator</a></li>
+          <li><a href="/tools/fencing/fence-calculator">Fence Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+    <p class="footer-affiliate-disclosure">As an Amazon Associate, we earn from qualifying purchases. Product links may redirect to Amazon.com.</p>
+  </div>
+</footer>
+
+  <script>
+  // Cost per linear foot (6ft, installed) by type — 2026 national average midpoint
+  const fenceCostPerFt = {
+    woodprivacy: 35,
+    woodpicket:  22.5,
+    chainlink:   22.5,
+    vinyl:       45,
+    aluminum:    55,
+    wroughtiron: 75
+  };
+
+  const heightMult = { '4': 0.8, '6': 1.0, '8': 1.3 };
+
+  const gateCosts = {
+    none: 0,
+    '1walk': 300,
+    '2walk': 600,
+    '1walk1drive': 1450,
+    '2walk1drive': 1750
+  };
+
+  function calculate() {
+    const fenceLength = parseFloat(document.getElementById('fenceLength').value) || 0;
+    const fenceType = document.getElementById('fenceType').value;
+    const fenceHeight = document.getElementById('fenceHeight').value;
+    const gates = document.getElementById('gates').value;
+    const locationFactor = parseFloat(document.getElementById('locationFactor').value) || 1.0;
+
+    if (fenceLength <= 0) {
+      alert('Please enter a valid fence length.');
+      return;
+    }
+
+    const basePerFt = fenceCostPerFt[fenceType] || 22.5;
+    const hFactor = heightMult[fenceHeight] || 1.0;
+    const perFt = basePerFt * hFactor * locationFactor;
+    const fenceCost = Math.round(fenceLength * perFt);
+    const gateCost = gateCosts[gates] || 0;
+    const total = fenceCost + gateCost;
+
+    const low = Math.round(total * 0.85);
+    const high = Math.round(total * 1.15);
+    const materials = fenceCost * 0.60;
+    const labor = fenceCost * 0.40;
+
+    document.getElementById('result-totalCost').textContent = '$' + total.toLocaleString();
+    document.getElementById('result-perFt').textContent = '$' + perFt.toFixed(2);
+    document.getElementById('result-low').textContent = '$' + low.toLocaleString();
+    document.getElementById('result-high').textContent = '$' + high.toLocaleString();
+    document.getElementById('result-materials').textContent = '$' + Math.round(materials).toLocaleString();
+    document.getElementById('result-labor').textContent = '$' + Math.round(labor).toLocaleString();
+    document.getElementById('result-gates').textContent = '$' + gateCost.toLocaleString();
+
+    document.getElementById('resultSection').style.display = 'block';
+
+    const tipEl = document.getElementById('aiTip');
+    const tipText = document.getElementById('aiTipText');
+    let tip = '';
+    if (fenceType === 'vinyl') {
+      tip = 'Vinyl fences cost more upfront but never need staining or painting. Over 20+ years, vinyl is often cheaper than wood when maintenance costs are included.';
+    } else if (fenceType === 'wroughtiron') {
+      tip = 'Wrought iron fences last 50+ years but require periodic rust-proofing and repainting. They add significant curb appeal and security but are the most expensive option.';
+    } else if (gates !== 'none') {
+      tip = 'Gates are the weakest point of any fence. Invest in quality hinges and self-closing mechanisms — especially if you have children or pets.';
+    } else {
+      tip = 'Get at least 3 fencing quotes. Prices can vary 25-40% between contractors. Check local HOA rules and utility lines before digging post holes.';
+    }
+    tipText.textContent = tip;
+    tipEl.style.display = 'block';
+  }
+
+  function resetForm() {
+    document.getElementById('fenceLength').value = '150';
+    document.getElementById('fenceType').value = 'woodpicket';
+    document.getElementById('fenceHeight').value = '6';
+    document.getElementById('gates').value = '1walk';
+    document.getElementById('locationFactor').value = '1.0';
+    document.getElementById('resultSection').style.display = 'none';
+    document.getElementById('aiTip').style.display = 'none';
+  }
+  </script>
+
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
+</body>
+</html>

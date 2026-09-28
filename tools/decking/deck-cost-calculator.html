@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deck Cost Calculator: Estimate Deck Building Cost by Material | AIBuildCalc</title>
+  <meta name="description" content="Free deck cost calculator. Estimate deck building cost by material (pressure-treated, cedar, composite, PVC, hardwood), railing, stairs, and location. 2026 national cost data.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/decking/deck-cost-calculator">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Deck Cost Calculator - AIBuildCalc">
+  <meta property="og:description" content="Estimate deck building cost by material, railing, and stairs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/decking/deck-cost-calculator">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deck Cost Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Estimate deck building cost by material, railing, and stairs.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Deck Cost Calculator","description":"Free deck cost calculator. Estimate deck building cost by material, railing, stairs, and location.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost to build a deck?","acceptedAnswer":{"@type":"Answer","text":"The national average cost to build a deck is $15-$45 per square foot installed. A 200 sq ft pressure-treated wood deck costs $3,000-$6,000. Cedar decks cost $5,000-$9,000, composite $8,000-$14,000, and PVC or tropical hardwood $9,000-$18,000 for 200 sq ft."}},{"@type":"Question","name":"What is the cheapest deck material?","acceptedAnswer":{"@type":"Answer","text":"Pressure-treated pine is the cheapest decking material at $15-$25 per square foot installed. Cedar costs $25-$35 per sq ft. Composite (Trex, TimberTech) costs $30-$45 per sq ft. PVC and tropical hardwoods (ipe, cumaru) are premium at $35-$60 per sq ft."}},{"@type":"Question","name":"Does a deck add value to a home?","acceptedAnswer":{"@type":"Answer","text":"Yes. A wood deck addition returns about 65-75% of cost at resale, while a composite deck returns 60-70%. Decks are one of the best outdoor improvements for ROI, especially in moderate climates where they can be used year-round."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Decking","item":"https://aibuildcalc.com/tools/decking/"},{"@type":"ListItem","position":3,"name":"Deck Cost Calculator","item":"https://aibuildcalc.com/tools/decking/deck-cost-calculator"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/decking/">Decking</a> <span>›</span> Deck Cost Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Deck Cost Calculator</h1>
+          <p>Estimate deck building cost by material, railing, and stairs</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="deckArea">Deck Area <span class="unit-label">sq ft</span></label>
+            <span class="label-hint">Total deck surface area (typical: 150-400 sq ft)</span>
+            <input type="number" id="deckArea" value="200" step="any" min="0" aria-label="Deck Area">
+          </div>
+          <div class="form-group">
+            <label for="material">Decking Material </label>
+            <span class="label-hint">Pressure-treated is cheapest; composite is low-maintenance</span>
+            <select id="material" aria-label="Decking Material">
+              <option value="pt">Pressure-Treated Pine</option>
+              <option value="cedar">Cedar</option>
+              <option value="composite" selected>Composite (Trex, TimberTech)</option>
+              <option value="pvc">PVC (Azek, Fiberon)</option>
+              <option value="hardwood">Tropical Hardwood (Ipe, Cumaru)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="railing">Railing Type </label>
+            <span class="label-hint">Cost per linear foot around the perimeter</span>
+            <select id="railing" aria-label="Railing Type">
+              <option value="wood">Wood</option>
+              <option value="composite" selected>Composite</option>
+              <option value="aluminum">Aluminum</option>
+              <option value="glass">Glass / Cable</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stairs">Stairs </label>
+            <span class="label-hint">Number of stair sets leading off the deck</span>
+            <select id="stairs" aria-label="Stairs">
+              <option value="0">None</option>
+              <option value="1" selected>1 Set</option>
+              <option value="2">2 Sets</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="features">Built-In Features </label>
+            <span class="label-hint">Optional benches and planters</span>
+            <select id="features" aria-label="Built-In Features">
+              <option value="none" selected>None</option>
+              <option value="bench">Built-In Bench</option>
+              <option value="planter">Planter Boxes</option>
+              <option value="both">Bench + Planters</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="locationFactor">Location Cost Factor </label>
+            <span class="label-hint">Labor costs vary by region</span>
+            <select id="locationFactor" aria-label="Location Cost Factor">
+              <option value="0.8">Low-Cost Region (South, Midwest)</option>
+              <option value="1.0" selected>National Average</option>
+              <option value="1.3">High-Cost Region (Northeast, West Coast)</option>
+              <option value="1.6">Major Metro (NYC, SF, LA, Boston)</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Estimated Total Cost</div>
+            <div class="result-value" id="result-totalCost">—</div>
+            <div class="result-unit">USD</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Cost per Sq Ft</div>
+            <div class="detail-value" id="result-perSqft">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Low Estimate</div>
+            <div class="detail-value" id="result-low">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">High Estimate</div>
+            <div class="detail-value" id="result-high">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Decking &amp; Structure (est.)</div>
+            <div class="detail-value" id="result-decking">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Railing (est.)</div>
+            <div class="detail-value" id="result-railing">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Stairs &amp; Features (est.)</div>
+            <div class="detail-value" id="result-extras">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on 2026 national averages and may vary by site conditions, elevation, and contractor. Always check local building codes for deck railings and footings.
+          </div>
+
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Deck costs vary significantly by material, railing type, and extras. This calculator uses 2026 national cost data to estimate your total deck building cost.</p>
+        <ol>
+          <li>Enter the total deck area in square feet</li>
+          <li>Select the decking material</li>
+          <li>Choose the railing type</li>
+          <li>Select the number of stair sets</li>
+          <li>Choose any built-in features</li>
+          <li>Select your regional cost factor</li>
+        </ol>
+      </div>
+
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your deck project</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🌿</div>
+            <div class="insight-title">Composite = Low Maintenance</div>
+            <div class="insight-desc">Composite decking costs ~50% more than wood but never needs staining. Over 25 years, composite saves $1,000-$3,000 in maintenance and lasts 2-3x longer than wood.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">💰</div>
+            <div class="insight-title">High Outdoor ROI</div>
+            <div class="insight-desc">Decks return 65-75% of cost at resale — one of the best outdoor investments. A 200 sq ft composite deck can recoup $6,000-$10,000 when you sell.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">⚙️</div>
+            <div class="insight-title">Railing Costs Add Up</div>
+            <div class="insight-desc">Railings account for 25-40% of total deck cost. Aluminum and glass/cable railings look modern but cost 2-3x more than basic wood railings.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Calculation Methodology</h2>
+        <div class="formula-box">Decking Cost = Area x Cost per Sq Ft (by material)
+Perimeter ≈ 4 x sqrt(Area) (square deck approximation)
+Railing Cost = Perimeter x Railing Cost per Ft
+Stairs = $450 per set
+Features: Bench $350, Planter $250, Both $550
+Total = (Decking + Railing + Stairs + Features) x Location Factor
+Materials = Total x 0.55, Labor = Total x 0.45</div>
+      </div>
+
+      <div class="content-section">
+        <h2>Average Deck Costs by Material (2026, Installed)</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Material</th><th>Cost / Sq Ft</th><th>Lifespan</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Pressure-Treated Pine</td><td>$15 - $25</td><td>10-15 years</td></tr>
+              <tr><td>Cedar</td><td>$25 - $35</td><td>15-20 years</td></tr>
+              <tr><td>Composite (Trex, etc.)</td><td>$30 - $45</td><td>25-30 years</td></tr>
+              <tr><td>PVC (Azek, Fiberon)</td><td>$35 - $55</td><td>25-30 years</td></tr>
+              <tr><td>Tropical Hardwood (Ipe)</td><td>$35 - $60</td><td>40-75 years</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <ul class="citation-list">
+          <li><strong>NADRA</strong> — North American Deck and Railing Association. <a href="https://www.nadra.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>IRC</strong> — International Residential Code (deck construction). <a href="https://www.iccsafe.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Remodeling Magazine</strong> — Cost vs. Value Report 2026. <a href="https://www.remodeling.hw.net/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much does it cost to build a deck?</div>
+          <div class="faq-answer">The national average cost to build a deck is $15-$45 per square foot installed. A 200 sq ft pressure-treated wood deck costs $3,000-$6,000. Cedar decks cost $5,000-$9,000, composite $8,000-$14,000, and PVC or tropical hardwood $9,000-$18,000 for 200 sq ft.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the cheapest deck material?</div>
+          <div class="faq-answer">Pressure-treated pine is the cheapest decking material at $15-$25 per square foot installed. Cedar costs $25-$35 per sq ft. Composite (Trex, TimberTech) costs $30-$45 per sq ft. PVC and tropical hardwoods (ipe, cumaru) are premium at $35-$60 per sq ft.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Does a deck add value to a home?</div>
+          <div class="faq-answer">Yes. A wood deck addition returns about 65-75% of cost at resale, while a composite deck returns 60-70%. Decks are one of the best outdoor improvements for ROI, especially in moderate climates where they can be used year-round.</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/decking/deck-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Deck Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/decking/deck-joist-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Deck Joist Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/decking/deck-railing-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Deck Railing Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+      <section class="amazon-ad-section">
+        <h2>Recommended Deck Tools</h2>
+        <p class="ad-subtitle">Find quality tools &amp; supplies for your deck project on Amazon</p>
+        <a class="amz-shop-btn" href="https://www.amazon.com/s?k=deck%20building%20tools&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">
+          <span class="amz-btn-icon">&#128722;</span> Shop Deck Tools on Amazon
+        </a>
+        <div class="amz-sub-links"><a class="amz-sub-link" href="https://www.amazon.com/s?k=composite%20decking&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Composite Decking →</a><a class="amz-sub-link" href="https://www.amazon.com/s?k=deck%20screws&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Deck Screws →</a><a class="amz-sub-link" href="https://www.amazon.com/s?k=deck%20railings&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Deck Railings →</a></div>
+        <p class="affiliate-disclaimer">As an Amazon Associate, AIBuildCalc earns from qualifying purchases. Prices and availability are subject to change.</p>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
+
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="active">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/decking/deck-cost-calculator">Deck Cost Calculator</a></li>
+          <li><a href="/tools/decking/deck-calculator">Deck Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+    <p class="footer-affiliate-disclosure">As an Amazon Associate, we earn from qualifying purchases. Product links may redirect to Amazon.com.</p>
+  </div>
+</footer>
+
+  <script>
+  // Cost per sq ft (installed, decking only) by material — 2026 national average midpoint
+  const deckCostPerSqft = {
+    pt:        20,
+    cedar:     30,
+    composite: 37.5,
+    pvc:       45,
+    hardwood:  47.5
+  };
+
+  // Railing cost per linear foot
+  const railingCostPerFt = {
+    wood:      25,
+    composite: 40,
+    aluminum:  55,
+    glass:     80
+  };
+
+  const featureCost = { none: 0, bench: 350, planter: 250, both: 550 };
+  const stairCostPerSet = 450;
+
+  function calculate() {
+    const deckArea = parseFloat(document.getElementById('deckArea').value) || 0;
+    const material = document.getElementById('material').value;
+    const railing = document.getElementById('railing').value;
+    const stairs = parseInt(document.getElementById('stairs').value) || 0;
+    const features = document.getElementById('features').value;
+    const locationFactor = parseFloat(document.getElementById('locationFactor').value) || 1.0;
+
+    if (deckArea <= 0) {
+      alert('Please enter a valid deck area.');
+      return;
+    }
+
+    const decking = deckArea * (deckCostPerSqft[material] || 37.5);
+    // Approximate perimeter for a roughly square deck
+    const perimeter = 4 * Math.sqrt(deckArea);
+    const railingCost = perimeter * (railingCostPerFt[railing] || 40);
+    const stairsCost = stairs * stairCostPerSet;
+    const featuresCost = featureCost[features] || 0;
+    const subtotal = decking + railingCost + stairsCost + featuresCost;
+    const total = Math.round(subtotal * locationFactor);
+
+    const low = Math.round(total * 0.85);
+    const high = Math.round(total * 1.15);
+    const perSqft = total / deckArea;
+
+    document.getElementById('result-totalCost').textContent = '$' + total.toLocaleString();
+    document.getElementById('result-perSqft').textContent = '$' + perSqft.toFixed(2);
+    document.getElementById('result-low').textContent = '$' + low.toLocaleString();
+    document.getElementById('result-high').textContent = '$' + high.toLocaleString();
+    document.getElementById('result-decking').textContent = '$' + Math.round(decking * locationFactor).toLocaleString();
+    document.getElementById('result-railing').textContent = '$' + Math.round(railingCost * locationFactor).toLocaleString();
+    document.getElementById('result-extras').textContent = '$' + Math.round((stairsCost + featuresCost) * locationFactor).toLocaleString();
+
+    document.getElementById('resultSection').style.display = 'block';
+
+    const tipEl = document.getElementById('aiTip');
+    const tipText = document.getElementById('aiTipText');
+    let tip = '';
+    if (material === 'composite' || material === 'pvc') {
+      tip = 'Composite/PVC decking costs more upfront but saves $1,000-$3,000 over 25 years by eliminating staining and sealing. The 25-30 year warranty adds peace of mind.';
+    } else if (material === 'hardwood') {
+      tip = 'Tropical hardwoods like ipe are beautiful and durable but require annual oiling. They are also 2-3x heavier, so your deck framing and footings must be sized accordingly.';
+    } else if (railing === 'glass') {
+      tip = 'Glass/cable railings offer unobstructed views but are the most expensive option. They also require more frequent cleaning to maintain their appearance.';
+    } else {
+      tip = 'Get at least 3 deck builder quotes. Prices can vary 30-40% between contractors. Verify licenses, insurance, and check recent references. Always obtain a building permit.';
+    }
+    tipText.textContent = tip;
+    tipEl.style.display = 'block';
+  }
+
+  function resetForm() {
+    document.getElementById('deckArea').value = '200';
+    document.getElementById('material').value = 'composite';
+    document.getElementById('railing').value = 'composite';
+    document.getElementById('stairs').value = '1';
+    document.getElementById('features').value = 'none';
+    document.getElementById('locationFactor').value = '1.0';
+    document.getElementById('resultSection').style.display = 'none';
+    document.getElementById('aiTip').style.display = 'none';
+  }
+  </script>
+
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
+</body>
+</html>
