@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VFB4M5TB5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2VFB4M5TB5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bathroom Remodel Cost Calculator: Estimate Bathroom Renovation Cost | AIBuildCalc</title>
+  <meta name="description" content="Free bathroom remodel cost calculator. Estimate bathroom renovation cost by size, scope (cosmetic, mid-grade, full gut), plumbing changes, and location. 2026 national cost data.">
+  <link rel="canonical" href="https://aibuildcalc.com/tools/remodeling/bathroom-remodel-cost-calculator">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Bathroom Remodel Cost Calculator - AIBuildCalc">
+  <meta property="og:description" content="Estimate bathroom renovation cost by size, scope, plumbing changes, and location.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibuildcalc.com/tools/remodeling/bathroom-remodel-cost-calculator">
+  <meta property="og:site_name" content="AIBuildCalc">
+  <meta property="og:image" content="https://aibuildcalc.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bathroom Remodel Cost Calculator - AIBuildCalc">
+  <meta name="twitter:description" content="Estimate bathroom renovation cost by size, scope, plumbing changes, and location.">
+  <meta name="twitter:image" content="https://aibuildcalc.com/images/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+    [
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Bathroom Remodel Cost Calculator","description":"Free bathroom remodel cost calculator. Estimate bathroom renovation cost by size, scope, plumbing changes, and location.","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a bathroom remodel cost?","acceptedAnswer":{"@type":"Answer","text":"The national average bathroom remodel costs $10,000-$25,000 for a mid-grade renovation of a full bath. Cosmetic refreshes cost $3,000-$7,000, while full gut renovations cost $20,000-$50,000+. Primary bathrooms with luxury finishes can exceed $60,000."}},{"@type":"Question","name":"How much does a bathroom remodel cost per square foot?","acceptedAnswer":{"@type":"Answer","text":"Cosmetic refresh: $50-$100 per sq ft. Mid-grade remodel: $150-$250 per sq ft. Full gut renovation: $250-$400 per sq ft. Luxury primary bathrooms: $400-$700+ per sq ft. Plumbing layout changes add 10-25%."}},{"@type":"Question","name":"What is the most expensive part of a bathroom remodel?","acceptedAnswer":{"@type":"Answer","text":"Labor and plumbing are typically the largest costs at 40-50% of the total. Fixtures (vanity, toilet, tub/shower) account for 20-30%, tile and flooring 15-20%, and electrical/drywall 10-15%."}}]},
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aibuildcalc.com/"},{"@type":"ListItem","position":2,"name":"Remodeling","item":"https://aibuildcalc.com/tools/remodeling/"},{"@type":"ListItem","position":3,"name":"Bathroom Remodel Cost Calculator","item":"https://aibuildcalc.com/tools/remodeling/bathroom-remodel-cost-calculator"}]}
+  ]
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">
+        <span class="logo-icon">BC</span>
+        AIBuildCalc
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="/tools/concrete/">Concrete &amp; Masonry</a>
+        <a href="/tools/roofing/">Roofing</a>
+        <a href="/tools/painting/">Painting</a>
+        <a href="/tools/flooring/">Flooring</a>
+        <a href="/tools/fencing/">Fencing</a>
+        <a href="/tools/decking/">Decking</a>
+        <a href="/tools/landscaping/">Landscaping</a>
+        <a href="/tools/hvac/">HVAC</a>
+        <a href="/tools/stairs/">Stairs</a>
+        <a href="/tools/paving/">Paving</a>
+        <a href="/tools/remodeling/">Remodeling</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+      <button class="mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span>›</span> <a href="/tools/remodeling/">Remodeling</a> <span>›</span> Bathroom Remodel Cost Calculator
+  </nav>
+
+  <div class="page-container">
+    <main class="main-content">
+      <!-- Tool Card -->
+      <div class="tool-card">
+        <div class="tool-card-header">
+          <h1>Bathroom Remodel Cost Calculator</h1>
+          <p>Estimate bathroom renovation cost by size, scope, and plumbing changes</p>
+        </div>
+        <div class="tool-card-body">
+          <div class="calc-form" id="calcForm">
+          <div class="form-group">
+            <label for="bathSize">Bathroom Size <span class="unit-label">sq ft</span></label>
+            <span class="label-hint">Total floor area of the bathroom (typical: 35-100 sq ft)</span>
+            <input type="number" id="bathSize" value="60" step="any" min="0" aria-label="Bathroom Size">
+          </div>
+          <div class="form-group">
+            <label for="scope">Remodel Scope </label>
+            <span class="label-hint">Cosmetic refresh, mid-grade remodel, or full gut</span>
+            <select id="scope" aria-label="Remodel Scope">
+              <option value="cosmetic">Cosmetic Refresh (fixtures, paint, no layout change)</option>
+              <option value="mid" selected>Mid-Grade Remodel (new tile, vanity, fixtures)</option>
+              <option value="fullgut">Full Gut &amp; Renovation (walls, plumbing, layout)</option>
+              <option value="luxury">Luxury Primary Bathroom (high-end finishes)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="plumbing">Plumbing Layout Change? </label>
+            <span class="label-hint">Moving pipes, drains, or fixture locations</span>
+            <select id="plumbing" aria-label="Plumbing Layout Change">
+              <option value="none" selected>None (keep existing layout)</option>
+              <option value="minor">Minor (move one fixture)</option>
+              <option value="major">Major (rearrange all plumbing)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="demolition">Include Demolition? </label>
+            <span class="label-hint">Remove existing tile, vanity, and fixtures</span>
+            <select id="demolition" aria-label="Include Demolition">
+              <option value="yes" selected>Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="locationFactor">Location Cost Factor </label>
+            <span class="label-hint">Labor and material costs vary by region</span>
+            <select id="locationFactor" aria-label="Location Cost Factor">
+              <option value="0.8">Low-Cost Region (South, Midwest)</option>
+              <option value="1.0" selected>National Average</option>
+              <option value="1.3">High-Cost Region (Northeast, West Coast)</option>
+              <option value="1.6">Major Metro (NYC, SF, LA, Boston)</option>
+            </select>
+          </div>
+            <button type="button" class="btn-calculate" onclick="calculate()">
+              <span class="btn-icon">✦</span> Calculate
+            </button>
+            <button type="button" class="btn-reset" onclick="resetForm()">Reset</button>
+          </div>
+
+          <div class="result-section" id="resultSection">
+          <div class="result-main">
+            <div class="result-label">Estimated Total Cost</div>
+            <div class="result-value" id="result-totalCost">—</div>
+            <div class="result-unit">USD</div>
+          </div>
+          <div class="result-details">
+          <div class="result-detail">
+            <div class="detail-label">Cost per Sq Ft</div>
+            <div class="detail-value" id="result-costPerSqft">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Low Estimate</div>
+            <div class="detail-value" id="result-low">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">High Estimate</div>
+            <div class="detail-value" id="result-high">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Labor &amp; Plumbing (est.)</div>
+            <div class="detail-value" id="result-labor">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Fixtures &amp; Materials (est.)</div>
+            <div class="detail-value" id="result-materials">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          <div class="result-detail">
+            <div class="detail-label">Demolition (est.)</div>
+            <div class="detail-value" id="result-demo">—</div>
+            <div class="detail-unit">USD</div>
+          </div>
+          </div>
+          </div>
+          <div class="inline-disclaimer">
+            <strong>Disclaimer:</strong> Results are estimates based on 2026 national averages and may vary significantly by contractor, material choices, and site conditions. Always get multiple quotes from licensed contractors.
+          </div>
+
+          <div class="ai-tip" id="aiTip" style="display:none;">
+            <div class="ai-tip-header"><span class="ai-badge-sm">Pro Tip</span> Smart Recommendation</div>
+            <p id="aiTipText"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ad-inline" id="ad-after-tool">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>How to Use This Calculator</h2>
+        <p>Bathroom remodel costs vary widely based on the scope of work, whether you change the plumbing layout, and your location. This calculator uses 2026 national cost data adjusted for regional labor rates.</p>
+        <ol>
+          <li>Enter the bathroom's total square footage</li>
+          <li>Select the remodel scope — cosmetic, mid-grade, full gut, or luxury</li>
+          <li>Indicate whether you plan to change the plumbing layout</li>
+          <li>Choose whether demolition of existing finishes is included</li>
+          <li>Select your regional cost factor</li>
+        </ol>
+      </div>
+
+      <div class="ai-insights">
+        <div class="ai-insights-header">
+          <span class="ai-badge">Expert Insights</span>
+          <span class="ai-insights-subtitle">Smart analysis for your bathroom budget</span>
+        </div>
+        <div class="ai-insights-grid" id="aiInsights">
+          <div class="ai-insight-card">
+            <div class="insight-icon">🚿</div>
+            <div class="insight-title">Layout Changes Cost Big</div>
+            <div class="insight-desc">Moving drain lines and supply pipes adds 10-25% to your total. Keeping the existing plumbing layout is the single biggest way to stay on budget.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">💰</div>
+            <div class="insight-title">Bathroom ROI</div>
+            <div class="insight-desc">Mid-range bathroom remodels return about 60-70% of cost at resale. Upscale remodels return closer to 50-60%. Focus on fixtures, tile, and lighting for best value.</div>
+          </div>
+          <div class="ai-insight-card">
+            <div class="insight-icon">⚠️</div>
+            <div class="insight-title">Mold &amp; Water Damage</div>
+            <div class="insight-desc">Older bathrooms often hide mold or water damage behind tile. Budget an extra 10-15% contingency for repairs discovered during demolition.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Calculation Methodology</h2>
+        <div class="formula-box">Base Cost = Bathroom Size x Cost per Sq Ft (by scope)
+Plumbing Factor: None x1.0, Minor x1.1, Major x1.25
+Demolition = Size x $5-$8/sq ft (if selected)
+Adjusted Cost = (Base x Plumbing Factor + Demolition) x Location Factor
+Labor &amp; Plumbing = Adjusted Cost x 0.50
+Fixtures &amp; Materials = Adjusted Cost x 0.50
+Total = Adjusted Cost</div>
+      </div>
+
+      <div class="content-section">
+        <h2>Average Bathroom Remodel Costs by Scope (2026)</h2>
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr><th>Scope</th><th>Cost / Sq Ft</th><th>Typical 6'x8' Bath</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cosmetic Refresh</td><td>$50 - $100</td><td>$3,000 - $7,000</td></tr>
+              <tr><td>Mid-Grade Remodel</td><td>$150 - $250</td><td>$10,000 - $18,000</td></tr>
+              <tr><td>Full Gut &amp; Reno</td><td>$250 - $400</td><td>$18,000 - $30,000</td></tr>
+              <tr><td>Luxury Primary Bath</td><td>$400 - $700+</td><td>$30,000 - $60,000+</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Authority References</h2>
+        <ul class="citation-list">
+          <li><strong>NKBA</strong> — National Kitchen &amp; Bath Association. <a href="https://www.nkba.org/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>Remodeling Magazine</strong> — Cost vs. Value Report 2026. <a href="https://www.remodeling.hw.net/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+          <li><strong>RSMeans</strong> — Construction Cost Database 2026. <a href="https://www.rsmeans.com/" target="_blank" rel="noopener noreferrer">Learn more</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-inline" id="ad-mid-content">
+        <!-- AdSense ad unit here -->
+      </div>
+
+      <div class="content-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <div class="faq-question">How much does a bathroom remodel cost?</div>
+          <div class="faq-answer">The national average bathroom remodel costs $10,000-$25,000 for a mid-grade renovation of a full bath. Cosmetic refreshes cost $3,000-$7,000, while full gut renovations cost $20,000-$50,000+. Primary bathrooms with luxury finishes can exceed $60,000.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much does a bathroom remodel cost per square foot?</div>
+          <div class="faq-answer">Cosmetic refresh: $50-$100 per sq ft. Mid-grade remodel: $150-$250 per sq ft. Full gut renovation: $250-$400 per sq ft. Luxury primary bathrooms: $400-$700+ per sq ft. Plumbing layout changes add 10-25%.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is the most expensive part of a bathroom remodel?</div>
+          <div class="faq-answer">Labor and plumbing are typically the largest costs at 40-50% of the total. Fixtures (vanity, toilet, tub/shower) account for 20-30%, tile and flooring 15-20%, and electrical/drywall 10-15%.</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Related Calculators</h2>
+        <div class="related-tools">
+        <a href="/tools/kitchen-bath/shower-tile-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Shower Tile Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/kitchen-bath/bathroom-tile-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Bathroom Tile Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/kitchen-bath/vanity-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Vanity Calculator</div>
+          </div>
+        </a>
+        <a href="/tools/flooring/tile-calculator" class="related-tool-card">
+          <div>
+            <div class="tool-name">Tile Calculator</div>
+          </div>
+        </a>
+        </div>
+      </div>
+      <section class="amazon-ad-section">
+        <h2>Recommended Bathroom Remodeling Tools</h2>
+        <p class="ad-subtitle">Find quality tools &amp; supplies for your bathroom project on Amazon</p>
+        <a class="amz-shop-btn" href="https://www.amazon.com/s?k=bathroom%20remodel%20tools&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">
+          <span class="amz-btn-icon">&#128722;</span> Shop Bathroom Tools on Amazon
+        </a>
+        <div class="amz-sub-links"><a class="amz-sub-link" href="https://www.amazon.com/s?k=tile%20saw&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Tile Saw →</a><a class="amz-sub-link" href="https://www.amazon.com/s?k=plumbing%20tools&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Plumbing Tools →</a><a class="amz-sub-link" href="https://www.amazon.com/s?k=bathroom%20vanity&tag=calchive-20&linkCode=ur2&camp=1789&creative=9325" target="_blank" rel="nofollow noopener">Vanities →</a></div>
+        <p class="affiliate-disclosure">As an Amazon Associate, AIBuildCalc earns from qualifying purchases. Prices and availability are subject to change.</p>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot" id="ad-sidebar-top" aria-hidden="true"></div>
+
+      <div class="sidebar-section">
+        <h3>Categories</h3>
+        <ul class="sidebar-links">
+      <li><a href="/tools/concrete/" class="">Concrete &amp; Masonry</a></li>
+      <li><a href="/tools/roofing/" class="">Roofing</a></li>
+      <li><a href="/tools/painting/" class="">Painting</a></li>
+      <li><a href="/tools/flooring/" class="">Flooring</a></li>
+      <li><a href="/tools/fencing/" class="">Fencing</a></li>
+      <li><a href="/tools/decking/" class="">Decking</a></li>
+      <li><a href="/tools/insulation/" class="">Insulation</a></li>
+      <li><a href="/tools/drywall/" class="">Drywall</a></li>
+      <li><a href="/tools/plumbing/" class="">Plumbing</a></li>
+      <li><a href="/tools/electrical/" class="">Electrical</a></li>
+      <li><a href="/tools/landscaping/" class="">Landscaping</a></li>
+      <li><a href="/tools/siding/" class="">Siding</a></li>
+      <li><a href="/tools/hvac/" class="">HVAC</a></li>
+      <li><a href="/tools/kitchen-bath/" class="">Kitchen &amp; Bath</a></li>
+      <li><a href="/tools/framing/" class="">Framing &amp; Structure</a></li>
+      <li><a href="/tools/remodeling/" class="active">Remodeling</a></li>
+        </ul>
+      </div>
+
+      <div class="ad-slot" id="ad-sidebar-mid" aria-hidden="true"></div>
+
+      <div class="sidebar-section">
+        <h3>Popular Tools</h3>
+        <ul class="sidebar-links">
+          <li><a href="/tools/remodeling/bathroom-remodel-cost-calculator">Bathroom Remodel Cost Calculator</a></li>
+          <li><a href="/tools/remodeling/kitchen-remodel-cost-calculator">Kitchen Remodel Cost Calculator</a></li>
+          <li><a href="/tools/remodeling/home-renovation-cost-calculator">Home Renovation Cost Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>About AIBuildCalc</h4>
+      <p>AIBuildCalc provides smart construction calculators for home improvement projects. Smart estimates, intelligent recommendations, and instant accuracy for DIY homeowners and contractors.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="/tools/concrete/">Concrete &amp; Masonry</a></li>
+          <li><a href="/tools/roofing/">Roofing</a></li>
+          <li><a href="/tools/painting/">Painting</a></li>
+          <li><a href="/tools/flooring/">Flooring</a></li>
+          <li><a href="/tools/fencing/">Fencing</a></li>
+          <li><a href="/tools/decking/">Decking</a></li>
+          <li><a href="/tools/insulation/">Insulation</a></li>
+          <li><a href="/tools/drywall/">Drywall</a></li>
+          <li><a href="/tools/plumbing/">Plumbing</a></li>
+          <li><a href="/tools/electrical/">Electrical</a></li>
+          <li><a href="/tools/landscaping/">Landscaping</a></li>
+          <li><a href="/tools/siding/">Siding</a></li>
+          <li><a href="/tools/hvac/">HVAC</a></li>
+          <li><a href="/tools/kitchen-bath/">Kitchen &amp; Bath</a></li>
+          <li><a href="/tools/framing/">Framing &amp; Structure</a></li>
+        <li><a href="/tools/windows-doors/">Windows &amp; Doors</a></li>
+        <li><a href="/tools/solar/">Solar</a></li>
+        <li><a href="/tools/foundation/">Foundation</a></li>
+        <li><a href="/tools/garage/">Garage</a></li>
+        <li><a href="/tools/stairs/">Stairs</a></li>
+        <li><a href="/tools/paving/">Paving</a></li>
+        <li><a href="/tools/remodeling/">Remodeling</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Popular Tools</h4>
+      <ul>
+        <li><a href="/tools/concrete/concrete-slab-calculator">Concrete Slab Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-footing-calculator">Concrete Footing Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-column-calculator">Concrete Column Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-stairs-calculator">Concrete Stairs Calculator</a></li>
+          <li><a href="/tools/concrete/rebar-calculator">Rebar Calculator</a></li>
+          <li><a href="/tools/concrete/concrete-weight-calculator">Concrete Weight Calculator</a></li>
+          <li><a href="/tools/concrete/sonotube-calculator">Sonotube Calculator</a></li>
+          <li><a href="/tools/roofing/roofing-calculator">Roofing Calculator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/research/">Research Reports</a></li>
+        <li><a href="/">All Calculators</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AIBuildCalc. All rights reserved. Calculations are estimates — verify with a professional for critical projects.</p>
+    <p class="footer-affiliate-disclosure">As an Amazon Associate, we earn from qualifying purchases. Product links may redirect to Amazon.com.</p>
+  </div>
+</footer>
+
+  <script>
+  // Cost per sq ft by scope — 2026 national average (midpoint of range)
+  const scopeCost = {
+    cosmetic:  { low: 50, high: 100 },
+    mid:       { low: 150, high: 250 },
+    fullgut:   { low: 250, high: 400 },
+    luxury:    { low: 400, high: 700 }
+  };
+
+  const plumbingFactor = { none: 1.0, minor: 1.1, major: 1.25 };
+
+  function calculate() {
+    const bathSize = parseFloat(document.getElementById('bathSize').value) || 0;
+    const scope = document.getElementById('scope').value;
+    const plumbing = document.getElementById('plumbing').value;
+    const demolition = document.getElementById('demolition').value;
+    const locationFactor = parseFloat(document.getElementById('locationFactor').value) || 1.0;
+
+    if (bathSize <= 0) {
+      alert('Please enter a valid bathroom size.');
+      return;
+    }
+
+    const range = scopeCost[scope] || scopeCost.mid;
+    const midPrice = (range.low + range.high) / 2;
+    const pFactor = plumbingFactor[plumbing] || 1.0;
+
+    const baseCost = bathSize * midPrice * pFactor;
+    const demoCost = demolition === 'yes' ? bathSize * 6.5 : 0;
+    const adjusted = (baseCost + demoCost) * locationFactor;
+
+    const total = Math.round(adjusted);
+    const low = Math.round(total * 0.85);
+    const high = Math.round(total * 1.15);
+    const costPerSqft = total / bathSize;
+    const labor = total * 0.50;
+    const materials = total * 0.50;
+
+    document.getElementById('result-totalCost').textContent = '$' + total.toLocaleString();
+    document.getElementById('result-costPerSqft').textContent = '$' + costPerSqft.toFixed(2);
+    document.getElementById('result-low').textContent = '$' + low.toLocaleString();
+    document.getElementById('result-high').textContent = '$' + high.toLocaleString();
+    document.getElementById('result-labor').textContent = '$' + Math.round(labor).toLocaleString();
+    document.getElementById('result-materials').textContent = '$' + Math.round(materials).toLocaleString();
+    document.getElementById('result-demo').textContent = '$' + Math.round(demoCost * locationFactor).toLocaleString();
+
+    document.getElementById('resultSection').style.display = 'block';
+
+    // Smart tip
+    const tipEl = document.getElementById('aiTip');
+    const tipText = document.getElementById('aiTipText');
+    let tip = '';
+    if (plumbing === 'major') {
+      tip = 'Major plumbing changes are the biggest budget buster. If possible, keep the toilet, sink, and tub/shower in their original locations to save $3,000-$8,000.';
+    } else if (scope === 'luxury') {
+      tip = 'Luxury bathrooms have lower ROI (~50-55%) than mid-grade remodels (~65-70%). Invest in quality fixtures and tile rather than ultra-premium brands for best resale value.';
+    } else if (demolition === 'yes') {
+      tip = 'Set aside 10-15% contingency for hidden water damage or mold found during demolition. Bathrooms built before 1990 often have mold behind tile surrounds.';
+    } else {
+      tip = 'Get at least 3 contractor quotes. Bathroom remodel prices can vary 30-40% between contractors for the same scope. Verify licenses and insurance.';
+    }
+    tipText.textContent = tip;
+    tipEl.style.display = 'block';
+  }
+
+  function resetForm() {
+    document.getElementById('bathSize').value = '60';
+    document.getElementById('scope').value = 'mid';
+    document.getElementById('plumbing').value = 'none';
+    document.getElementById('demolition').value = 'yes';
+    document.getElementById('locationFactor').value = '1.0';
+    document.getElementById('resultSection').style.display = 'none';
+    document.getElementById('aiTip').style.display = 'none';
+  }
+  </script>
+
+  <script src="/js/shopping-list.js" defer></script>
+  <script src="/js/pdf-export.js" defer></script>
+  <script src="/js/search.js" defer></script>
+</body>
+</html>

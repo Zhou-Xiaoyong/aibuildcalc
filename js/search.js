@@ -95,7 +95,10 @@
     {name: "Water Flow Calculator", url: "/tools/plumbing/water-flow-calculator", cat: "Plumbing"},
     {name: "Water Heater Calculator", url: "/tools/plumbing/water-heater-calculator", cat: "Plumbing"},
     {name: "Home Renovation Cost Calculator", url: "/tools/remodeling/home-renovation-cost-calculator", cat: "Remodeling"},
+    {name: "Bathroom Remodel Cost Calculator", url: "/tools/remodeling/bathroom-remodel-cost-calculator", cat: "Remodeling"},
+    {name: "Kitchen Remodel Cost Calculator", url: "/tools/remodeling/kitchen-remodel-cost-calculator", cat: "Remodeling"},
     {name: "Metal Roofing Calculator", url: "/tools/roofing/metal-roof-calculator", cat: "Roofing"},
+    {name: "Roof Cost Calculator", url: "/tools/roofing/roof-cost-calculator", cat: "Roofing"},
     {name: "Roof Pitch Calculator", url: "/tools/roofing/roof-pitch-calculator", cat: "Roofing"},
     {name: "Roof Sheathing Calculator", url: "/tools/roofing/roof-sheathing-calculator", cat: "Roofing"},
     {name: "Roof Truss Calculator", url: "/tools/roofing/roof-truss-calculator", cat: "Roofing"},
@@ -125,7 +128,7 @@
     var wrap = document.createElement('div');
     wrap.className = 'site-search';
     wrap.innerHTML =
-      '<input type="search" id="siteSearchInput" placeholder="Search 113 calculators..." autocomplete="off" aria-label="Search calculators">' +
+      '<input type="search" id="siteSearchInput" placeholder="Search 116 calculators..." autocomplete="off" aria-label="Search calculators">' +
       '<div class="search-results" id="siteSearchResults" hidden></div>';
     header.insertBefore(wrap, header.querySelector('.mobile-menu-btn'));
 
