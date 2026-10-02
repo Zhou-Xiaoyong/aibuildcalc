@@ -1478,3 +1478,51 @@ img { max-width: 100%; height: auto; }
 /* Related guide box (backlink from tools to blog) */
 .related-guide-box{max-width:var(--max-width);margin:18px auto;padding:10px 24px;border-left:3px solid #2e7d32;background:#f4faf4;font-size:14px;border-radius:4px}
 .related-guide-box a{font-weight:600;color:#1b5e20;text-decoration:none}
+
+/* --- Amazon product cards (added 2026-10-02) --- */
+.amz-card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:16px 0 10px;
+}
+.amz-card{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:14px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:10px;
+  text-decoration:none;
+  transition:border-color .15s,box-shadow .15s,transform .15s;
+}
+.amz-card:hover{
+  border-color:#ff9900;
+  box-shadow:0 4px 14px rgba(255,153,0,.18);
+  transform:translateY(-2px);
+  text-decoration:none;
+}
+.amz-card-icon{
+  flex:0 0 auto;
+  width:34px;height:34px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.05rem;line-height:1;
+  background:#fff8ec;
+  border-radius:8px;
+}
+.amz-card-body{display:flex;flex-direction:column;gap:2px;min-width:0}
+.amz-card-title{
+  font-size:.875rem;font-weight:600;color:var(--text);line-height:1.35;
+}
+.amz-card-desc{
+  font-size:.75rem;color:var(--text-light);line-height:1.45;
+}
+.amz-card-cta{
+  font-size:.75rem;font-weight:700;color:#c76b00;margin-top:4px;
+}
+@media(max-width:760px){
+  .amz-card-grid{grid-template-columns:1fr}
+  .amz-card{padding:12px}
+}
+
