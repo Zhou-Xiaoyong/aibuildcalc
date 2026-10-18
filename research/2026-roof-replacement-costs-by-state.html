@@ -66,17 +66,43 @@
     "name": "2026 Average Roof Replacement Costs by US State",
     "description": "State-by-state breakdown of asphalt shingle roof replacement costs across all 50 US states plus DC, including low, mid, and high cost ranges based on BLS, Census, and RSMeans data.",
     "url": "https://aibuildcalc.com/research/2026-roof-replacement-costs-by-state",
+    "identifier": "https://aibuildcalc.com/research/2026-roof-replacement-costs-by-state",
     "creator": {"@type": "Organization", "name": "AIBuildCalc Research", "url": "https://aibuildcalc.com/research/"},
+    "publisher": {"@type": "Organization", "name": "AIBuildCalc", "url": "https://aibuildcalc.com/"},
     "datePublished": "2026-01-15",
     "dateModified": "2026-07-11",
+    "temporalCoverage": "2026",
     "spatialCoverage": "United States",
     "keywords": ["roof replacement cost", "roofing prices", "construction costs by state", "asphalt shingle roof"],
-    "distribution": {
-      "@type": "DataDownload",
-      "encodingFormat": "text/html",
-      "contentUrl": "https://aibuildcalc.com/research/2026-roof-replacement-costs-by-state"
+    "variableMeasured": [
+      "Installed roof replacement cost, low estimate (USD, per state)",
+      "Installed roof replacement cost, average (USD, per state)",
+      "Installed roof replacement cost, high estimate (USD, per state)",
+      "Percent difference from the national average"
+    ],
+    "measurementTechnique": "Cost-of-construction model for a 1,700 sq ft single-family home (~17 roofing squares, 6/12 pitch), applying BLS roofer wage data (SOC 47-2181), RSMeans location factors, and state building-code complexity multipliers to a national baseline of $500 per square.",
+    "license": {
+      "@type": "CreativeWork",
+      "name": "AIBuildCalc research data terms",
+      "url": "https://aibuildcalc.com/terms-of-use#research-data"
     },
-    "isAccessibleForFree": true
+    "isAccessibleForFree": true,
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "name": "Roof replacement costs by US state, 2026 (CSV)",
+        "description": "All 51 rows of the state cost table: state name, low, average, and high installed cost in USD, and percent difference from the national average.",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://aibuildcalc.com/research/data/roof-replacement-costs-by-state-2026.csv",
+        "license": "https://aibuildcalc.com/terms-of-use#research-data"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Report page with full state cost table (HTML)",
+        "encodingFormat": "text/html",
+        "contentUrl": "https://aibuildcalc.com/research/2026-roof-replacement-costs-by-state"
+      }
+    ]
   }
   </script>
 </head>
@@ -283,6 +309,13 @@
     <div class="callout">
       <strong>Cite this report:</strong> AIBuildCalc Research. (2026). <em>2026 Average Roof Replacement Costs by US State.</em> AIBuildCalc.com. Retrieved from https://aibuildcalc.com/research/2026-roof-replacement-costs-by-state
     </div>
+
+    <p style="font-size:0.9375rem;color:var(--text-secondary);margin:14px 0 0;">
+      <strong>Download the data:</strong>
+      <a href="/research/data/roof-replacement-costs-by-state-2026.csv" download>roof-replacement-costs-by-state-2026.csv</a>
+      — all 51 rows from the table above (state, low, average, high, difference vs. national) as a plain CSV file.
+      Reuse terms are described in our <a href="/terms-of-use#research-data">research data terms</a>.
+    </p>
 
     <h2>Frequently asked questions</h2>
     <div class="content-section" style="padding:0;border:none;">

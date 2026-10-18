@@ -16,3 +16,7 @@
 
 /images/*
   Cache-Control: public, max-age=604800
+
+# 研究数据 CSV：给 Dataset 的 distribution 用的下载文件，缓存一天
+/research/data/*
+  Cache-Control: public, max-age=86400
