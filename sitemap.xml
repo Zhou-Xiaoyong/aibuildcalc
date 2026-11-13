@@ -67,7 +67,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/insulation/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -297,7 +297,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -842,7 +842,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/insulation/insulation-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -1148,6 +1148,11 @@
   <url>
     <loc>https://aibuildcalc.com/blog/paint-guest-room-before-thanksgiving</loc>
     <lastmod>2026-11-12</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/insulating-guest-room-over-garage-before-thanksgiving</loc>
+    <lastmod>2026-11-13</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
