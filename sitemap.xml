@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/windows-doors/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -297,7 +297,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -692,7 +692,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/guest-bedroom-conversion-cost-before-thanksgiving</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -1117,7 +1117,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/windows-doors/egress-window-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -1132,7 +1132,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/windows-doors/window-cost-calculator</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1153,6 +1153,11 @@
   <url>
     <loc>https://aibuildcalc.com/blog/insulating-guest-room-over-garage-before-thanksgiving</loc>
     <lastmod>2026-11-13</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/egress-window-before-thanksgiving</loc>
+    <lastmod>2026-11-14</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
