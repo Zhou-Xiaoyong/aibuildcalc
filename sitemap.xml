@@ -297,12 +297,12 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/will-a-50-gallon-water-heater-handle-12-thanksgiving-guests</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -527,7 +527,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/electrical/amp-calculator</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -697,7 +697,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/how-many-amps-does-thanksgiving-dinner-pull</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -867,7 +867,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/kitchen-bath/cabinet-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -977,7 +977,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/plumbing/drain-pipe-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -1163,6 +1163,11 @@
   <url>
     <loc>https://aibuildcalc.com/blog/thanksgiving-entry-floor-vinyl-plank-vs-tile</loc>
     <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/dishwasher-before-thanksgiving</loc>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
