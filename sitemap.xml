@@ -297,7 +297,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -532,7 +532,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/electrical/circuit-load-calculator</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -547,7 +547,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/electrical/lighting-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -697,7 +697,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/how-many-amps-does-thanksgiving-dinner-pull</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -1178,6 +1178,11 @@
   <url>
     <loc>https://aibuildcalc.com/blog/will-one-bathroom-handle-18-thanksgiving-guests</loc>
     <lastmod>2026-11-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/thanksgiving-table-lighting-lumens</loc>
+    <lastmod>2026-11-19</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
