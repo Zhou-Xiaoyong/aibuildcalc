@@ -297,12 +297,12 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/will-a-50-gallon-water-heater-handle-12-thanksgiving-guests</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -1177,7 +1177,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/will-one-bathroom-handle-18-thanksgiving-guests</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1188,6 +1188,11 @@
   <url>
     <loc>https://aibuildcalc.com/blog/thanksgiving-stair-safety-handrail</loc>
     <lastmod>2026-11-20</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/thanksgiving-septic-tank-capacity</loc>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>
