@@ -297,12 +297,12 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/will-a-50-gallon-water-heater-handle-12-thanksgiving-guests</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -987,7 +987,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/plumbing/pipe-size-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -997,7 +997,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/tools/plumbing/water-flow-calculator</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -1177,7 +1177,7 @@
   </url>
   <url>
     <loc>https://aibuildcalc.com/blog/will-one-bathroom-handle-18-thanksgiving-guests</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -1208,6 +1208,11 @@
   <url>
     <loc>https://aibuildcalc.com/blog/thanksgiving-guests-den-smoke-co-alarm-count</loc>
     <lastmod>2026-11-25</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aibuildcalc.com/blog/thanksgiving-three-showers-water-pressure</loc>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
